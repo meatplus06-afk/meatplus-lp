@@ -2,20 +2,27 @@
 name: Deploy static content to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
+  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -24,21 +31,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Cache product images locally
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p assets/products/k003
-          curl --fail --location --retry 3 --retry-all-errors "https://lh3.googleusercontent.com/d/1amLsnlwEcpEpa_IyXmo9r9IC2c2D48K1=w1600" --output assets/products/k003/product-list.jpg
-          curl --fail --location --retry 3 --retry-all-errors "https://lh3.googleusercontent.com/d/16BFDrLUVAGfXXKwUnGee42pDyWJcxzV6=w1600" --output assets/products/k003/sns1.jpg
-          curl --fail --location --retry 3 --retry-all-errors "https://lh3.googleusercontent.com/d/18UbFDDxWn0uMad4dgzmU4ZwyJ5wx8bCs=w1600" --output assets/products/k003/sns2.jpg
-          curl --fail --location --retry 3 --retry-all-errors "https://lh3.googleusercontent.com/d/1d1PPql9Twk5-WwD9a2YrLkdU7dN4vrdF=w1600" --output assets/products/k003/sns3.jpg
-          test -s assets/products/k003/product-list.jpg
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
