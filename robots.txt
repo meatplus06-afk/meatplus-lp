@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://meatplus06-afk.github.io/meatplus-lp/sitemap.xml
