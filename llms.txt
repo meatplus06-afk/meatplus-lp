@@ -1,0 +1,9 @@
+# MEAT PLUS 商品ガイド
+
+> 株式会社MEATPLUSが運営する、商品の特徴・原材料・保存方法を案内する公式商品ガイドです。
+
+## 商品
+- [ミックスビーンズ 270g](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): 豆菓子ミックス。商品ID k003。常温保存。原材料とアレルギー情報を掲載。
+
+## 公式購入先
+- [MEAT PLUS公式オンラインショップ](https://meat-plus.club/)
