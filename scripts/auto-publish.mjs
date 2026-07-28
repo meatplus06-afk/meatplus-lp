@@ -58,7 +58,7 @@ const render = (p, images) => {
   const description=text(p.description), meta=text(p.metaDescription)||description||name;
   const catchCopy=text(p.catchCopy)||name, closing=text(p.closingCopy)||catchCopy;
   const purchase=text(p.purchaseUrl), queued=text(p.updatedAt);
-  if (!validId(id) || !name || !/^https?:\/\//i.test(purchase) || !queued) throw new Error(id+': required data is missing');
+  if (!validId(id) || !name || !/^https?:\/\//i.test(purchase)) throw new Error(id+': required data is missing');
   const imageUrls=Object.values(images).map(f => site+'/assets/products/'+id+'/'+f);
   const faq=(Array.isArray(p.faq)?p.faq:[]).map(x=>({q:text(x.question||x.q),a:text(x.answer||x.a)})).filter(x=>x.q&&x.a);
   const info=Object.entries(p.productInfo||{}).filter(([,v])=>text(v));
@@ -83,6 +83,10 @@ ${faqHtml?`<section class="faq"><p class="eyebrow">FAQ</p><h2>よくあるご質
 for (const product of products) {
   const id=text(product.productId).toLowerCase();
   if (!validId(id)) throw new Error('Invalid productId: '+id);
+  if (!text(product.updatedAt)) {
+    try { await fs.access(path.join('products',id,'index.html')); console.log(id+': legacy published LP preserved'); continue; } catch {}
+    throw new Error(id+': publish timestamp is missing');
+  }
   const images=await downloadImages(product);
   await fs.mkdir(path.join('products',id),{recursive:true});
   await fs.writeFile(path.join('products',id,'index.html'),render(product,images));
