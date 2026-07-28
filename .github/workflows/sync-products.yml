@@ -3,7 +3,7 @@ name: Sync Food EC Master LPs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "17 18 * * *"
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
           node-version: "22"
       - name: Generate product LPs
         env:
-          FOOD_EC_MASTER_FEED_URL: ${{ secrets.FOOD_EC_MASTER_FEED_URL }}
+          FOOD_EC_MASTER_FEED_URL: https://script.google.com/macros/s/AKfycbwr_19nzaX976Ejm6Oarr1FyvOyasxM5W3Ot5IfKKrr0XugerhPyfWY3qmpOmBCAyzq7Q/exec?action=github-lp-feed
         run: node scripts/sync-lp.mjs
       - name: Commit changed LPs
         run: |
@@ -34,6 +34,6 @@ jobs:
           fi
           git config user.name "meatplus-lp-bot"
           git config user.email "meatplus-lp-bot@users.noreply.github.com"
-          git add index.html sitemap.xml products assets/products
+          git add data/products.json index.html sitemap.xml products assets/products
           git commit -m "Sync Food EC Master product LPs"
           git push
