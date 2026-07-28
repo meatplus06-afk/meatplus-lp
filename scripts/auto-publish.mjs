@@ -19,7 +19,7 @@ const extFrom = (contentType, url) => {
 };
 const jsonLd = value => JSON.stringify(value).replace(/</g, '\\u003c');
 
-const response = await fetch(feedUrl + '?feed=github', {
+const response = await fetch(feedUrl + '?lp=__github_feed__', {
   method: 'GET',
   redirect: 'follow'
 });
