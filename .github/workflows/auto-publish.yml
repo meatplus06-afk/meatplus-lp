@@ -1,0 +1,38 @@
+name: Auto publish product LP
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-publish-product-lp
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Publish queued products
+        env:
+          LP_FEED_URL: https://script.google.com/macros/s/AKfycbwr_19nzaX976Ejm6Oarr1FyvOyasxM5W3Ot5IfKKrr0XugerhPyfWY3qmpOmBCAyzq7Q/exec
+        run: node scripts/auto-publish.mjs
+      - name: Commit published LPs
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "No queued products."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add products assets/products data/products.json index.html sitemap.xml
+          git commit -m "Auto-publish queued product LPs"
+          git push
