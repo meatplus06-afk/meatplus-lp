@@ -1,6 +1,6 @@
 # Food EC Master → LP feed
 
-GitHub Actions reads one public, read-only JSON endpoint. The endpoint must expose only products approved for public LP publication. Never expose Drive IDs, user data, GPT action tokens, API keys, or unpublished product records.
+GitHub Actions reads one public, read-only JSON endpoint. The endpoint exposes only products whose LP button has been pressed and which are waiting for publication. Never expose Drive IDs, user data, supplier data, cost data, GPT action tokens, API keys, or unrelated product records.
 
 ## Response
 
@@ -13,7 +13,6 @@ GitHub Actions reads one public, read-only JSON endpoint. The endpoint must expo
       "productName": "ミックスビーンズ",
       "category": "豆菓子・おつまみ",
       "purchaseUrl": "https://meat-plus.club/product/detail/k003",
-      "lpPublished": true,
       "visualLabel": "MIXED BEANS / 270g",
       "catchCopy": "カリッ、ぽりっ。一口ごとに変わる味と食感。",
       "description": "商品説明",
@@ -22,10 +21,10 @@ GitHub Actions reads one public, read-only JSON endpoint. The endpoint must expo
       "closingCopy": "おやつにも、晩酌にも。",
       "ingredients": "原材料表示",
       "images": {
-        "productList": "https://.../public-image",
-        "sns1": "https://.../public-image",
-        "sns2": "https://.../public-image",
-        "sns3": "https://.../public-image"
+        "productList": {"name": "product.jpg", "mimeType": "image/jpeg", "base64": "..."},
+        "sns1": {"name": "sns1.jpg", "mimeType": "image/jpeg", "base64": "..."},
+        "sns2": {"name": "sns2.jpg", "mimeType": "image/jpeg", "base64": "..."},
+        "sns3": {"name": "sns3.jpg", "mimeType": "image/jpeg", "base64": "..."}
       },
       "sceneCopies": ["訴求1", "訴求2", "訴求3"],
       "productInfo": {
@@ -48,12 +47,12 @@ GitHub Actions reads one public, read-only JSON endpoint. The endpoint must expo
 - `sns1`, `sns2`, `sns3`: select by filename, case-insensitive.
 - Ignore every other uploaded image.
 - Missing SNS images are omitted without empty frames.
-- Image responses must be directly downloadable without a Google login page.
+- Images are transferred only for the pending product, then stored in the public repository.
 
 ## Publication
 
 - Workflow: `.github/workflows/sync-products.yml`
 - Generator: `scripts/sync-lp.mjs`
-- Secret: `FOOD_EC_MASTER_FEED_URL`
-- Schedule: once per hour and manual execution
+- Schedule: once per day at 03:17 JST and manual execution
 - No data change means no commit or redeployment.
+- Published LPs are not regenerated. A saved product edit clears its publication state, allowing a replacement LP to be published to the same URL.
