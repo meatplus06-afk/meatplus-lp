@@ -20,13 +20,17 @@ const extFrom = (contentType, url) => {
 const jsonLd = value => JSON.stringify(value).replace(/</g, '\\u003c');
 
 const response = await fetch(feedUrl + '?action=github-lp-feed', {
-  method: 'POST',
-  headers: {'content-type':'application/x-www-form-urlencoded'},
-  body: 'action=github-lp-feed',
+  method: 'GET',
   redirect: 'follow'
 });
 if (!response.ok) throw new Error('Feed request failed: ' + response.status);
-const payload = await response.json();
+const rawPayload = await response.text();
+let payload;
+try {
+  payload = JSON.parse(rawPayload);
+} catch {
+  throw new Error('Feed returned non-JSON content: ' + rawPayload.slice(0, 120).replace(/\s+/g, ' '));
+}
 const products = Array.isArray(payload.products) ? payload.products : [];
 if (!products.length) process.exit(0);
 
