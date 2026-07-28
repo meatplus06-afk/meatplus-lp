@@ -2,6 +2,9 @@ name: Sync Food EC Master LPs
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/sync-products.yml"
   schedule:
     - cron: "17 18 * * *"
 
