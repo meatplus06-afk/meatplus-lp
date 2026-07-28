@@ -1,0 +1,39 @@
+name: Sync Food EC Master LPs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: food-ec-master-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Generate product LPs
+        env:
+          FOOD_EC_MASTER_FEED_URL: ${{ secrets.FOOD_EC_MASTER_FEED_URL }}
+        run: node scripts/sync-lp.mjs
+      - name: Commit changed LPs
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "meatplus-lp-bot"
+          git config user.email "meatplus-lp-bot@users.noreply.github.com"
+          git add index.html sitemap.xml products assets/products
+          git commit -m "Sync Food EC Master product LPs"
+          git push
