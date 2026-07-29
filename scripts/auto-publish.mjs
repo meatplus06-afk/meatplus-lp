@@ -57,12 +57,12 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','${gaMeasurementId}');
 document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('a.cta').forEach(function(link,index){
+  document.querySelectorAll('a[data-cta-position]').forEach(function(link){
     link.addEventListener('click',function(){
       var match=location.pathname.match(/\\/products\\/([^/]+)\\//);
       gtag('event','purchase_button_click',{
         product_id:match?match[1]:'',
-        cta_position:index===0?'main':'bottom',
+        cta_position:link.dataset.ctaPosition||'unknown',
         link_url:link.href,
         transport_type:'beacon'
       });
@@ -128,18 +128,35 @@ const render = (p, images, offer) => {
   const additionalProperty=info.map(([name,value])=>({'@type':'PropertyValue',name,value:text(value)}));
   const productLd={'@context':'https://schema.org','@type':'Product','@id':productUrl+'#product',url:productUrl,mainEntityOfPage:productUrl,name,sku:id,category,description,image:imageUrls,brand:{'@type':'Brand',name:'MEAT PLUS'},manufacturer:{'@type':'Organization','@id':shop+'#organization',name:company,url:shop},additionalProperty};
   if (offer) productLd.offers=offer;
+  const price=offer?.price ? Number(offer.price).toLocaleString('ja-JP') : '';
+  const infoMap=new Map(info.map(([key,value])=>[text(key),text(value)]));
+  const quickFacts=[
+    ['内容量',infoMap.get('商品規格')||infoMap.get('販売規格')||infoMap.get('内容量')],
+    ['保存',infoMap.get('保存方法')],
+    ['産地',infoMap.get('原産国')||infoMap.get('原産地')]
+  ].filter(([,value])=>value).slice(0,3);
+  const purchaseUrl=new URL(purchase);
+  purchaseUrl.searchParams.set('utm_source','github_pages');
+  purchaseUrl.searchParams.set('utm_medium','referral');
+  purchaseUrl.searchParams.set('utm_campaign',id+'_lp');
+  const buy=position=>{
+    const url=new URL(purchaseUrl);
+    url.searchParams.set('utm_content',position+'_cta');
+    return url.toString();
+  };
   const breadcrumbLd={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'MEAT PLUS 商品ガイド',item:site+'/'},{'@type':'ListItem',position:2,name,item:productUrl}]};
   return `<!doctype html><html lang="ja" data-food-ec-updated-at="${esc(queued)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(name)}｜MEAT PLUS公式商品ガイド</title><meta name="description" content="${esc(meta)}"><meta name="author" content="${company}"><link rel="canonical" href="${productUrl}"><link rel="alternate" type="application/json" href="${site}/data/products-public.json"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="product"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="MEAT PLUS公式商品ガイド"><meta property="og:title" content="${esc(name)}｜MEAT PLUS"><meta property="og:description" content="${esc(meta)}"><meta property="og:url" content="${productUrl}"><meta property="og:image" content="${imageUrls[0]}"><meta property="og:image:alt" content="${esc(name)}"><meta property="article:modified_time" content="${esc(queued)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(name)}｜MEAT PLUS"><meta name="twitter:description" content="${esc(meta)}"><meta name="twitter:image" content="${imageUrls[0]}"><link rel="stylesheet" href="../../assets/style.css">
-<script type="application/ld+json">${jsonLd(productLd)}</script><script type="application/ld+json">${jsonLd(breadcrumbLd)}</script>${faqLd.length?`<script type="application/ld+json">${jsonLd({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqLd})}</script>`:''}${analytics}</head><body>
+<script type="application/ld+json">${jsonLd(productLd)}</script><script type="application/ld+json">${jsonLd(breadcrumbLd)}</script>${faqLd.length?`<script type="application/ld+json">${jsonLd({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqLd})}</script>`:''}${analytics}</head><body class="product-page">
 <header class="site-header"><a class="brand" href="../../">MEAT PLUS</a><span>商品ガイド</span></header><main><nav class="breadcrumb"><a href="../../">商品ガイド</a><span>／</span><span>${esc(name)}</span></nav>
-<section class="product-hero"><div class="product-shot"><span class="visual-label">${esc(id.toUpperCase())}</span><img class="main-photo" data-image-role="product-list" src="${img('productList')}" alt="${esc(name)}" width="1200" height="1200" fetchpriority="high"></div><div class="product-copy"><p class="eyebrow">${esc(category)}</p><h1>${esc(name)}</h1><p class="lead">${esc(catchCopy)}</p><p>${esc(description)}</p><a class="cta" href="${esc(purchase)}">公式オンラインショップで商品を見る</a><p class="note">価格・在庫・配送条件は公式オンラインショップでご確認ください。</p></div></section>
-${stories?`<section class="visual-story" aria-label="${esc(name)}の魅力">${stories}</section>`:''}
-<section class="info"><div><p class="eyebrow">PRODUCT INFORMATION</p><h2>商品情報</h2></div><dl>${info.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></section>
+<section class="product-hero"><div class="product-shot"><span class="visual-label">${esc(id.toUpperCase())}</span><img class="main-photo" data-image-role="product-list" src="${img('productList')}" alt="${esc(name)}" width="1200" height="1200" fetchpriority="high"></div><div class="product-copy"><p class="eyebrow">${esc(category)}</p><h1>${esc(name)}</h1><p class="lead">${esc(catchCopy)}</p>${quickFacts.length?`<ul class="quick-facts">${quickFacts.map(([key,value])=>`<li><span>${esc(key)}</span><strong>${esc(value)}</strong></li>`).join('')}</ul>`:''}${price?`<p class="price"><strong>¥${price}</strong><span>税込</span></p>`:''}<details class="product-description"><summary>商品の特徴を読む</summary><p>${esc(description)}</p></details><a class="cta" data-cta-position="main" href="${esc(buy('main'))}">公式オンラインショップで購入する</a><p class="note">公式サイトへ移動します。価格・在庫・配送条件は移動先で最終確認してください。</p></div></section>
+<nav class="section-nav" aria-label="ページ内メニュー"><a href="#appeal">写真で見る</a><a href="#product-info">商品情報</a>${faqHtml?'<a href="#faq">よくある質問</a>':''}</nav>
+${stories?`<section class="visual-story" id="appeal" aria-label="${esc(name)}の魅力">${stories}</section>`:''}
+<section class="info" id="product-info"><div><p class="eyebrow">PRODUCT INFORMATION</p><h2>購入前に確認したい商品情報</h2></div><dl>${info.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></section>
 ${text(p.ingredients)?`<section class="ingredients"><h2>原材料</h2><p>${esc(p.ingredients)}</p></section>`:''}
-${faqHtml?`<section class="faq"><p class="eyebrow">FAQ</p><h2>よくあるご質問</h2>${faqHtml}</section>`:''}
-<section class="closing"><h2>${esc(closing)}</h2><a class="cta" href="${esc(purchase)}">公式オンラインショップへ</a></section></main><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>商品ID：${esc(id)}　© MEAT PLUS</small></footer></body></html>`;
+${faqHtml?`<section class="faq" id="faq"><p class="eyebrow">FAQ</p><h2>購入前のよくあるご質問</h2>${faqHtml}</section>`:''}
+<section class="closing"><p class="eyebrow">MEAT PLUS OFFICIAL SHOP</p><h2>${esc(closing)}</h2><p>仕入れ・加工・梱包・発送まで自社で行うMEAT PLUSの公式オンラインショップでご注文いただけます。</p><a class="cta" data-cta-position="bottom" href="${esc(buy('bottom'))}">公式オンラインショップで購入する</a></section></main><div class="sticky-buy" aria-label="購入案内">${price?`<span><small>税込</small><strong>¥${price}</strong></span>`:'<span><small>公式サイトで</small><strong>詳細を確認</strong></span>'}<a data-cta-position="sticky" href="${esc(buy('sticky'))}">購入する</a></div><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>商品ID：${esc(id)}　© MEAT PLUS</small></footer></body></html>`;
 };
 
 for (const product of products) {
@@ -180,9 +197,9 @@ for (const item of catalog) {
   } catch {}
 }
 
-const cards=catalog.map(x=>`<a class="card" href="./products/${esc(x.id)}/"><img src="${esc(x.image)}" alt="${esc(x.name)}" width="800" height="800"><div><p class="eyebrow">${esc(x.category)}</p><h3>${esc(x.name)}</h3><p>${esc(x.description)}</p><span class="text-link">詳しく見る →</span></div></a>`).join('\n');
+const cards=catalog.map(x=>`<a class="card" href="./products/${esc(x.id)}/"><img src="${esc(x.image)}" alt="${esc(x.name)}" width="800" height="800" loading="lazy"><div><p class="eyebrow">${esc(x.category)}</p><h3>${esc(x.name)}</h3>${x.offer?.price?`<p class="card-price">¥${Number(x.offer.price).toLocaleString('ja-JP')}<small>税込</small></p>`:''}<p>${esc(x.description)}</p><span class="text-link">商品情報と購入先を見る →</span></div></a>`).join('\n');
 const indexLd={'@context':'https://schema.org','@graph':[{'@type':'Organization','@id':shop+'#organization',name:company,alternateName:'MEAT PLUS',url:shop},{'@type':'WebSite','@id':site+'/#website',url:site+'/',name:'MEAT PLUS公式商品ガイド',publisher:{'@id':shop+'#organization'},inLanguage:'ja'},{'@type':'ItemList',name:'MEAT PLUS 商品一覧',numberOfItems:catalog.length,itemListElement:catalog.map((x,i)=>({'@type':'ListItem',position:i+1,url:site+'/products/'+x.id+'/',name:x.name}))}]};
-const index=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MEAT PLUS公式商品ガイド｜お肉・食品のお取り寄せ</title><meta name="description" content="MEAT PLUSの黒毛和牛、精肉、冷凍食品などの商品情報、原材料、食べ方を紹介する公式商品ガイドです。"><meta name="author" content="${company}"><link rel="canonical" href="${site}/"><link rel="alternate" type="application/json" href="${site}/data/products-public.json"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta property="og:type" content="website"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="MEAT PLUS公式商品ガイド"><meta property="og:title" content="MEAT PLUS公式商品ガイド"><meta property="og:description" content="MEAT PLUSの商品情報、原材料、食べ方を紹介します。"><meta property="og:url" content="${site}/"><script type="application/ld+json">${jsonLd(indexLd)}</script>${analytics}<link rel="stylesheet" href="./assets/style.css"></head><body><header class="site-header"><a class="brand" href="./">MEAT PLUS</a><span>商品ガイド</span></header><main><section class="hero"><p class="eyebrow">MEAT PLUS OFFICIAL GUIDE</p><h1>おいしい時間を、<br>もっと身近に。</h1><p>商品の特徴を確認しながら、公式オンラインショップへ進めます。</p></section><section class="catalog"><h2>商品を探す</h2>${cards}</section></main><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>© MEAT PLUS</small></footer></body></html>`;
+const index=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MEAT PLUS公式商品ガイド｜お肉・食品のお取り寄せ</title><meta name="description" content="MEAT PLUSの黒毛和牛、精肉、冷凍食品などの商品情報、原材料、食べ方を紹介する公式商品ガイドです。"><meta name="author" content="${company}"><link rel="canonical" href="${site}/"><link rel="alternate" type="application/json" href="${site}/data/products-public.json"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta property="og:type" content="website"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="MEAT PLUS公式商品ガイド"><meta property="og:title" content="MEAT PLUS公式商品ガイド"><meta property="og:description" content="MEAT PLUSの商品情報、原材料、食べ方を紹介します。"><meta property="og:url" content="${site}/"><script type="application/ld+json">${jsonLd(indexLd)}</script>${analytics}<link rel="stylesheet" href="./assets/style.css"></head><body><header class="site-header"><a class="brand" href="./">MEAT PLUS</a><span>商品ガイド</span></header><main><section class="hero"><p class="eyebrow">MEAT PLUS OFFICIAL GUIDE</p><h1>今夜の「おいしい」が、<br>ここで見つかる。</h1><p>内容量・保存方法・おすすめの楽しみ方を確認して、MEAT PLUS公式オンラインショップで購入できます。</p><a class="hero-link" href="#catalog">商品を選ぶ ↓</a></section><section class="catalog" id="catalog"><div class="catalog-heading"><div><p class="eyebrow">PRODUCTS</p><h2>商品を探す</h2></div><p>気になる商品を選ぶと、詳しい情報と公式購入先を確認できます。</p></div>${cards}</section></main><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>© MEAT PLUS</small></footer></body></html>`;
 await fs.writeFile('index.html',index);
 
 const today=new Date().toISOString().slice(0,10);
