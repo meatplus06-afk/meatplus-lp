@@ -11,6 +11,7 @@
 ## 商品ページ
 - [赤鶏炭火焼](https://meatplus06-afk.github.io/meatplus-lp/products/i020/): ローズソルト（岩塩）使用
 - [九州産黒毛和牛スライス](https://meatplus06-afk.github.io/meatplus-lp/products/a003/): 【A4～A5等級】
+- [九州産黒毛和牛肩ローススライス　250ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/a002/): 【A4～A5等級】
 - [九州産黒毛和牛大判霜降り切り落とし](https://meatplus06-afk.github.io/meatplus-lp/products/a001/): 切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！
 - [ミックスビーンズ](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): いろいろな味と食感を一袋で楽しめる、ミックスビーンズです。
 
