@@ -5,7 +5,7 @@
     "category": "a 牛肉",
     "description": "【A4～A5等級】",
     "image": "./assets/products/a003/product-list.jpg",
-    "updatedAt": "2026-07-29T03:01:48.897Z"
+    "updatedAt": "2026-07-29T03:02:54.530Z"
   },
   {
     "id": "a001",
@@ -13,15 +13,14 @@
     "category": "a 牛肉",
     "description": "切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！",
     "image": "./assets/products/a001/product-list.jpg",
-    "updatedAt": "2026-07-29T03:01:48.895Z"
+    "updatedAt": "2026-07-29T03:02:54.529Z"
   },
   {
     "id": "k003",
     "name": "ミックスビーンズ",
     "category": "スイーツ・菓子",
     "description": "いろいろな味と食感を一袋で楽しめる、ミックスビーンズです。",
-    "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k003/",
-    "image": "./https://meatplus06-afk.github.io/meatplus-lp/assets/products/k003/product-list.webp",
+    "image": "./assets/products/k003/product-list.webp",
     "updatedAt": "2026-07-27T09:25:57.000Z"
   }
 ]
