@@ -4,20 +4,16 @@
     "name": "九州産黒毛和牛スライス",
     "category": "a 牛肉",
     "description": "【A4～A5等級】",
-    "url": "https://meatplus06-afk.github.io/meatplus-lp/products/a003/",
-    "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/a003/product-list.jpg",
-    "purchaseUrl": "https://meat-plus.club/product/detail/a003?previewid=2793&previewtype=product_detail&previewkey=0c024fd8d9594b450d715d8e27e0a8e9490d6743cadf5e30a2d2b7f7ef43ab96",
-    "updatedAt": "2026-07-29T03:00:43.073Z"
+    "image": "./assets/products/a003/product-list.jpg",
+    "updatedAt": "2026-07-29T03:01:48.897Z"
   },
   {
     "id": "a001",
     "name": "九州産黒毛和牛大判霜降り切り落とし",
     "category": "a 牛肉",
     "description": "切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！",
-    "url": "https://meatplus06-afk.github.io/meatplus-lp/products/a001/",
-    "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/a001/product-list.jpg",
-    "purchaseUrl": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E5%A4%A7%E5%88%A4%E9%9C%9C%E9%99%8D%E3%82%8A%E5%88%87%E3%82%8A%E8%90%BD%E3%81%A8%E3%81%97%E3%80%80/product/a001/",
-    "updatedAt": "2026-07-29T03:00:43.072Z"
+    "image": "./assets/products/a001/product-list.jpg",
+    "updatedAt": "2026-07-29T03:01:48.895Z"
   },
   {
     "id": "k003",
@@ -25,7 +21,7 @@
     "category": "スイーツ・菓子",
     "description": "いろいろな味と食感を一袋で楽しめる、ミックスビーンズです。",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k003/",
-    "image": "https://meatplus06-afk.github.io/meatplus-lp/https://meatplus06-afk.github.io/meatplus-lp/assets/products/k003/product-list.webp",
+    "image": "./https://meatplus06-afk.github.io/meatplus-lp/assets/products/k003/product-list.webp",
     "updatedAt": "2026-07-27T09:25:57.000Z"
   }
 ]

@@ -4,7 +4,7 @@
 
 ## 公式情報源
 - 商品一覧: https://meatplus06-afk.github.io/meatplus-lp/
-- 商品データ(JSON): https://meatplus06-afk.github.io/meatplus-lp/data/products.json
+- 商品データ(JSON): https://meatplus06-afk.github.io/meatplus-lp/data/products-public.json
 - サイトマップ: https://meatplus06-afk.github.io/meatplus-lp/sitemap.xml
 - 公式オンラインショップ: https://meat-plus.club/
 
