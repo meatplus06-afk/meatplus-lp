@@ -21,6 +21,35 @@ const extFrom = (contentType, url) => {
   return m ? m[1].toLowerCase() : 'jpg';
 };
 const jsonLd = value => JSON.stringify(value).replace(/</g, '\\u003c');
+const normalizePrice = value => {
+  const normalized = text(value).replace(/[,\s￥¥円税込()（）]/g,'');
+  return /^\d+(?:\.\d+)?$/.test(normalized) && Number(normalized) > 0 ? normalized : '';
+};
+const availabilityUrl = value => {
+  const normalized = text(value).toLowerCase();
+  if (['outofstock','out_of_stock','soldout','sold_out','売り切れ','在庫切れ'].includes(normalized)) return 'https://schema.org/OutOfStock';
+  if (['preorder','pre_order','予約'].includes(normalized)) return 'https://schema.org/PreOrder';
+  return 'https://schema.org/InStock';
+};
+const fetchOffer = async (purchaseUrl, product = {}) => {
+  const suppliedPrice = normalizePrice(product.price ?? product.salePrice ?? product.productPrice);
+  if (suppliedPrice) {
+    return {'@type':'Offer',url:purchaseUrl,priceCurrency:'JPY',price:suppliedPrice,availability:availabilityUrl(product.availability),itemCondition:'https://schema.org/NewCondition'};
+  }
+  try {
+    const r = await fetch(purchaseUrl,{redirect:'follow',headers:{'user-agent':'MEATPLUS-LP-Publisher/1.0'}});
+    if (!r.ok) return null;
+    const html = await r.text();
+    const sale = html.match(/class=["'][^"']*\bprice\b[^"']*\bsale\b[^"']*["'][^>]*>\s*[￥¥]?\s*([\d,]+)/i);
+    const regular = html.match(/class=["'][^"']*\bprice\b[^"']*["'][^>]*>\s*[￥¥]?\s*([\d,]+)/i);
+    const price = normalizePrice((sale || regular || [])[1]);
+    if (!price) return null;
+    const outOfStock = /売り切れ|在庫切れ|sold\s*out/i.test(html);
+    return {'@type':'Offer',url:r.url || purchaseUrl,priceCurrency:'JPY',price,availability:outOfStock?'https://schema.org/OutOfStock':'https://schema.org/InStock',itemCondition:'https://schema.org/NewCondition'};
+  } catch {
+    return null;
+  }
+};
 const analytics = `<script async src="https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -81,7 +110,7 @@ const downloadImages = async product => {
   return output;
 };
 
-const render = (p, images) => {
+const render = (p, images, offer) => {
   const id=text(p.productId).toLowerCase(), name=text(p.productName), category=text(p.category);
   const description=text(p.description), meta=text(p.metaDescription)||description||name;
   const catchCopy=text(p.catchCopy)||name, closing=text(p.closingCopy)||catchCopy;
@@ -98,6 +127,7 @@ const render = (p, images) => {
   const productUrl=site+'/products/'+id+'/';
   const additionalProperty=info.map(([name,value])=>({'@type':'PropertyValue',name,value:text(value)}));
   const productLd={'@context':'https://schema.org','@type':'Product','@id':productUrl+'#product',url:productUrl,mainEntityOfPage:productUrl,name,sku:id,category,description,image:imageUrls,brand:{'@type':'Brand',name:'MEAT PLUS'},manufacturer:{'@type':'Organization','@id':shop+'#organization',name:company,url:shop},additionalProperty};
+  if (offer) productLd.offers=offer;
   const breadcrumbLd={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'MEAT PLUS 商品ガイド',item:site+'/'},{'@type':'ListItem',position:2,name,item:productUrl}]};
   return `<!doctype html><html lang="ja" data-food-ec-updated-at="${esc(queued)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(name)}｜MEAT PLUS公式商品ガイド</title><meta name="description" content="${esc(meta)}"><meta name="author" content="${company}"><link rel="canonical" href="${productUrl}"><link rel="alternate" type="application/json" href="${site}/data/products-public.json"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -120,9 +150,10 @@ for (const product of products) {
     throw new Error(id+': publish timestamp is missing');
   }
   const images=await downloadImages(product);
+  const offer=await fetchOffer(text(product.purchaseUrl),product);
   await fs.mkdir(path.join('products',id),{recursive:true});
-  await fs.writeFile(path.join('products',id,'index.html'),render(product,images));
-  const record={id,name:text(product.productName),category:text(product.category),description:text(product.cardDescription)||text(product.metaDescription),image:'./assets/products/'+id+'/'+images.productList,updatedAt:text(product.updatedAt)};
+  await fs.writeFile(path.join('products',id,'index.html'),render(product,images,offer));
+  const record={id,name:text(product.productName),category:text(product.category),description:text(product.cardDescription)||text(product.metaDescription),image:'./assets/products/'+id+'/'+images.productList,updatedAt:text(product.updatedAt),...(offer?{offer}:{})};
   catalog=catalog.filter(x=>x.id!==id); catalog.unshift(record);
 }
 await fs.mkdir('data',{recursive:true});
@@ -135,8 +166,17 @@ for (const item of catalog) {
     let page=await fs.readFile(pagePath,'utf8');
     if (!page.includes(`gtag/js?id=${gaMeasurementId}`)) {
       page=page.replace('</head>',analytics+'</head>');
-      await fs.writeFile(pagePath,page);
     }
+    if (item.offer) {
+      page=page.replace(/<script type="application\/ld\+json">\s*(\{[^<]*"@type"\s*:\s*"Product"[^<]*\})\s*<\/script>/,(_,source)=>{
+        try {
+          const schema=JSON.parse(source);
+          schema.offers=item.offer;
+          return `<script type="application/ld+json">${jsonLd(schema)}</script>`;
+        } catch { return _; }
+      });
+    }
+    await fs.writeFile(pagePath,page);
   } catch {}
 }
 

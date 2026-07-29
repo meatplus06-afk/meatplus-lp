@@ -5,7 +5,15 @@
     "category": "a 牛肉",
     "description": "【A4～A5等級】",
     "image": "./assets/products/a003/product-list.jpg",
-    "updatedAt": "2026-07-29T03:20:22.166Z"
+    "updatedAt": "2026-07-29T03:07:35.649Z",
+    "offer": {
+      "@type": "Offer",
+      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+      "priceCurrency": "JPY",
+      "price": "3780",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
   },
   {
     "id": "a001",
@@ -13,7 +21,15 @@
     "category": "a 牛肉",
     "description": "切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！",
     "image": "./assets/products/a001/product-list.jpg",
-    "updatedAt": "2026-07-29T03:20:22.165Z"
+    "updatedAt": "2026-07-29T03:07:35.648Z",
+    "offer": {
+      "@type": "Offer",
+      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E5%A4%A7%E5%88%A4%E9%9C%9C%E9%99%8D%E3%82%8A%E5%88%87%E3%82%8A%E8%90%BD%E3%81%A8%E3%81%97%E3%80%80/product/a001/",
+      "priceCurrency": "JPY",
+      "price": "2280",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
   },
   {
     "id": "k003",
@@ -21,6 +37,14 @@
     "category": "スイーツ・菓子",
     "description": "いろいろな味と食感を一袋で楽しめる、ミックスビーンズです。",
     "image": "./assets/products/k003/product-list.webp",
-    "updatedAt": "2026-07-27T09:25:57.000Z"
+    "updatedAt": "2026-07-27T09:25:57.000Z",
+    "offer": {
+      "@type": "Offer",
+      "url": "https://meat-plus.club/product/detail/k003",
+      "priceCurrency": "JPY",
+      "price": "980",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
   }
 ]
