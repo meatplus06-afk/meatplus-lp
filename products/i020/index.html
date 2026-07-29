@@ -8,26 +8,27 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','G-6WW5KF32KS');
 document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('a.cta').forEach(function(link,index){
+  document.querySelectorAll('a[data-cta-position]').forEach(function(link){
     link.addEventListener('click',function(){
       var match=location.pathname.match(/\/products\/([^/]+)\//);
       gtag('event','purchase_button_click',{
         product_id:match?match[1]:'',
-        cta_position:index===0?'main':'bottom',
+        cta_position:link.dataset.ctaPosition||'unknown',
         link_url:link.href,
         transport_type:'beacon'
       });
     });
   });
 });
-</script></head><body>
+</script></head><body class="product-page">
 <header class="site-header"><a class="brand" href="../../">MEAT PLUS</a><span>商品ガイド</span></header><main><nav class="breadcrumb"><a href="../../">商品ガイド</a><span>／</span><span>赤鶏炭火焼</span></nav>
-<section class="product-hero"><div class="product-shot"><span class="visual-label">I020</span><img class="main-photo" data-image-role="product-list" src="../../assets/products/i020/product-list.jpg" alt="赤鶏炭火焼" width="1200" height="1200" fetchpriority="high"></div><div class="product-copy"><p class="eyebrow">i 惣菜・加工品</p><h1>赤鶏炭火焼</h1><p class="lead">【炭火の香りと鶏の旨味。本場宮崎の味を食卓へ。】</p><p>今夜の晩酌は、ちょっと特別な一品を加えてみませんか。袋を開ければ、炭火でじっくりと焼き上げた香ばしい香りがふわりと広がります。ご紹介するのは、本場宮崎の味わいをご家庭で手軽に楽しめる「赤鶏炭火焼」です。厳選した国産の赤鶏を、職人が丹念に炭火で焼き上げ、鶏肉本来の旨味と歯ごたえを最大限に引き出しました。味付けはシンプルながらも奥深い、まろやかなローズソルト（岩塩）と香辛料のみ。余計なものは加えず、素材の良さをストレートに味わっていただけます。常温で保存でき、賞味期限も発送日から3ヶ月と長いので、いつでも好きな時にお召し上がりいただけます。湯煎で温めるだけで、まるで焼きたてのようなジューシーさが蘇ります。ビールや焼酎のお供にはもちろん、ご飯の上にのせて丼にしたり、柚子胡椒やネギを添えたりとアレンジも自由自在。今日の食卓に、本格的な炭火焼をプラスして、心満たされるひとときをお過ごしください。</p><a class="cta" href="https://meat-plus.club/%E8%B5%A4%E9%B6%8F%E7%82%AD%E7%81%AB%E7%84%BC/product/i020/">公式オンラインショップで商品を見る</a><p class="note">価格・在庫・配送条件は公式オンラインショップでご確認ください。</p></div></section>
-<section class="visual-story" aria-label="赤鶏炭火焼の魅力">
+<section class="product-hero"><div class="product-shot"><span class="visual-label">I020</span><img class="main-photo" data-image-role="product-list" src="../../assets/products/i020/product-list.jpg" alt="赤鶏炭火焼" width="1200" height="1200" fetchpriority="high"></div><div class="product-copy"><p class="eyebrow">i 惣菜・加工品</p><h1>赤鶏炭火焼</h1><p class="lead">【炭火の香りと鶏の旨味。本場宮崎の味を食卓へ。】</p><ul class="quick-facts"><li><span>内容量</span><strong>75ｇ/ｐ</strong></li><li><span>保存</span><strong>常温</strong></li><li><span>産地</span><strong>日本</strong></li></ul><details class="product-description"><summary>商品の特徴を読む</summary><p>今夜の晩酌は、ちょっと特別な一品を加えてみませんか。袋を開ければ、炭火でじっくりと焼き上げた香ばしい香りがふわりと広がります。ご紹介するのは、本場宮崎の味わいをご家庭で手軽に楽しめる「赤鶏炭火焼」です。厳選した国産の赤鶏を、職人が丹念に炭火で焼き上げ、鶏肉本来の旨味と歯ごたえを最大限に引き出しました。味付けはシンプルながらも奥深い、まろやかなローズソルト（岩塩）と香辛料のみ。余計なものは加えず、素材の良さをストレートに味わっていただけます。常温で保存でき、賞味期限も発送日から3ヶ月と長いので、いつでも好きな時にお召し上がりいただけます。湯煎で温めるだけで、まるで焼きたてのようなジューシーさが蘇ります。ビールや焼酎のお供にはもちろん、ご飯の上にのせて丼にしたり、柚子胡椒やネギを添えたりとアレンジも自由自在。今日の食卓に、本格的な炭火焼をプラスして、心満たされるひとときをお過ごしください。</p></details><a class="cta" data-cta-position="main" href="https://meat-plus.club/%E8%B5%A4%E9%B6%8F%E7%82%AD%E7%81%AB%E7%84%BC/product/i020/?utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=i020_lp&amp;utm_content=main_cta">公式オンラインショップで購入する</a><p class="note">公式サイトへ移動します。価格・在庫・配送条件は移動先で最終確認してください。</p></div></section>
+<nav class="section-nav" aria-label="ページ内メニュー"><a href="#appeal">写真で見る</a><a href="#product-info">商品情報</a><a href="#faq">よくある質問</a></nav>
+<section class="visual-story" id="appeal" aria-label="赤鶏炭火焼の魅力">
 <article class="story-card story-card-dark"><img data-image-role="sns1" src="../../assets/products/i020/sns1.jpg" alt="赤鶏炭火焼の商品イメージ1" width="1200" height="1200" loading="lazy"><div><span>SCENE 01</span><h2>【炭火の香りと鶏の旨味。本場宮崎の味を食卓へ。】</h2></div></article>
 <article class="story-card story-card-light"><img data-image-role="sns2" src="../../assets/products/i020/sns2.jpg" alt="赤鶏炭火焼の商品イメージ2" width="1200" height="1200" loading="lazy"><div><span>SCENE 02</span><h2>【炭火の香りと鶏の旨味。本場宮崎の味を食卓へ。】</h2></div></article>
 <article class="story-card story-card-red"><img data-image-role="sns3" src="../../assets/products/i020/sns3.jpg" alt="赤鶏炭火焼の商品イメージ3" width="1200" height="1200" loading="lazy"><div><span>SCENE 03</span><h2>【炭火の香りと鶏の旨味。本場宮崎の味を食卓へ。】</h2></div></article></section>
-<section class="info"><div><p class="eyebrow">PRODUCT INFORMATION</p><h2>商品情報</h2></div><dl><dt>商品名</dt><dd>赤鶏炭火焼</dd><dt>商品規格</dt><dd>75ｇ/ｐ</dd><dt>保存方法</dt><dd>常温</dd><dt>原産国</dt><dd>日本</dd><dt>製造地</dt><dd>日本</dd><dt>賞味期限</dt><dd>発送日より3ヶ月</dd></dl></section>
+<section class="info" id="product-info"><div><p class="eyebrow">PRODUCT INFORMATION</p><h2>購入前に確認したい商品情報</h2></div><dl><dt>商品名</dt><dd>赤鶏炭火焼</dd><dt>商品規格</dt><dd>75ｇ/ｐ</dd><dt>保存方法</dt><dd>常温</dd><dt>原産国</dt><dd>日本</dd><dt>製造地</dt><dd>日本</dd><dt>賞味期限</dt><dd>発送日より3ヶ月</dd></dl></section>
 <section class="ingredients"><h2>原材料</h2><p>鶏肉（国産）、食塩、香辛料</p></section>
-<section class="faq"><p class="eyebrow">FAQ</p><h2>よくあるご質問</h2><details><summary>温めずにそのままでも食べられますか？</summary><p>はい、加熱調理済みですのでそのままでもお召し上がりいただけます。温めていただくと、より一層炭火の香りが引き立ち、鶏の脂が溶けてジューシーな食感をお楽しみいただけますのでおすすめです。</p></details><details><summary>赤鶏とはどんな鶏ですか？</summary><p>赤鶏は、一般的な若鶏に比べて飼育期間が長く、運動量も多いため、肉質がしっかりとしていて歯ごたえがあり、鶏本来の豊かな旨味を味わえるのが特徴です。</p></details></section>
-<section class="closing"><h2>【炭火の香りと鶏の旨味。本場宮崎の味を食卓へ。】</h2><a class="cta" href="https://meat-plus.club/%E8%B5%A4%E9%B6%8F%E7%82%AD%E7%81%AB%E7%84%BC/product/i020/">公式オンラインショップへ</a></section></main><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>商品ID：i020　© MEAT PLUS</small></footer></body></html>
+<section class="faq" id="faq"><p class="eyebrow">FAQ</p><h2>購入前のよくあるご質問</h2><details><summary>温めずにそのままでも食べられますか？</summary><p>はい、加熱調理済みですのでそのままでもお召し上がりいただけます。温めていただくと、より一層炭火の香りが引き立ち、鶏の脂が溶けてジューシーな食感をお楽しみいただけますのでおすすめです。</p></details><details><summary>赤鶏とはどんな鶏ですか？</summary><p>赤鶏は、一般的な若鶏に比べて飼育期間が長く、運動量も多いため、肉質がしっかりとしていて歯ごたえがあり、鶏本来の豊かな旨味を味わえるのが特徴です。</p></details></section>
+<section class="closing"><p class="eyebrow">MEAT PLUS OFFICIAL SHOP</p><h2>【炭火の香りと鶏の旨味。本場宮崎の味を食卓へ。】</h2><p>仕入れ・加工・梱包・発送まで自社で行うMEAT PLUSの公式オンラインショップでご注文いただけます。</p><a class="cta" data-cta-position="bottom" href="https://meat-plus.club/%E8%B5%A4%E9%B6%8F%E7%82%AD%E7%81%AB%E7%84%BC/product/i020/?utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=i020_lp&amp;utm_content=bottom_cta">公式オンラインショップで購入する</a></section></main><div class="sticky-buy" aria-label="購入案内"><span><small>公式サイトで</small><strong>詳細を確認</strong></span><a data-cta-position="sticky" href="https://meat-plus.club/%E8%B5%A4%E9%B6%8F%E7%82%AD%E7%81%AB%E7%84%BC/product/i020/?utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=i020_lp&amp;utm_content=sticky_cta">購入する</a></div><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>商品ID：i020　© MEAT PLUS</small></footer></body></html>
