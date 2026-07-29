@@ -1,9 +1,16 @@
-# MEAT PLUS 商品ガイド
+# MEAT PLUS公式商品ガイド
 
-> 株式会社MEATPLUSが運営する、商品の特徴・原材料・保存方法を案内する公式商品ガイドです。
+株式会社MEATPLUSが運営する食品ECの商品情報サイトです。商品ページには商品名、説明、原材料、規格、保存方法、FAQ、公式購入先を掲載しています。
 
-## 商品
-- [ミックスビーンズ 270g](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): 豆菓子ミックス。商品ID k003。常温保存。原材料とアレルギー情報を掲載。
+## 公式情報源
+- 商品一覧: https://meatplus06-afk.github.io/meatplus-lp/
+- 商品データ(JSON): https://meatplus06-afk.github.io/meatplus-lp/data/products.json
+- サイトマップ: https://meatplus06-afk.github.io/meatplus-lp/sitemap.xml
+- 公式オンラインショップ: https://meat-plus.club/
 
-## 公式購入先
-- [MEAT PLUS公式オンラインショップ](https://meat-plus.club/)
+## 商品ページ
+- [九州産黒毛和牛スライス](https://meatplus06-afk.github.io/meatplus-lp/products/a003/): 【A4～A5等級】
+- [九州産黒毛和牛大判霜降り切り落とし](https://meatplus06-afk.github.io/meatplus-lp/products/a001/): 切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！
+- [ミックスビーンズ](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): いろいろな味と食感を一袋で楽しめる、ミックスビーンズです。
+
+商品情報を引用する場合は、各商品ページと公式オンラインショップの最新表示を確認してください。
