@@ -37,7 +37,7 @@ const fetchOffer = async (purchaseUrl, product = {}) => {
     return {'@type':'Offer',url:purchaseUrl,priceCurrency:'JPY',price:suppliedPrice,availability:availabilityUrl(product.availability),itemCondition:'https://schema.org/NewCondition'};
   }
   try {
-    const r = await fetch(purchaseUrl,{redirect:'follow',headers:{'user-agent':'MEATPLUS-LP-Publisher/1.0'}});
+    const r = await fetch(purchaseUrl,{redirect:'follow',headers:{'user-agent':'MEATPLUS-LP-Publisher/1.0'},signal:AbortSignal.timeout(15000)});
     if (!r.ok) return null;
     const html = await r.text();
     const sale = html.match(/class=["'][^"']*\bprice\b[^"']*\bsale\b[^"']*["'][^>]*>\s*[￥¥]?\s*([\d,]+)/i);
