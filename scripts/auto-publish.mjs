@@ -39,7 +39,7 @@ if (!products.length) console.log('No queued products; rebuilding discovery file
 let catalog = [];
 try { catalog = JSON.parse(await fs.readFile('data/products.json','utf8')); } catch {}
 if (!Array.isArray(catalog)) catalog = [];
-catalog=catalog.map(item=>{const {purchaseUrl,...rest}=item; const rawImage=text(rest.image); const image=rawImage.startsWith(site+'/')?'./'+rawImage.slice(site.length+1):rawImage; return {...rest,image};});
+catalog=catalog.map(item=>{const {purchaseUrl,url,...rest}=item; const rawImage=text(rest.image).replace(/^\.\/(?=https?:\/\/)/,''); const image=rawImage.startsWith(site+'/')?'./'+rawImage.slice(site.length+1):rawImage; return {...rest,image};});
 
 const downloadImages = async product => {
   const id = text(product.productId).toLowerCase();
