@@ -34,7 +34,7 @@ try {
   throw new Error('Feed returned non-JSON content: ' + rawPayload.slice(0, 120).replace(/\s+/g, ' '));
 }
 const products = Array.isArray(payload.products) ? payload.products : [];
-if (!products.length) process.exit(0);
+if (!products.length) console.log('No queued products; rebuilding discovery files from the published catalog.');
 
 let catalog = [];
 try { catalog = JSON.parse(await fs.readFile('data/products.json','utf8')); } catch {}
