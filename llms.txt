@@ -9,6 +9,7 @@
 - 公式オンラインショップ: https://meat-plus.club/
 
 ## 商品ページ
+- [国産梅ひじき](https://meatplus06-afk.github.io/meatplus-lp/products/i023/): 【国産ひじきの旨味とカリカリ梅の酸味。ご飯がすすむ、食卓のもう一品。】
 - [赤鶏炭火焼](https://meatplus06-afk.github.io/meatplus-lp/products/i020/): ローズソルト（岩塩）使用
 - [九州産黒毛和牛スライス](https://meatplus06-afk.github.io/meatplus-lp/products/a003/): 【A4～A5等級】
 - [九州産黒毛和牛肩ローススライス　250ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/a002/): 【A4～A5等級】
