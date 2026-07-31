@@ -1,11 +1,19 @@
 [
   {
+    "id": "i024",
+    "name": "オリジナルビーフカレー",
+    "category": "i 惣菜・加工品",
+    "description": "販売は辛口or甘口セット\nSKUは、4で\n・甘口3ｐ、5ｐ\n・辛口3ｐ、5ｐ",
+    "image": "./assets/products/i024/product-list.jpg",
+    "updatedAt": "2026-07-31T08:08:39.435Z"
+  },
+  {
     "id": "i023",
     "name": "国産梅ひじき",
     "category": "i 惣菜・加工品",
     "description": "【国産ひじきの旨味とカリカリ梅の酸味。ご飯がすすむ、食卓のもう一品。】",
     "image": "./assets/products/i023/product-list.jpg",
-    "updatedAt": "2026-07-31T08:07:03.775Z"
+    "updatedAt": "2026-07-31T08:08:39.435Z"
   },
   {
     "id": "i020",
@@ -13,7 +21,7 @@
     "category": "i 惣菜・加工品",
     "description": "ローズソルト（岩塩）使用",
     "image": "./assets/products/i020/product-list.jpg",
-    "updatedAt": "2026-07-31T08:07:03.775Z"
+    "updatedAt": "2026-07-31T08:08:39.435Z"
   },
   {
     "id": "a003",
@@ -21,7 +29,7 @@
     "category": "a 牛肉",
     "description": "【A4～A5等級】",
     "image": "./assets/products/a003/product-list.jpg",
-    "updatedAt": "2026-07-31T08:07:03.775Z"
+    "updatedAt": "2026-07-31T08:08:39.435Z"
   },
   {
     "id": "a002",
@@ -29,7 +37,7 @@
     "category": "a 牛肉",
     "description": "【A4～A5等級】",
     "image": "./assets/products/a002/product-list.jpg",
-    "updatedAt": "2026-07-31T08:07:03.775Z"
+    "updatedAt": "2026-07-31T08:08:39.435Z"
   },
   {
     "id": "a001",
@@ -37,7 +45,7 @@
     "category": "a 牛肉",
     "description": "切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！",
     "image": "./assets/products/a001/product-list.jpg",
-    "updatedAt": "2026-07-31T08:07:03.772Z"
+    "updatedAt": "2026-07-31T08:08:39.435Z"
   },
   {
     "id": "k003",
