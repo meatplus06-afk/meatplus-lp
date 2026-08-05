@@ -9,7 +9,7 @@
 - 公式オンラインショップ: https://meat-plus.club/
 
 ## 商品ページ
-- [ムラオカの梅しば](https://meatplus06-afk.github.io/meatplus-lp/products/k006/): 【カリッと甘酸っぱい、懐かしの味。いつでもどこでも楽しめる一粒。】
+- [ムラオカの梅しば](https://meatplus06-afk.github.io/meatplus-lp/products/k006/): 【カリッとした歯ごたえと甘酸っぱさがクセになる、懐かしの味。】
 - [宮崎マンゴーこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k005/): 宮崎県産マンゴーピューレ1.25％使用 1個約15ｇ
 - [長野県産シャインマスカットこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k004/): 長野県産 1個約15ｇ
 - [オリジナルビーフカレー](https://meatplus06-afk.github.io/meatplus-lp/products/i024/): 販売は辛口or甘口セット SKUは、4で ・甘口3ｐ、5ｐ ・辛口3ｐ、5ｐ
