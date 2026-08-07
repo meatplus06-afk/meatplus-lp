@@ -15,9 +15,11 @@
 - [ムラオカの梅しば](https://meatplus06-afk.github.io/meatplus-lp/products/k006/): 【カリッとした歯ごたえと甘酸っぱさがクセになる、懐かしの味。】
 - [宮崎マンゴーこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k005/): 宮崎県産マンゴーピューレ1.25％使用 1個約15ｇ
 - [長野県産シャインマスカットこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k004/): 長野県産 1個約15ｇ
+- [お肉屋さんが作った特製ニラ焼餅](https://meatplus06-afk.github.io/meatplus-lp/products/i043/): お肉屋さんが作った特製ニラ焼餅
 - [オリジナルビーフカレー](https://meatplus06-afk.github.io/meatplus-lp/products/i024/): 販売は辛口or甘口セット SKUは、4で ・甘口3ｐ、5ｐ ・辛口3ｐ、5ｐ
 - [国産梅ひじき](https://meatplus06-afk.github.io/meatplus-lp/products/i023/): 【国産ひじきの旨味とカリカリ梅の酸味。ご飯がすすむ、食卓のもう一品。】
 - [赤鶏炭火焼](https://meatplus06-afk.github.io/meatplus-lp/products/i020/): ローズソルト（岩塩）使用
+- [九州産黒毛和牛ロースブロック](https://meatplus06-afk.github.io/meatplus-lp/products/a026/): 九州産黒毛和牛ロースブロック
 - [訳あり！九州産黒毛和牛バラ切り落とし](https://meatplus06-afk.github.io/meatplus-lp/products/a025/): ・約500ｇの袋入りです。 ・※本商品は、食品ロス削減（SDGs）への取り組みの一環として、九州産黒毛和牛のバラ肉をほとんどトリミングせずに切り落とした「訳あり品」です。脂身が多い部分も含まれますのでご理解・ご了承の上お申し込みください。
 - [九州産黒毛和牛スライス](https://meatplus06-afk.github.io/meatplus-lp/products/a003/): 【A4～A5等級】
 - [九州産黒毛和牛肩ローススライス　250ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/a002/): 【A4～A5等級】
