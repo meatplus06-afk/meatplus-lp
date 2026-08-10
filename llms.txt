@@ -15,6 +15,7 @@
 - [ムラオカの梅しば](https://meatplus06-afk.github.io/meatplus-lp/products/k006/): 【カリッとした歯ごたえと甘酸っぱさがクセになる、懐かしの味。】
 - [宮崎マンゴーこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k005/): 宮崎県産マンゴーピューレ1.25％使用 1個約15ｇ
 - [長野県産シャインマスカットこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k004/): 長野県産 1個約15ｇ
+- [素焼き小魚＆ミックスナッツ](https://meatplus06-afk.github.io/meatplus-lp/products/k002/): 素焼き小魚＆ミックスナッツ
 - [お肉屋さんが作った特製ニラ焼餅](https://meatplus06-afk.github.io/meatplus-lp/products/i043/): お肉屋さんが作った特製ニラ焼餅
 - [オリジナルビーフカレー](https://meatplus06-afk.github.io/meatplus-lp/products/i024/): 販売は辛口or甘口セット SKUは、4で ・甘口3ｐ、5ｐ ・辛口3ｐ、5ｐ
 - [国産梅ひじき](https://meatplus06-afk.github.io/meatplus-lp/products/i023/): 【国産ひじきの旨味とカリカリ梅の酸味。ご飯がすすむ、食卓のもう一品。】
