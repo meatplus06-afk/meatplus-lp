@@ -10,12 +10,13 @@ if (!feedUrl) throw new Error('LP_FEED_URL is required');
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const retryableStatuses = new Set([404, 408, 425, 429, 500, 502, 503, 504]);
-const fetchWithRetry = async (url, options = {}, { attempts = 5, baseDelayMs = 2000, label = 'Request' } = {}) => {
+const fetchWithRetry = async (url, options = {}, { attempts = 5, baseDelayMs = 2000, timeoutMs = 45000, label = 'Request' } = {}) => {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     let response;
     try {
-      response = await fetch(url, options);
+      const requestOptions = timeoutMs ? { ...options, signal: AbortSignal.timeout(timeoutMs) } : options;
+      response = await fetch(url, requestOptions);
     } catch (error) {
       lastError = error;
     }
@@ -100,11 +101,11 @@ document.addEventListener('DOMContentLoaded',function(){
 
 const response = await fetchWithRetry(feedUrl + '?lp=__github_feed__', {
   method: 'GET',
-  redirect: 'follow',
-  signal: AbortSignal.timeout(45000)
+  redirect: 'follow'
 }, {
   attempts: 5,
   baseDelayMs: 2000,
+  timeoutMs: 45000,
   label: 'Feed request'
 });
 const rawPayload = await response.text();
