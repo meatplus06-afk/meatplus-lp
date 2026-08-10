@@ -102,37 +102,63 @@ document.addEventListener('DOMContentLoaded',function(){
 const catalogFilterScript = `<script>
 document.addEventListener('DOMContentLoaded',function(){
   var categoryFilter=document.getElementById('category-filter');
+  var sortFilter=document.getElementById('sort-filter');
   var productSearch=document.getElementById('product-search');
   var clearButton=document.getElementById('clear-filters');
+  var moreButton=document.getElementById('load-more');
   var result=document.getElementById('filter-result');
   var empty=document.getElementById('catalog-empty');
+  var grid=document.getElementById('catalog-grid');
   var cards=Array.prototype.slice.call(document.querySelectorAll('[data-product-card]'));
-  if(!categoryFilter||!productSearch||!result)return;
+  var pageSize=24;
+  var displayLimit=pageSize;
+  if(!categoryFilter||!sortFilter||!productSearch||!result||!grid)return;
   function normalize(value){return String(value||'').trim().toLocaleLowerCase('ja-JP');}
-  function applyFilters(){
+  function orderedCards(){
+    var order=sortFilter.value;
+    return cards.slice().sort(function(a,b){
+      if(order==='name-asc')return a.dataset.name.localeCompare(b.dataset.name,'ja');
+      if(order==='category-asc'){
+        var categoryOrder=a.dataset.category.localeCompare(b.dataset.category,'ja');
+        return categoryOrder||a.dataset.name.localeCompare(b.dataset.name,'ja');
+      }
+      return String(b.dataset.updated||'').localeCompare(String(a.dataset.updated||''));
+    });
+  }
+  function applyFilters(resetLimit){
+    if(resetLimit)displayLimit=pageSize;
     var selected=categoryFilter.value;
     var keyword=normalize(productSearch.value);
-    var visible=0;
-    cards.forEach(function(card){
+    var ordered=orderedCards();
+    ordered.forEach(function(card){grid.appendChild(card);});
+    var matched=ordered.filter(function(card){
       var categoryMatch=!selected||card.dataset.category===selected;
       var keywordMatch=!keyword||normalize(card.textContent).indexOf(keyword)!==-1;
-      var show=categoryMatch&&keywordMatch;
-      card.hidden=!show;
-      if(show)visible+=1;
+      return categoryMatch&&keywordMatch;
     });
-    result.textContent=visible+'件を表示';
-    if(empty)empty.hidden=visible!==0;
-    if(clearButton)clearButton.hidden=!selected&&!keyword;
+    var visibleCards=new Set(matched.slice(0,displayLimit));
+    ordered.forEach(function(card){card.hidden=!visibleCards.has(card);});
+    var visible=Math.min(displayLimit,matched.length);
+    result.textContent=visible+' / '+matched.length+'件を表示';
+    if(empty)empty.hidden=matched.length!==0;
+    if(moreButton){
+      moreButton.hidden=visible>=matched.length;
+      moreButton.textContent='さらに表示（残り'+Math.max(0,matched.length-visible)+'件）';
+    }
+    if(clearButton)clearButton.hidden=!selected&&!keyword&&sortFilter.value==='updated-desc';
   }
-  categoryFilter.addEventListener('change',applyFilters);
-  productSearch.addEventListener('input',applyFilters);
+  categoryFilter.addEventListener('change',function(){applyFilters(true);});
+  sortFilter.addEventListener('change',function(){applyFilters(true);});
+  productSearch.addEventListener('input',function(){applyFilters(true);});
+  if(moreButton)moreButton.addEventListener('click',function(){displayLimit+=pageSize;applyFilters(false);});
   if(clearButton)clearButton.addEventListener('click',function(){
     categoryFilter.value='';
+    sortFilter.value='updated-desc';
     productSearch.value='';
-    applyFilters();
+    applyFilters(true);
     productSearch.focus();
   });
-  applyFilters();
+  applyFilters(true);
 });
 <\/script>`;
 
@@ -269,10 +295,12 @@ for (const item of catalog) {
 const categoryLabel=value=>text(value).replace(/^[a-z]\\s+/i,'')||'その他';
 const categories=[...new Set(catalog.map(x=>categoryLabel(x.category)))].sort((a,b)=>a.localeCompare(b,'ja'));
 const categoryOptions=categories.map(category=>`<option value="${esc(category)}">${esc(category)}</option>`).join('');
-const catalogControls=`<div class="catalog-tools" aria-label="商品絞り込み"><label class="catalog-filter-field"><span>カテゴリ</span><select id="category-filter"><option value="">すべてのカテゴリ</option>${categoryOptions}</select></label><label class="catalog-filter-field"><span>商品名で検索</span><input id="product-search" type="search" inputmode="search" placeholder="商品名や特徴を入力" autocomplete="off"></label><button class="catalog-clear" id="clear-filters" type="button" hidden>条件をクリア</button></div><p class="catalog-result" id="filter-result" aria-live="polite">全${catalog.length}件を表示</p><div class="catalog-empty" id="catalog-empty" hidden>該当する商品が見つかりませんでした。条件を変えてお試しください。</div>`;
-const cards=catalog.map(x=>{const category=categoryLabel(x.category);return `<a class="card" data-product-card data-category="${esc(category)}" href="./products/${esc(x.id)}/"><img src="${esc(x.image)}" alt="${esc(x.name)}" width="800" height="800" loading="lazy"><div><p class="eyebrow">${esc(category)}</p><h3>${esc(x.name)}</h3>${x.offer?.price?`<p class="card-price">¥${Number(x.offer.price).toLocaleString('ja-JP')}<small>税込</small></p>`:''}<p>${esc(x.description)}</p><span class="text-link">商品情報と購入先を見る →</span></div></a>`;}).join('\\n');
+const initialVisible=Math.min(24,catalog.length);
+const catalogControls=`<div class="catalog-tools" aria-label="商品絞り込み"><label class="catalog-filter-field"><span>カテゴリ</span><select id="category-filter"><option value="">すべて</option>${categoryOptions}</select></label><label class="catalog-filter-field"><span>並び順</span><select id="sort-filter"><option value="updated-desc">新着順</option><option value="name-asc">商品名順</option><option value="category-asc">カテゴリ順</option></select></label><label class="catalog-filter-field catalog-filter-search"><span>商品名で検索</span><input id="product-search" type="search" inputmode="search" placeholder="商品名や特徴を入力" autocomplete="off"></label><button class="catalog-clear" id="clear-filters" type="button" hidden>条件をクリア</button></div><p class="catalog-result" id="filter-result" aria-live="polite">${initialVisible} / ${catalog.length}件を表示</p><div class="catalog-empty" id="catalog-empty" hidden>該当する商品が見つかりませんでした。条件を変えてお試しください。</div>`;
+const cards=catalog.map(x=>{const category=categoryLabel(x.category);return `<a class="card" data-product-card data-category="${esc(category)}" data-name="${esc(x.name)}" data-updated="${esc(x.updatedAt)}" href="./products/${esc(x.id)}/"><img src="${esc(x.image)}" alt="${esc(x.name)}" width="800" height="800" loading="lazy"><div><p class="eyebrow">${esc(category)}</p><h3>${esc(x.name)}</h3>${x.offer?.price?`<p class="card-price">¥${Number(x.offer.price).toLocaleString('ja-JP')}<small>税込</small></p>`:''}<p class="card-description">${esc(x.description)}</p><span class="text-link">商品を見る →</span></div></a>`;}).join('\\n');
+const catalogContent=`<div class="catalog-grid" id="catalog-grid">${cards}</div><button class="catalog-more" id="load-more" type="button"${catalog.length<=24?' hidden':''}>さらに表示（残り${Math.max(0,catalog.length-24)}件）</button>`;
 const indexLd={'@context':'https://schema.org','@graph':[{'@type':'Organization','@id':shop+'#organization',name:company,alternateName:'MEAT PLUS',url:shop},{'@type':'WebSite','@id':site+'/#website',url:site+'/',name:'MEAT PLUS公式商品ガイド',publisher:{'@id':shop+'#organization'},inLanguage:'ja'},{'@type':'ItemList',name:'MEAT PLUS 商品一覧',numberOfItems:catalog.length,itemListElement:catalog.map((x,i)=>({'@type':'ListItem',position:i+1,url:site+'/products/'+x.id+'/',name:x.name}))}]};
-const index=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MEAT PLUS公式商品ガイド｜お肉・食品のお取り寄せ</title><meta name="description" content="MEAT PLUSの黒毛和牛、精肉、冷凍食品などの商品情報、原材料、食べ方を紹介する公式商品ガイドです。"><meta name="author" content="${company}"><link rel="canonical" href="${site}/"><link rel="alternate" type="application/json" href="${site}/data/products-public.json"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta property="og:type" content="website"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="MEAT PLUS公式商品ガイド"><meta property="og:title" content="MEAT PLUS公式商品ガイド"><meta property="og:description" content="MEAT PLUSの商品情報、原材料、食べ方を紹介します。"><meta property="og:url" content="${site}/"><script type="application/ld+json">${jsonLd(indexLd)}</script>${analytics}<link rel="stylesheet" href="./assets/style.css"></head><body><header class="site-header"><a class="brand" href="./">MEAT PLUS</a><span>商品ガイド</span></header><main><section class="hero"><p class="eyebrow">MEAT PLUS OFFICIAL GUIDE</p><h1>今夜の「おいしい」が、<br>ここで見つかる。</h1><p>内容量・保存方法・おすすめの楽しみ方を確認して、MEAT PLUS公式オンラインショップで購入できます。</p><a class="hero-link" href="#catalog">商品を選ぶ ↓</a></section><section class="catalog" id="catalog"><div class="catalog-heading"><div><p class="eyebrow">PRODUCTS</p><h2>商品を探す</h2></div><p>気になる商品を選ぶと、詳しい情報と公式購入先を確認できます。</p></div>${catalogControls}${cards}</section></main><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>© MEAT PLUS</small></footer>${catalogFilterScript}</body></html>`;
+const index=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MEAT PLUS公式商品ガイド｜お肉・食品のお取り寄せ</title><meta name="description" content="MEAT PLUSの黒毛和牛、精肉、冷凍食品などの商品情報、原材料、食べ方を紹介する公式商品ガイドです。"><meta name="author" content="${company}"><link rel="canonical" href="${site}/"><link rel="alternate" type="application/json" href="${site}/data/products-public.json"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta property="og:type" content="website"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="MEAT PLUS公式商品ガイド"><meta property="og:title" content="MEAT PLUS公式商品ガイド"><meta property="og:description" content="MEAT PLUSの商品情報、原材料、食べ方を紹介します。"><meta property="og:url" content="${site}/"><script type="application/ld+json">${jsonLd(indexLd)}</script>${analytics}<link rel="stylesheet" href="./assets/style.css"></head><body><header class="site-header"><a class="brand" href="./">MEAT PLUS</a><span>商品ガイド</span></header><main><section class="hero"><p class="eyebrow">MEAT PLUS OFFICIAL GUIDE</p><h1>今夜の「おいしい」が、<br>ここで見つかる。</h1><p>内容量・保存方法・おすすめの楽しみ方を確認して、MEAT PLUS公式オンラインショップで購入できます。</p><a class="hero-link" href="#catalog">商品を選ぶ ↓</a></section><section class="catalog" id="catalog"><div class="catalog-heading"><div><p class="eyebrow">PRODUCTS</p><h2>商品を探す</h2></div><p>気になる商品を選ぶと、詳しい情報と公式購入先を確認できます。</p></div>${catalogControls}${catalogContent}</section></main><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>© MEAT PLUS</small></footer>${catalogFilterScript}</body></html>`;
 await fs.writeFile('index.html',index);
 
 const today=new Date().toISOString().slice(0,10);
