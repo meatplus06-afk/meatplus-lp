@@ -292,7 +292,7 @@ for (const item of catalog) {
   } catch {}
 }
 
-const categoryLabel=value=>text(value).replace(/^[a-z]\\s+/i,'')||'その他';
+const categoryLabel=value=>text(value).replace(/^[a-z][\s　]+/i,'')||'その他';
 const categories=[...new Set(catalog.map(x=>categoryLabel(x.category)))].sort((a,b)=>a.localeCompare(b,'ja'));
 const categoryOptions=categories.map(category=>`<option value="${esc(category)}">${esc(category)}</option>`).join('');
 const initialVisible=Math.min(24,catalog.length);
