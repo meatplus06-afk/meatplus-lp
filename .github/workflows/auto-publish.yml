@@ -20,7 +20,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -32,7 +32,18 @@ jobs:
       - name: Publish queued products
         env:
           LP_FEED_URL: https://script.google.com/macros/s/AKfycbwr_19nzaX976Ejm6Oarr1FyvOyasxM5W3Ot5IfKKrr0XugerhPyfWY3qmpOmBCAyzq7Q/exec
-        run: node scripts/auto-publish.mjs
+        run: |
+          for attempt in 1 2; do
+            if node scripts/auto-publish.mjs; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 2 ]; then
+              echo "Publish failed after the automatic retry."
+              exit 1
+            fi
+            echo "Publish failed; retrying the entire process in 20 seconds..."
+            sleep 20
+          done
       - name: Commit published LPs
         run: |
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
