@@ -15,6 +15,7 @@
 - [ムラオカの梅しば](https://meatplus06-afk.github.io/meatplus-lp/products/k006/): 【カリッとした歯ごたえと甘酸っぱさがクセになる、懐かしの味。】
 - [宮崎マンゴーこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k005/): 宮崎県産マンゴーピューレ1.25％使用 1個約15ｇ
 - [長野県産シャインマスカットこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k004/): 長野県産 1個約15ｇ
+- [ミックスビーンズ](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): 【カリッ、ぽりっ。甘辛食感いろいろ。止まらない、魅惑の豆菓子ミックス。】
 - [お肉屋さんが作った特製ニラ焼餅](https://meatplus06-afk.github.io/meatplus-lp/products/i043/): お肉屋さんが作った特製ニラ焼餅
 - [オリジナルビーフカレー](https://meatplus06-afk.github.io/meatplus-lp/products/i024/): 販売は辛口or甘口セット SKUは、4で ・甘口3ｐ、5ｐ ・辛口3ｐ、5ｐ
 - [国産梅ひじき](https://meatplus06-afk.github.io/meatplus-lp/products/i023/): 【国産ひじきの旨味とカリカリ梅の酸味。ご飯がすすむ、食卓のもう一品。】
@@ -24,6 +25,5 @@
 - [九州産黒毛和牛スライス](https://meatplus06-afk.github.io/meatplus-lp/products/a003/): 【A4～A5等級】
 - [九州産黒毛和牛肩ローススライス　250ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/a002/): 【A4～A5等級】
 - [九州産黒毛和牛大判霜降り切り落とし](https://meatplus06-afk.github.io/meatplus-lp/products/a001/): 切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！
-- [ミックスビーンズ](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): いろいろな味と食感を一袋で楽しめる、ミックスビーンズです。
 
 商品情報を引用する場合は、各商品ページと公式オンラインショップの最新表示を確認してください。
