@@ -8,6 +8,33 @@ const company = '株式会社MEATPLUS';
 const gaMeasurementId = 'G-6WW5KF32KS';
 if (!feedUrl) throw new Error('LP_FEED_URL is required');
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const retryableStatuses = new Set([404, 408, 425, 429, 500, 502, 503, 504]);
+const fetchWithRetry = async (url, options = {}, { attempts = 5, baseDelayMs = 2000, label = 'Request' } = {}) => {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    let response;
+    try {
+      response = await fetch(url, options);
+    } catch (error) {
+      lastError = error;
+    }
+
+    if (response?.ok) return response;
+
+    if (response) {
+      lastError = new Error(label + ' failed: ' + response.status);
+      if (!retryableStatuses.has(response.status)) throw lastError;
+    }
+
+    if (attempt === attempts) throw lastError;
+    const delayMs = baseDelayMs * (2 ** (attempt - 1));
+    console.warn(label + ' attempt ' + attempt + '/' + attempts + ' failed (' + (lastError?.message || 'unknown error') + '); retrying in ' + delayMs + 'ms');
+    await sleep(delayMs);
+  }
+  throw lastError;
+};
+
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const text = value => String(value ?? '').trim();
 const validId = value => /^[a-z0-9][a-z0-9_-]*$/i.test(value);
@@ -71,11 +98,15 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>`;
 
-const response = await fetch(feedUrl + '?lp=__github_feed__', {
+const response = await fetchWithRetry(feedUrl + '?lp=__github_feed__', {
   method: 'GET',
-  redirect: 'follow'
+  redirect: 'follow',
+  signal: AbortSignal.timeout(45000)
+}, {
+  attempts: 5,
+  baseDelayMs: 2000,
+  label: 'Feed request'
 });
-if (!response.ok) throw new Error('Feed request failed: ' + response.status);
 const rawPayload = await response.text();
 let payload;
 try {
