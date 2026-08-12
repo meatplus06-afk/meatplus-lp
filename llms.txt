@@ -16,7 +16,7 @@
 - [宮崎マンゴーこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k005/): 宮崎県産マンゴーピューレ1.25％使用 1個約15ｇ
 - [長野県産シャインマスカットこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k004/): 長野県産 1個約15ｇ
 - [素焼き小魚＆ミックスナッツ](https://meatplus06-afk.github.io/meatplus-lp/products/k002/): 素焼き小魚＆ミックスナッツ
-- [辛子明太子　小切り](https://meatplus06-afk.github.io/meatplus-lp/products/j020/): 【ご飯がすすむ、ちょうどいい。手間いらずで便利な小切り明太子。】
+- [辛子明太子　小切り](https://meatplus06-afk.github.io/meatplus-lp/products/j020/): 【食卓がぱっと華やぐ、ピリ辛の旨み。使いやすい小切りタイプ。】
 - [プチプチ弾ける！子持ちやりいか](https://meatplus06-afk.github.io/meatplus-lp/products/j017/): プチプチ食感
 - [お肉屋さんが作った特製ニラ焼餅](https://meatplus06-afk.github.io/meatplus-lp/products/i043/): お肉屋さんが作った特製ニラ焼餅
 - [オリジナルビーフカレー](https://meatplus06-afk.github.io/meatplus-lp/products/i024/): 販売は辛口or甘口セット SKUは、4で ・甘口3ｐ、5ｐ ・辛口3ｐ、5ｐ
