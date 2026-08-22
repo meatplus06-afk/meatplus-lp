@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - scripts/auto-publish.mjs
+      - scripts/apply-scene-copy-patch.mjs
       - .github/workflows/auto-publish.yml
 
 permissions:
@@ -29,6 +30,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Enable per-scene copy support
+        run: node scripts/apply-scene-copy-patch.mjs
       - name: Publish queued products
         env:
           LP_FEED_URL: https://script.google.com/macros/s/AKfycbwr_19nzaX976Ejm6Oarr1FyvOyasxM5W3Ot5IfKKrr0XugerhPyfWY3qmpOmBCAyzq7Q/exec
