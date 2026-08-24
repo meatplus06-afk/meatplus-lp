@@ -6,7 +6,7 @@
     "description": "カリカリ梅",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k009/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/k009/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "k008",
@@ -15,7 +15,7 @@
     "description": "カリカリ梅",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k008/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/k008/product-list.png",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "k007",
@@ -24,7 +24,7 @@
     "description": "ネコポス便",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k007/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/k007/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "k006",
@@ -33,7 +33,7 @@
     "description": "【カリッとした歯ごたえと甘酸っぱさがクセになる、懐かしの味。】",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k006/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/k006/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "k005",
@@ -42,7 +42,7 @@
     "description": "宮崎県産マンゴーピューレ1.25％使用　1個約15ｇ",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k005/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/k005/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "k004",
@@ -51,7 +51,7 @@
     "description": "長野県産　1個約15ｇ",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k004/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/k004/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "k002",
@@ -60,7 +60,16 @@
     "description": "素焼き小魚＆ミックスナッツ",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/k002/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/k002/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
+  },
+  {
+    "id": "j021",
+    "name": "タコチャンジャ",
+    "category": "j 海鮮・魚介類",
+    "description": "【プリプリ蛸の旨味、シャキシャキ大根。やみつき食感の旨辛珍味。】",
+    "url": "https://meatplus06-afk.github.io/meatplus-lp/products/j021/",
+    "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/j021/product-list.jpg",
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "j020",
@@ -69,7 +78,7 @@
     "description": "【食卓がぱっと華やぐ、ピリ辛の旨み。使いやすい小切りタイプ。】",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/j020/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/j020/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "j017",
@@ -78,7 +87,7 @@
     "description": "プチプチ食感",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/j017/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/j017/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "j004",
@@ -87,7 +96,7 @@
     "description": "調理方法：湯せん（目安5分）",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/j004/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/j004/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i043",
@@ -96,7 +105,7 @@
     "description": "お肉屋さんが作った特製ニラ焼餅",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i043/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i043/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i028",
@@ -105,7 +114,7 @@
     "description": "・推奨希釈のお水600ｃｃですが、お好みでご調整ください。",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i028/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i028/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i027",
@@ -114,7 +123,7 @@
     "description": "・推奨希釈のお水600ｃｃですが、お好みでご調整ください。\n・本場博多の味をお届けします！",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i027/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i027/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i026",
@@ -123,7 +132,7 @@
     "description": "・推奨希釈のお水600ｃｃですが、お好みでご調整ください。",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i026/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i026/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i025",
@@ -132,7 +141,7 @@
     "description": "※スープ1ｐに対してお水は400ｃｃで薄める。（お好みで調整してください）",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i025/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i025/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i024",
@@ -141,7 +150,7 @@
     "description": "販売は辛口or甘口セット\nSKUは、4で\n・甘口3ｐ、5ｐ\n・辛口3ｐ、5ｐ",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i024/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i024/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i023",
@@ -150,7 +159,7 @@
     "description": "【国産ひじきの旨味とカリカリ梅の酸味。ご飯がすすむ、食卓のもう一品。】",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i023/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i023/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i020",
@@ -159,7 +168,7 @@
     "description": "ローズソルト（岩塩）使用",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i020/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i020/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i009",
@@ -168,7 +177,7 @@
     "description": "・推奨希釈のお水600ｃｃですが、お好みでご調整ください。\n・本場博多の味をお届けします！",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i009/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i009/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i008",
@@ -177,7 +186,7 @@
     "description": "・推奨希釈のお水600ｃｃですが、お好みでご調整ください。\n・本場博多の味をお届けします！",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i008/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i008/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "i007",
@@ -186,7 +195,7 @@
     "description": "・推奨希釈のお水600ｃｃですが、お好みでご調整ください。",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/i007/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i007/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "a026",
@@ -195,7 +204,7 @@
     "description": "九州産黒毛和牛ロースブロック",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/a026/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/a026/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "a025",
@@ -204,7 +213,7 @@
     "description": "・約500ｇの袋入りです。\n・※本商品は、食品ロス削減（SDGs）への取り組みの一環として、九州産黒毛和牛のバラ肉をほとんどトリミングせずに切り落とした「訳あり品」です。脂身が多い部分も含まれますのでご理解・ご了承の上お申し込みください。",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/a025/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/a025/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "a003",
@@ -213,7 +222,7 @@
     "description": "【A4～A5等級】",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/a003/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/a003/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "a002",
@@ -222,7 +231,7 @@
     "description": "【A4～A5等級】",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/a002/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/a002/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "a001",
@@ -231,7 +240,7 @@
     "description": "切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！",
     "url": "https://meatplus06-afk.github.io/meatplus-lp/products/a001/",
     "image": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/a001/product-list.jpg",
-    "updatedAt": "2026-08-22T08:38:57.259Z"
+    "updatedAt": "2026-08-24T08:30:09.920Z"
   },
   {
     "id": "k003",
