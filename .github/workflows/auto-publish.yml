@@ -7,6 +7,7 @@ on:
     paths:
       - scripts/auto-publish.mjs
       - scripts/apply-scene-copy-patch.mjs
+      - scripts/google-business-post.mjs
       - .github/workflows/auto-publish.yml
 
 permissions:
@@ -30,8 +31,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      - name: Require Google Business Profile authentication
+        env:
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+        run: |
+          test -n "$GBP_CLIENT_ID" || { echo "GBP_CLIENT_ID is not configured; publication is blocked."; exit 1; }
+          test -n "$GBP_CLIENT_SECRET" || { echo "GBP_CLIENT_SECRET is not configured; publication is blocked."; exit 1; }
+          test -n "$GBP_REFRESH_TOKEN" || { echo "GBP_REFRESH_TOKEN is not configured; publication is blocked."; exit 1; }
+
       - name: Enable per-scene copy support
         run: node scripts/apply-scene-copy-patch.mjs
+
       - name: Publish queued products
         env:
           LP_FEED_URL: https://script.google.com/macros/s/AKfycbwr_19nzaX976Ejm6Oarr1FyvOyasxM5W3Ot5IfKKrr0XugerhPyfWY3qmpOmBCAyzq7Q/exec
@@ -47,6 +60,13 @@ jobs:
             echo "Publish failed; retrying the entire process in 20 seconds..."
             sleep 20
           done
+
+      - name: Capture newly published product IDs
+        run: |
+          git status --porcelain -- products | awk '{print $2}' | sed -n 's#^products/\([^/]*\)/index.html$#\1#p' | sort -u > /tmp/published_product_ids.txt
+          echo "New/updated product LPs:"
+          cat /tmp/published_product_ids.txt || true
+
       - name: Commit published LPs
         run: |
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
@@ -58,6 +78,7 @@ jobs:
             git commit -m "Auto-publish queued product LPs"
             git push
           fi
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload GitHub Pages artifact
@@ -67,6 +88,16 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Post every published LP to Google Business Profile
+        env:
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+          GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
+          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
+        run: node scripts/google-business-post.mjs /tmp/published_product_ids.txt
+
       - name: Notify IndexNow
         continue-on-error: true
         run: node scripts/indexnow.mjs
