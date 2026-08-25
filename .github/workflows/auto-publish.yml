@@ -7,6 +7,7 @@ on:
     paths:
       - scripts/auto-publish.mjs
       - scripts/apply-scene-copy-patch.mjs
+      - scripts/apply-google-business-copy-patch.mjs
       - scripts/google-business-post.mjs
       - .github/workflows/auto-publish.yml
 
@@ -44,6 +45,9 @@ jobs:
 
       - name: Enable per-scene copy support
         run: node scripts/apply-scene-copy-patch.mjs
+
+      - name: Enable AI Google Business copy handoff
+        run: node scripts/apply-google-business-copy-patch.mjs
 
       - name: Publish queued products
         env:
