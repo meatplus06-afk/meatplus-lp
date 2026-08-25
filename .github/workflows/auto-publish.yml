@@ -38,10 +38,14 @@ jobs:
           GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
           GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
           GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+          GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
+          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
         run: |
           test -n "$GBP_CLIENT_ID" || { echo "GBP_CLIENT_ID is not configured; publication is blocked."; exit 1; }
           test -n "$GBP_CLIENT_SECRET" || { echo "GBP_CLIENT_SECRET is not configured; publication is blocked."; exit 1; }
           test -n "$GBP_REFRESH_TOKEN" || { echo "GBP_REFRESH_TOKEN is not configured; publication is blocked."; exit 1; }
+          test -n "$GBP_ACCOUNT_ID" || { echo "GBP_ACCOUNT_ID is not configured; publication is blocked."; exit 1; }
+          test -n "$GBP_LOCATION_ID" || { echo "GBP_LOCATION_ID is not configured; publication is blocked."; exit 1; }
 
       - name: Enable per-scene copy support
         run: node scripts/apply-scene-copy-patch.mjs
