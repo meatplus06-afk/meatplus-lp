@@ -36,14 +36,27 @@ jobs:
             --data-urlencode "refresh_token=$GBP_REFRESH_TOKEN" \
             --data-urlencode "grant_type=refresh_token")"
 
-          access_token="$(printf '%s' "$token_json" | node -e '
+          token_result="$(printf '%s' "$token_json" | node -e '
             let s=""; process.stdin.on("data",d=>s+=d); process.stdin.on("end",()=>{
-              const j=JSON.parse(s); if (!j.access_token) process.exit(1); process.stdout.write(j.access_token);
+              const j=JSON.parse(s);
+              if (j.access_token) {
+                process.stdout.write("OK\\n" + j.access_token);
+                return;
+              }
+              const err = String(j.error || "unknown_error").replace(/[\\r\\n]/g," ");
+              const desc = String(j.error_description || "").replace(/[\\r\\n]/g," ").slice(0,240);
+              process.stdout.write("ERROR\\n" + err + "\\n" + desc);
             });
-          ')" || {
+          ')"
+
+          token_status="$(printf '%s' "$token_result" | sed -n '1p')"
+          if [ "$token_status" != "OK" ]; then
             echo "OAuth token acquisition failed."
+            echo "OAUTH_ERROR=$(printf '%s' "$token_result" | sed -n '2p')"
+            echo "OAUTH_ERROR_DESCRIPTION=$(printf '%s' "$token_result" | sed -n '3p')"
             exit 3
-          }
+          fi
+          access_token="$(printf '%s' "$token_result" | sed -n '2p')"
 
           http_code="$(curl -sS -o /tmp/gbp_accounts_response.json -w '%{http_code}' \
             -H "Authorization: Bearer $access_token" \
