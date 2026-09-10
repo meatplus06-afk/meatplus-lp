@@ -1,0 +1,68 @@
+name: Check GBP API approval status
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/check-gbp-api.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check Google Business Profile Accounts API
+        env:
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in GBP_CLIENT_ID GBP_CLIENT_SECRET GBP_REFRESH_TOKEN; do
+            if [ -z "${!name:-}" ]; then
+              echo "$name is not configured."
+              exit 2
+            fi
+          done
+
+          token_json="$(curl -sS -X POST https://oauth2.googleapis.com/token \
+            --data-urlencode "client_id=$GBP_CLIENT_ID" \
+            --data-urlencode "client_secret=$GBP_CLIENT_SECRET" \
+            --data-urlencode "refresh_token=$GBP_REFRESH_TOKEN" \
+            --data-urlencode "grant_type=refresh_token")"
+
+          access_token="$(printf '%s' "$token_json" | node -e '
+            let s=""; process.stdin.on("data",d=>s+=d); process.stdin.on("end",()=>{
+              const j=JSON.parse(s); if (!j.access_token) process.exit(1); process.stdout.write(j.access_token);
+            });
+          ')" || {
+            echo "OAuth token acquisition failed."
+            exit 3
+          }
+
+          http_code="$(curl -sS -o /tmp/gbp_accounts_response.json -w '%{http_code}' \
+            -H "Authorization: Bearer $access_token" \
+            -H 'Accept: application/json' \
+            'https://mybusinessaccountmanagement.googleapis.com/v1/accounts?pageSize=1')"
+
+          echo "GBP_ACCOUNTS_HTTP_STATUS=$http_code"
+
+          case "$http_code" in
+            200)
+              echo "GBP API access is active."
+              ;;
+            429)
+              echo "GBP API access is still quota-blocked/pending."
+              ;;
+            401|403)
+              echo "GBP API request reached Google but authorization/permission is not active."
+              ;;
+            *)
+              echo "GBP API returned an unexpected status."
+              ;;
+          esac
