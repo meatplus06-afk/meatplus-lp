@@ -8,6 +8,7 @@ on:
       - scripts/auto-publish.mjs
       - scripts/apply-scene-copy-patch.mjs
       - scripts/apply-google-business-copy-patch.mjs
+      - scripts/build-discovery.mjs
       - scripts/google-business-post.mjs
       - scripts/gbp-queue.mjs
       - .github/workflows/auto-publish.yml
@@ -56,6 +57,9 @@ jobs:
             sleep 20
           done
 
+      - name: Build search and AI discovery pages
+        run: node scripts/build-discovery.mjs
+
       - name: Capture newly published product IDs
         run: |
           git status --porcelain -- products | awk '{print $2}' | sed -n 's#^products/\([^/]*\)/index.html$#\1#p' | sort -u > /tmp/published_product_ids.txt
@@ -68,12 +72,12 @@ jobs:
       - name: Commit published LPs and GBP queue
         run: |
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
-            echo "No queued products."
+            echo "No queued products or discovery updates."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add products assets/products data/products.json data/products-public.json data/gbp-pending.json index.html sitemap.xml robots.txt llms.txt
-            git commit -m "Auto-publish queued product LPs"
+            git add products categories about assets/products data/products.json data/products-public.json data/gbp-pending.json index.html sitemap.xml robots.txt llms.txt llms-full.txt
+            git commit -m "Auto-publish products and discovery pages"
             git push
           fi
 
