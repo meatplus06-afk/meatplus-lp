@@ -1,14 +1,26 @@
 # MEAT PLUS公式商品ガイド
 
-株式会社MEATPLUSが運営する食品ECの商品情報サイトです。商品ページには商品名、説明、原材料、規格、保存方法、FAQ、公式購入先を掲載しています。
+> 株式会社MEATPLUSが運営する公式商品情報サイト。黒毛和牛・肉・食品を探す方、購入前に調べる方のために、商品名、特徴、規格、保存方法、原材料、FAQ、公式購入先を整理しています。
 
 ## 公式情報源
-- 商品一覧: https://meatplus06-afk.github.io/meatplus-lp/
-- 商品データ(JSON): https://meatplus06-afk.github.io/meatplus-lp/data/products-public.json
-- サイトマップ: https://meatplus06-afk.github.io/meatplus-lp/sitemap.xml
-- 公式オンラインショップ: https://meat-plus.club/
+- [商品ガイドTOP](https://meatplus06-afk.github.io/meatplus-lp/)
+- [運営者・情報更新方針](https://meatplus06-afk.github.io/meatplus-lp/about/)
+- [公開商品データ(JSON)](https://meatplus06-afk.github.io/meatplus-lp/data/products-public.json)
+- [サイトマップ](https://meatplus06-afk.github.io/meatplus-lp/sitemap.xml)
+- [詳細版 llms-full.txt](https://meatplus06-afk.github.io/meatplus-lp/llms-full.txt)
+- [公式オンラインショップ](https://meat-plus.club/)
+
+## カテゴリ
+- [スイーツ・菓子](https://meatplus06-afk.github.io/meatplus-lp/categories/sweets/): 8商品
+- [海鮮・魚介類](https://meatplus06-afk.github.io/meatplus-lp/categories/seafood/): 6商品
+- [牛肉](https://meatplus06-afk.github.io/meatplus-lp/categories/beef/): 5商品
+- [惣菜・加工品](https://meatplus06-afk.github.io/meatplus-lp/categories/prepared-foods/): 13商品
 
 ## 商品ページ
+- [黄金にしん甘酢漬](https://meatplus06-afk.github.io/meatplus-lp/products/j022/): 脂ののったにしんとカラフトししゃも卵を独自の製法で結着加工しました。飽きのこないさっぱりとした甘酢で味付けしています。にしんの甘味とししゃも卵特有の歯ごたえ，程良い酸味がご賞味いただけます。
+- [アジフライ](https://meatplus06-afk.github.io/meatplus-lp/products/j003/): 【揚げるだけ！今夜のおかずは、サクサク熱々の肉厚アジフライ。】
+- [骨付きフランク　100](https://meatplus06-afk.github.io/meatplus-lp/products/i011/): 【BBQの主役！ガブっと豪快、肉汁じゅわ〜な骨付きフランク。】
+- [骨付きフランク　50](https://meatplus06-afk.github.io/meatplus-lp/products/i010/): 【BBQやパーティーの主役に！食卓が盛り上がる骨付きフランク。】
 - [ムラオカのあま梅 10個/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/k009/): カリカリ梅
 - [ムラオカのあま梅 20個/箱](https://meatplus06-afk.github.io/meatplus-lp/products/k008/): カリカリ梅
 - [ムラオカの梅しば](https://meatplus06-afk.github.io/meatplus-lp/products/k007/): ネコポス便
@@ -38,4 +50,4 @@
 - [九州産黒毛和牛大判霜降り切り落とし](https://meatplus06-afk.github.io/meatplus-lp/products/a001/): 切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！
 - [ミックスビーンズ](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): 【カリッ、ぽりっ。甘辛食感いろいろ。止まらない、魅惑の豆菓子ミックス。】
 
-商品情報を引用する場合は、各商品ページと公式オンラインショップの最新表示を確認してください。
+商品情報を引用・参照する場合は、各商品ページとMEAT PLUS公式オンラインショップの最新表示を確認してください。

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-<url><loc>https://meatplus06-afk.github.io/meatplus-lp/</loc><lastmod>2026-08-24</lastmod><priority>0.8</priority></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/</loc><lastmod>2026-09-17</lastmod><priority>0.9</priority></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/about/</loc><lastmod>2026-09-17</lastmod><priority>0.6</priority></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/categories/sweets/</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/categories/seafood/</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/categories/beef/</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/categories/prepared-foods/</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/products/j022/</loc><lastmod>2026-09-17</lastmod><priority>1.0</priority><image:image><image:loc>https://meatplus06-afk.github.io/meatplus-lp/assets/products/j022/product-list.jpg</image:loc><image:title>黄金にしん甘酢漬</image:title></image:image></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/products/j003/</loc><lastmod>2026-09-17</lastmod><priority>1.0</priority><image:image><image:loc>https://meatplus06-afk.github.io/meatplus-lp/assets/products/j003/product-list.jpg</image:loc><image:title>アジフライ</image:title></image:image></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/products/i011/</loc><lastmod>2026-09-17</lastmod><priority>1.0</priority><image:image><image:loc>https://meatplus06-afk.github.io/meatplus-lp/assets/products/i011/product-list.jpg</image:loc><image:title>骨付きフランク　100</image:title></image:image></url>
+<url><loc>https://meatplus06-afk.github.io/meatplus-lp/products/i010/</loc><lastmod>2026-09-17</lastmod><priority>1.0</priority><image:image><image:loc>https://meatplus06-afk.github.io/meatplus-lp/assets/products/i010/product-list.jpg</image:loc><image:title>骨付きフランク　50</image:title></image:image></url>
 <url><loc>https://meatplus06-afk.github.io/meatplus-lp/products/k009/</loc><lastmod>2026-08-24</lastmod><priority>1.0</priority><image:image><image:loc>https://meatplus06-afk.github.io/meatplus-lp/assets/products/k009/product-list.jpg</image:loc><image:title>ムラオカのあま梅 10個/ｐ</image:title></image:image></url>
 <url><loc>https://meatplus06-afk.github.io/meatplus-lp/products/k008/</loc><lastmod>2026-08-24</lastmod><priority>1.0</priority><image:image><image:loc>https://meatplus06-afk.github.io/meatplus-lp/assets/products/k008/product-list.png</image:loc><image:title>ムラオカのあま梅 20個/箱</image:title></image:image></url>
 <url><loc>https://meatplus06-afk.github.io/meatplus-lp/products/k007/</loc><lastmod>2026-08-24</lastmod><priority>1.0</priority><image:image><image:loc>https://meatplus06-afk.github.io/meatplus-lp/assets/products/k007/product-list.jpg</image:loc><image:title>ムラオカの梅しば</image:title></image:image></url>

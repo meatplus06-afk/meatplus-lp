@@ -1,5 +1,37 @@
 [
   {
+    "id": "j022",
+    "name": "黄金にしん甘酢漬",
+    "category": "j 海鮮・魚介類",
+    "description": "脂ののったにしんとカラフトししゃも卵を独自の製法で結着加工しました。飽きのこないさっぱりとした甘酢で味付けしています。にしんの甘味とししゃも卵特有の歯ごたえ，程良い酸味がご賞味いただけます。",
+    "image": "./assets/products/j022/product-list.jpg",
+    "updatedAt": "2026-09-17T09:18:40.818Z"
+  },
+  {
+    "id": "j003",
+    "name": "アジフライ",
+    "category": "j 海鮮・魚介類",
+    "description": "【揚げるだけ！今夜のおかずは、サクサク熱々の肉厚アジフライ。】",
+    "image": "./assets/products/j003/product-list.jpg",
+    "updatedAt": "2026-09-17T09:18:40.818Z"
+  },
+  {
+    "id": "i011",
+    "name": "骨付きフランク　100",
+    "category": "i 惣菜・加工品",
+    "description": "【BBQの主役！ガブっと豪快、肉汁じゅわ〜な骨付きフランク。】",
+    "image": "./assets/products/i011/product-list.jpg",
+    "updatedAt": "2026-09-17T09:18:40.818Z"
+  },
+  {
+    "id": "i010",
+    "name": "骨付きフランク　50",
+    "category": "i 惣菜・加工品",
+    "description": "【BBQやパーティーの主役に！食卓が盛り上がる骨付きフランク。】",
+    "image": "./assets/products/i010/product-list.jpg",
+    "updatedAt": "2026-09-17T09:18:40.818Z"
+  },
+  {
     "id": "k009",
     "name": "ムラオカのあま梅 10個/ｐ",
     "category": "k スイーツ・菓子",
