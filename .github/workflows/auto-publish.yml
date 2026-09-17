@@ -9,6 +9,7 @@ on:
       - scripts/apply-scene-copy-patch.mjs
       - scripts/apply-google-business-copy-patch.mjs
       - scripts/google-business-post.mjs
+      - scripts/gbp-queue.mjs
       - .github/workflows/auto-publish.yml
 
 permissions:
@@ -32,20 +33,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-
-      - name: Require Google Business Profile authentication
-        env:
-          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
-          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
-          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
-          GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
-          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
-        run: |
-          test -n "$GBP_CLIENT_ID" || { echo "GBP_CLIENT_ID is not configured; publication is blocked."; exit 1; }
-          test -n "$GBP_CLIENT_SECRET" || { echo "GBP_CLIENT_SECRET is not configured; publication is blocked."; exit 1; }
-          test -n "$GBP_REFRESH_TOKEN" || { echo "GBP_REFRESH_TOKEN is not configured; publication is blocked."; exit 1; }
-          test -n "$GBP_ACCOUNT_ID" || { echo "GBP_ACCOUNT_ID is not configured; publication is blocked."; exit 1; }
-          test -n "$GBP_LOCATION_ID" || { echo "GBP_LOCATION_ID is not configured; publication is blocked."; exit 1; }
 
       - name: Enable per-scene copy support
         run: node scripts/apply-scene-copy-patch.mjs
@@ -75,14 +62,17 @@ jobs:
           echo "New/updated product LPs:"
           cat /tmp/published_product_ids.txt || true
 
-      - name: Commit published LPs
+      - name: Queue Google Business Profile posts
+        run: node scripts/gbp-queue.mjs enqueue /tmp/published_product_ids.txt /tmp/published_products_source.json
+
+      - name: Commit published LPs and GBP queue
         run: |
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
             echo "No queued products."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add products assets/products data/products.json data/products-public.json index.html sitemap.xml robots.txt llms.txt
+            git add products assets/products data/products.json data/products-public.json data/gbp-pending.json index.html sitemap.xml robots.txt llms.txt
             git commit -m "Auto-publish queued product LPs"
             git push
           fi
@@ -97,14 +87,15 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Post every published LP to Google Business Profile
-        env:
-          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
-          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
-          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
-          GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
-          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
-        run: node scripts/google-business-post.mjs /tmp/published_product_ids.txt
+      - name: Note deferred Google Business Profile posting
+        run: |
+          count="$(grep -cve '^$' /tmp/published_product_ids.txt || true)"
+          if [ "$count" -gt 0 ]; then
+            echo "$count product(s) published and durably queued for Google Business Profile posting."
+            echo "GBP posting is deferred while Google API access is quota-blocked/pending."
+          else
+            echo "No new GBP posts to queue."
+          fi
 
       - name: Notify IndexNow
         continue-on-error: true
