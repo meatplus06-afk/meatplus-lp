@@ -9,6 +9,7 @@ on:
       - scripts/apply-scene-copy-patch.mjs
       - scripts/apply-google-business-copy-patch.mjs
       - scripts/build-discovery.mjs
+      - scripts/indexnow.mjs
       - scripts/google-business-post.mjs
       - scripts/gbp-queue.mjs
       - .github/workflows/auto-publish.yml
@@ -60,10 +61,10 @@ jobs:
       - name: Build search and AI discovery pages
         run: node scripts/build-discovery.mjs
 
-      - name: Capture newly published product IDs
+      - name: Capture actual publish candidate IDs
         run: |
-          git status --porcelain -- products | awk '{print $2}' | sed -n 's#^products/\([^/]*\)/index.html$#\1#p' | sort -u > /tmp/published_product_ids.txt
-          echo "New/updated product LPs:"
+          node -e "const fs=require('fs');const rows=JSON.parse(fs.readFileSync('/tmp/published_products_source.json','utf8'));const ids=[...new Set(rows.map(x=>String(x.productId||x.id||'').trim().toLowerCase()).filter(Boolean))].sort();fs.writeFileSync('/tmp/published_product_ids.txt',ids.join('\n')+(ids.length?'\n':''));"
+          echo "New/updated product LP candidates:"
           cat /tmp/published_product_ids.txt || true
 
       - name: Queue Google Business Profile posts
