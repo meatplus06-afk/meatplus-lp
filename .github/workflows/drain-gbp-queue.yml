@@ -1,0 +1,81 @@
+name: Drain GBP post queue
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: drain-gbp-post-queue
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Require Google Business Profile authentication
+        env:
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+          GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
+          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
+        run: |
+          test -n "$GBP_CLIENT_ID" || { echo "GBP_CLIENT_ID is not configured."; exit 1; }
+          test -n "$GBP_CLIENT_SECRET" || { echo "GBP_CLIENT_SECRET is not configured."; exit 1; }
+          test -n "$GBP_REFRESH_TOKEN" || { echo "GBP_REFRESH_TOKEN is not configured."; exit 1; }
+          test -n "$GBP_ACCOUNT_ID" || { echo "GBP_ACCOUNT_ID is not configured."; exit 1; }
+          test -n "$GBP_LOCATION_ID" || { echo "GBP_LOCATION_ID is not configured."; exit 1; }
+
+      - name: Prepare pending Google Business Profile posts
+        run: node scripts/gbp-queue.mjs prepare /tmp/published_product_ids.txt /tmp/published_products_source.json
+
+      - name: Stop cleanly when queue is empty
+        id: pending
+        run: |
+          if [ ! -s /tmp/published_product_ids.txt ]; then
+            echo "has_pending=false" >> "$GITHUB_OUTPUT"
+            echo "GBP queue is empty."
+          else
+            echo "has_pending=true" >> "$GITHUB_OUTPUT"
+            echo "Pending GBP product IDs:"
+            cat /tmp/published_product_ids.txt
+          fi
+
+      - name: Enable AI Google Business copy handoff
+        if: steps.pending.outputs.has_pending == 'true'
+        run: node scripts/apply-google-business-copy-patch.mjs
+
+      - name: Post pending products to Google Business Profile
+        if: steps.pending.outputs.has_pending == 'true'
+        env:
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+          GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
+          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
+        run: node scripts/google-business-post.mjs /tmp/published_product_ids.txt
+
+      - name: Clear successfully posted queue entries
+        if: steps.pending.outputs.has_pending == 'true'
+        run: node scripts/gbp-queue.mjs clear /tmp/published_product_ids.txt
+
+      - name: Commit updated GBP queue
+        if: steps.pending.outputs.has_pending == 'true'
+        run: |
+          if git diff --quiet -- data/gbp-pending.json; then
+            echo "GBP queue did not change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/gbp-pending.json
+          git commit -m "Clear posted Google Business Profile queue"
+          git push
