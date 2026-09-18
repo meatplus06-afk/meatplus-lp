@@ -9,6 +9,7 @@ on:
       - scripts/apply-scene-copy-patch.mjs
       - scripts/apply-google-business-copy-patch.mjs
       - scripts/build-discovery.mjs
+      - scripts/clean-legacy-seo.mjs
       - scripts/indexnow.mjs
       - scripts/google-business-post.mjs
       - scripts/gbp-queue.mjs
@@ -57,6 +58,9 @@ jobs:
             echo "Publish failed; retrying the entire process in 20 seconds..."
             sleep 20
           done
+
+      - name: Clean legacy SEO copy
+        run: node scripts/clean-legacy-seo.mjs
 
       - name: Build search and AI discovery pages
         run: node scripts/build-discovery.mjs
