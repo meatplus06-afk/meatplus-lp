@@ -27,12 +27,12 @@
 - [ムラオカの梅しば](https://meatplus06-afk.github.io/meatplus-lp/products/k006/): 【カリッとした歯ごたえと甘酸っぱさがクセになる、懐かしの味。】
 - [宮崎マンゴーこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k005/): 宮崎県産マンゴーピューレ1.25％使用 1個約15ｇ
 - [長野県産シャインマスカットこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k004/): 長野県産 1個約15ｇ
-- [素焼き小魚＆ミックスナッツ](https://meatplus06-afk.github.io/meatplus-lp/products/k002/): 素焼き小魚＆ミックスナッツ
+- [素焼き小魚＆ミックスナッツ](https://meatplus06-afk.github.io/meatplus-lp/products/k002/): ちょっと小腹が空いた時、ついつい甘いものに手が伸びていませんか？そんな毎日のひとときに、からだ想いの美味しいおやつはいかがでしょうか。国産のカタクチイワシなどを香ばしく焼き上げ、ほんのり甘じょっぱく味付けした小魚。そこに、食塩や油を使わずに素焼きにしたアーモンド、カシューナッツ、クルミを絶妙なバラン
 - [タコチャンジャ](https://meatplus06-afk.github.io/meatplus-lp/products/j021/): 【プリプリ食感と旨辛がやみつき！ご飯もお酒も進む本格タコチャンジャ。】
 - [辛子明太子　小切り](https://meatplus06-afk.github.io/meatplus-lp/products/j020/): 【食卓がぱっと華やぐ、ピリ辛の旨み。使いやすい小切りタイプ。】
-- [プチプチ弾ける！子持ちやりいか](https://meatplus06-afk.github.io/meatplus-lp/products/j017/): プチプチ食感
+- [プチプチ弾ける！子持ちやりいか](https://meatplus06-afk.github.io/meatplus-lp/products/j017/): いつもの食卓に、ちょっとした彩りとごちそう感を添える一品はいかがでしょうか。やわらかなやりいかの中に、プチプチと弾けるカラフトシシャモの卵をぎっしりと詰め込みました。口に入れると、まずはいかの優しい甘み、そして噛むほどに魚卵の濃厚な旨味がじゅわっと広がります。どこか懐かしさを感じる甘じょっぱい醤油ベ
 - [饅楽うなぎ蒲焼きざみ](https://meatplus06-afk.github.io/meatplus-lp/products/j004/): 調理方法：湯せん（目安5分）
-- [お肉屋さんが作った特製ニラ焼餅](https://meatplus06-afk.github.io/meatplus-lp/products/i043/): お肉屋さんが作った特製ニラ焼餅
+- [お肉屋さんが作った特製ニラ焼餅](https://meatplus06-afk.github.io/meatplus-lp/products/i043/): 今夜のおかずに、もう一品プラスしたい時。冷凍庫にこれさえあれば、あっという間に食卓が華やぎます。お肉屋さんが本気で考えた特製ニラ焼餅は、まず皮が違います。餅粉と米粉を独自に配合し、こんにゃく加工品を加えることで実現した、驚くほどのもちもち食感。その皮に練り込まれたニラの風味が、食欲をそそります。中か
 - [博多味噌もつ鍋スープ](https://meatplus06-afk.github.io/meatplus-lp/products/i028/): ・推奨希釈のお水600ｃｃですが、お好みでご調整ください。
 - [博多醤油もつ鍋スープ](https://meatplus06-afk.github.io/meatplus-lp/products/i027/): ・推奨希釈のお水600ｃｃですが、お好みでご調整ください。 ・本場博多の味をお届けします！
 - [博多水炊きスープ](https://meatplus06-afk.github.io/meatplus-lp/products/i026/): ・推奨希釈のお水600ｃｃですが、お好みでご調整ください。
@@ -43,10 +43,10 @@
 - [博多味噌もつ鍋セット](https://meatplus06-afk.github.io/meatplus-lp/products/i009/): ・推奨希釈のお水600ｃｃですが、お好みでご調整ください。 ・本場博多の味をお届けします！
 - [博多醤油もつ鍋セット](https://meatplus06-afk.github.io/meatplus-lp/products/i008/): ・推奨希釈のお水600ｃｃですが、お好みでご調整ください。 ・本場博多の味をお届けします！
 - [博多水炊きセット](https://meatplus06-afk.github.io/meatplus-lp/products/i007/): ・推奨希釈のお水600ｃｃですが、お好みでご調整ください。
-- [九州産黒毛和牛ロースブロック](https://meatplus06-afk.github.io/meatplus-lp/products/a026/): 九州産黒毛和牛ロースブロック
-- [訳あり！九州産黒毛和牛バラ切り落とし](https://meatplus06-afk.github.io/meatplus-lp/products/a025/): ・約500ｇの袋入りです。 ・※本商品は、食品ロス削減（SDGs）への取り組みの一環として、九州産黒毛和牛のバラ肉をほとんどトリミングせずに切り落とした「訳あり品」です。脂身が多い部分も含まれますのでご理解・ご了承の上お申し込みください。
+- [九州産黒毛和牛ロースブロック](https://meatplus06-afk.github.io/meatplus-lp/products/a026/): 特別な日の食卓に、ひときわ輝く主役はいかがですか。九州の豊かな自然の中で丹精込めて育てられた黒毛和牛の中から、A4等級以上のものだけを厳選したロースブロックをお届けします。きめ細やかに入った美しい霜降りがもたらす、とろけるような口どけと上品な脂の甘み。そして、噛みしめるほどに広がる赤身本来の濃厚な旨
+- [訳あり！九州産黒毛和牛バラ切り落とし](https://meatplus06-afk.github.io/meatplus-lp/products/a025/): 今日の夕食は、ちょっと贅沢に黒毛和牛はいかがですか。九州の豊かな自然に育まれた、A4等級以上の黒毛和牛から、旨みたっぷりのバラ肉を切り落としにしました。本商品は、食品ロス削減への貢献を目指し、形を整えるためのトリミングをあえて行わない「訳あり品」です。そのため、お肉の形は不揃いで、脂身が多い部分も含
 - [九州産黒毛和牛スライス](https://meatplus06-afk.github.io/meatplus-lp/products/a003/): 【A4～A5等級】
-- [九州産黒毛和牛肩ローススライス　250ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/a002/): 【A4～A5等級】
+- [九州産黒毛和牛肩ローススライス　250ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/a002/): 今夜はちょっと贅沢に、家族みんなで笑顔がこぼれる食卓を囲みませんか？九州の豊かな自然に育まれた、A4～A5等級の黒毛和牛肩ローススライスをお届けします。きめ細やかな霜降りが織りなす、とろけるような舌触りと、赤身のしっかりとした旨味のバランスが絶妙な逸品です。すき焼きにすれば、割り下の甘辛い風味と和牛
 - [九州産黒毛和牛大判霜降り切り落とし](https://meatplus06-afk.github.io/meatplus-lp/products/a001/): 切り落としと侮るべからず！「えっ、これ切り落とし！？」と思わず口に出るほど大きな一枚肉！ 旨みたっぷり。九州産の上質な肩ロース（約30ｋｇ以上）の塊を、そのままバサッと使いやすい切り落としにしました！
 - [ミックスビーンズ](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): 【カリッ、ぽりっ。甘辛食感いろいろ。止まらない、魅惑の豆菓子ミックス。】
 
