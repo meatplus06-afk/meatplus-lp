@@ -10,6 +10,7 @@ on:
       - scripts/apply-google-business-copy-patch.mjs
       - scripts/build-discovery.mjs
       - scripts/clean-legacy-seo.mjs
+      - scripts/enhance-entity-seo.mjs
       - scripts/indexnow.mjs
       - scripts/google-business-post.mjs
       - scripts/gbp-queue.mjs
@@ -64,6 +65,9 @@ jobs:
 
       - name: Build search and AI discovery pages
         run: node scripts/build-discovery.mjs
+
+      - name: Enhance entity and category SEO
+        run: node scripts/enhance-entity-seo.mjs
 
       - name: Capture actual publish candidate IDs
         run: |
