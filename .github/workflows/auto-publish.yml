@@ -85,8 +85,10 @@ jobs:
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add products categories about assets/products data/products.json data/products-public.json data/gbp-pending.json index.html sitemap.xml robots.txt llms.txt llms-full.txt
+            git add products categories about assets/products data/products.json data/products-public.json data/products-public.js data/gbp-pending.json index.html sitemap.xml robots.txt llms.txt llms-full.txt
             git commit -m "Auto-publish products and discovery pages"
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
 
