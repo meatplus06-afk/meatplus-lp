@@ -38,6 +38,54 @@ const fetchWithRetry = async (url, options = {}, { attempts = 5, baseDelayMs = 2
 
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const text = value => String(value ?? '').trim();
+const extractGeneratedSection = (value, heading, nextHeadings = []) => {
+  const raw = text(value);
+  const marker = '【' + heading + '】';
+  const start = raw.indexOf(marker);
+  if (start < 0) return '';
+  const from = start + marker.length;
+  let end = raw.length;
+  for (const next of nextHeadings) {
+    const pos = raw.indexOf('【' + next + '】', from);
+    if (pos >= 0 && pos < end) end = pos;
+  }
+  return raw.slice(from, end).trim();
+};
+const cleanGeneratedDescription = value => {
+  const raw = text(value);
+  if (!raw) return '';
+  const extracted = extractGeneratedSection(raw, '商品説明文', ['おススメポイント','おすすめポイント','FAQ','商品情報','お客様への一言']);
+  return (extracted || raw).replace(/\n{3,}/g, '\n\n').trim();
+};
+const cleanGeneratedCatchCopy = (value, fallback = '') => {
+  const raw = text(value);
+  if (raw && !/[【】](?:商品名案|商品説明文|FAQ|商品情報)/.test(raw)) return raw;
+  return extractGeneratedSection(fallback, 'キャッチコピー', ['商品説明文','おススメポイント','おすすめポイント','FAQ','商品情報']) || raw || '';
+};
+const cleanMetaDescription = (value, fallback = '') => {
+  const raw = text(value).replace(/\s+/g, ' ');
+  const needsFallback = !raw || raw.length < 35 || /【(?:商品名案|商品説明文|FAQ|商品情報|おススメポイント|おすすめポイント)】/.test(raw);
+  const base = (needsFallback ? cleanGeneratedDescription(fallback) : raw).replace(/\s+/g, ' ').trim();
+  return (base || raw).slice(0, 150);
+};
+const parseGeneratedFaq = value => {
+  const section = extractGeneratedSection(value, 'FAQ', ['商品情報','お客様への一言']);
+  if (!section) return [];
+  const lines = section.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+  const result = [];
+  let current = null;
+  for (const line of lines) {
+    const question = line.match(/^\d+[.．、)]\s*(.+)$/);
+    if (question) {
+      if (current?.q && current.a.length) result.push({q: current.q, a: current.a.join(' ').trim()});
+      current = {q: question[1].trim(), a: []};
+    } else if (current) {
+      current.a.push(line);
+    }
+  }
+  if (current?.q && current.a.length) result.push({q: current.q, a: current.a.join(' ').trim()});
+  return result;
+};
 const validId = value => /^[a-z0-9][a-z0-9_-]*$/i.test(value);
 const stripQuery = value => text(value).split('?')[0];
 const extFrom = (contentType, url) => {
@@ -70,7 +118,10 @@ const fetchOffer = async (purchaseUrl, product = {}) => {
     const html = await r.text();
     const sale = html.match(/class=["'][^"']*\bprice\b[^"']*\bsale\b[^"']*["'][^>]*>\s*[￥¥]?\s*([\d,]+)/i);
     const regular = html.match(/class=["'][^"']*\bprice\b[^"']*["'][^>]*>\s*[￥¥]?\s*([\d,]+)/i);
-    const price = normalizePrice((sale || regular || [])[1]);
+    const metaPrice = html.match(/<meta[^>]+(?:property|itemprop)=["'](?:product:price:amount|price)["'][^>]+content=["']([\d,.]+)["']/i);
+    const jsonPrice = html.match(/["']price["']\s*:\s*["']?([\d,.]+)["']?/i);
+    const itempropPrice = html.match(/itemprop=["']price["'][^>]+content=["']([\d,.]+)["']/i);
+    const price = normalizePrice((sale || regular || metaPrice || itempropPrice || jsonPrice || [])[1]);
     if (!price) return null;
     const outOfStock = /売り切れ|在庫切れ|sold\s*out/i.test(html);
     return {'@type':'Offer',url:r.url || purchaseUrl,priceCurrency:'JPY',price,availability:outOfStock?'https://schema.org/OutOfStock':'https://schema.org/InStock',itemCondition:'https://schema.org/NewCondition'};
@@ -207,12 +258,15 @@ const downloadImages = async product => {
 
 const render = (p, images, offer) => {
   const id=text(p.productId).toLowerCase(), name=text(p.productName), category=text(p.category);
-  const description=text(p.description), meta=text(p.metaDescription)||description||name;
-  const catchCopy=text(p.catchCopy)||name, closing=text(p.closingCopy)||catchCopy;
+  const rawDescription=text(p.description), description=cleanGeneratedDescription(rawDescription);
+  const meta=cleanMetaDescription(p.metaDescription, rawDescription)||description||name;
+  const catchCopy=cleanGeneratedCatchCopy(p.catchCopy, rawDescription)||name;
+  const closing=cleanGeneratedCatchCopy(p.closingCopy, rawDescription)||catchCopy;
   const purchase=text(p.purchaseUrl), queued=text(p.updatedAt);
   if (!validId(id) || !name || !/^https?:\/\//i.test(purchase)) throw new Error(id+': required data is missing');
   const imageUrls=Object.values(images).map(f => site+'/assets/products/'+id+'/'+f);
-  const faq=(Array.isArray(p.faq)?p.faq:[]).map(x=>({q:text(x.question||x.q),a:text(x.answer||x.a)})).filter(x=>x.q&&x.a);
+  const explicitFaq=(Array.isArray(p.faq)?p.faq:[]).map(x=>({q:text(x.question||x.q),a:text(x.answer||x.a)})).filter(x=>x.q&&x.a);
+  const faq=explicitFaq.length ? explicitFaq : parseGeneratedFaq(rawDescription);
   const info=Object.entries(p.productInfo||{}).filter(([,v])=>text(v));
   const img = role => images[role] ? '../../assets/products/'+id+'/'+images[role] : '';
   const stories=['sns1','sns2','sns3'].filter(role=>images[role]).map((role,i)=>`
@@ -265,7 +319,8 @@ for (const product of products) {
   const offer=await fetchOffer(text(product.purchaseUrl),product);
   await fs.mkdir(path.join('products',id),{recursive:true});
   await fs.writeFile(path.join('products',id,'index.html'),render(product,images,offer));
-  const record={id,name:text(product.productName),category:text(product.category),description:text(product.cardDescription)||text(product.metaDescription),image:'./assets/products/'+id+'/'+images.productList,updatedAt:text(product.updatedAt),...(offer?{offer}:{})};
+  const recordDescription=cleanMetaDescription(text(product.cardDescription)||text(product.metaDescription), text(product.description));
+  const record={id,name:text(product.productName),category:text(product.category),description:recordDescription,image:'./assets/products/'+id+'/'+images.productList,updatedAt:text(product.updatedAt),...(offer?{offer}:{})};
   catalog=catalog.filter(x=>x.id!==id); catalog.unshift(record);
 }
 await fs.mkdir('data',{recursive:true});
