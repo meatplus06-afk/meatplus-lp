@@ -25,6 +25,12 @@ const today = new Date().toISOString().slice(0, 10);
 const products = JSON.parse(await fs.readFile('data/products-public.json', 'utf8'));
 if (!Array.isArray(products)) throw new Error('data/products-public.json must contain an array.');
 
+const publicProductIds = [...new Set(products.map(product => text(product.id).toLowerCase()).filter(Boolean))].sort();
+await fs.writeFile(
+  'data/products-public.js',
+  'window.MEATPLUS_GUIDE_PRODUCT_IDS=' + JSON.stringify(publicProductIds) + ';\n'
+);
+
 const groups = new Map();
 for (const product of products) {
   const label = categoryLabel(product.category);
