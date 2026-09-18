@@ -75,10 +75,13 @@ for (const entry of entries) {
   });
 
   const rawDescription = text(productSchema?.description);
-  if (!rawDescription || !markerPattern.test(rawDescription)) continue;
+  const currentLead = text((page.match(/<p class="lead">([\s\S]*?)<\/p>/) || [])[1] || '').replace(/<[^>]+>/g, '');
+  const pageHasMarkers = markerPattern.test(page);
+  const schemaHasMarkers = markerPattern.test(rawDescription);
+  if (!pageHasMarkers && !schemaHasMarkers) continue;
 
   const description = cleanDescription(rawDescription);
-  const catchCopy = cleanCatch(rawDescription) || description.split(/(?<=[。！？!?])/u).map(text).find(Boolean) || text(productSchema?.name);
+  const catchCopy = cleanCatch(rawDescription) || currentLead.replace(/^【|】$/g, '') || description.split(/(?<=[。！？!?])/u).map(text).find(Boolean) || text(productSchema?.name);
   const meta = metaFrom(description || catchCopy || productSchema?.name);
   const scenes = pickScenes(catchCopy, description);
 
@@ -105,7 +108,7 @@ for (const entry of entries) {
 
   for (let i = 0; i < scenes.length; i += 1) {
     const sceneNumber = String(i + 1).padStart(2, '0');
-    const re = new RegExp('(<span>SCENE ' + sceneNumber + '<\\\\/span><h2>)[\\\\s\\\\S]*?(<\\\\/h2>)');
+    const re = new RegExp('(<span>SCENE ' + sceneNumber + '<\\/span><h2>)[\\s\\S]*?(<\\/h2>)');
     page = page.replace(re, '$1' + esc(scenes[i]) + '$2');
   }
 
