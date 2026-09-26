@@ -237,6 +237,23 @@ try { catalog = JSON.parse(await fs.readFile('data/products.json','utf8')); } ca
 if (!Array.isArray(catalog)) catalog = [];
 catalog=catalog.map(item=>{const {purchaseUrl,url,...rest}=item; const rawImage=text(rest.image).replace(/^\.\/(?=https?:\/\/)/,''); const image=rawImage.startsWith(site+'/')?'./'+rawImage.slice(site.length+1):rawImage; return {...rest,image};});
 
+const publishedState = new Map(catalog.map(item => [text(item.id).toLowerCase(), item]));
+const productsToPublish = products.filter(product => {
+  const id = text(product.productId || product.id).toLowerCase();
+  if (!id) return true;
+  const existing = publishedState.get(id);
+  if (!existing) return true;
+  const sourceUpdatedAt = text(product.updatedAt);
+  const existingUpdatedAt = text(existing.updatedAt);
+  if (sourceUpdatedAt && existingUpdatedAt && sourceUpdatedAt > existingUpdatedAt) return true;
+  const queuedAt = text(product.githubLpQueuedAt);
+  const lastQueueAt = text(existing.sourceQueueAt);
+  if (queuedAt && lastQueueAt && queuedAt > lastQueueAt) return true;
+  return false;
+});
+console.log('LP publish candidates: ' + productsToPublish.length + ' / feed products: ' + products.length);
+console.log('LP publish candidate IDs: ' + productsToPublish.map(product => text(product.productId || product.id).toLowerCase()).filter(Boolean).join(', '));
+
 const downloadImages = async product => {
   const id = text(product.productId).toLowerCase();
   const output = {};
@@ -308,7 +325,7 @@ ${faqHtml?`<section class="faq" id="faq"><p class="eyebrow">FAQ</p><h2>購入前
 <section class="closing"><p class="eyebrow">MEAT PLUS OFFICIAL SHOP</p><h2>${esc(closing)}</h2><p>仕入れ・加工・梱包・発送まで自社で行うMEAT PLUSの公式オンラインショップでご注文いただけます。</p><a class="cta" data-cta-position="bottom" href="${esc(buy('bottom'))}">公式オンラインショップで購入する</a></section></main><div class="sticky-buy" aria-label="購入案内">${price?`<span><small>税込</small><strong>¥${price}</strong></span>`:'<span><small>公式サイトで</small><strong>詳細を確認</strong></span>'}<a data-cta-position="sticky" href="${esc(buy('sticky'))}">購入する</a></div><footer><a href="https://meat-plus.club/">MEAT PLUS公式オンラインショップ</a><small>商品ID：${esc(id)}　© MEAT PLUS</small></footer></body></html>`;
 };
 
-for (const product of products) {
+for (const product of productsToPublish) {
   const id=text(product.productId).toLowerCase();
   if (!validId(id)) throw new Error('Invalid productId: '+id);
   if (!text(product.updatedAt)) {
@@ -320,7 +337,7 @@ for (const product of products) {
   await fs.mkdir(path.join('products',id),{recursive:true});
   await fs.writeFile(path.join('products',id,'index.html'),render(product,images,offer));
   const recordDescription=cleanMetaDescription(text(product.cardDescription)||text(product.metaDescription), text(product.description));
-  const record={id,name:text(product.productName),category:text(product.category),description:recordDescription,image:'./assets/products/'+id+'/'+images.productList,updatedAt:text(product.updatedAt),...(offer?{offer}:{})};
+  const record={id,name:text(product.productName),category:text(product.category),description:recordDescription,image:'./assets/products/'+id+'/'+images.productList,updatedAt:text(product.updatedAt),sourceQueueAt:text(product.githubLpQueuedAt)||text(product.updatedAt),...(offer?{offer}:{})};
   catalog=catalog.filter(x=>x.id!==id); catalog.unshift(record);
 }
 await fs.mkdir('data',{recursive:true});
