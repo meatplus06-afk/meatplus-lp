@@ -15,9 +15,10 @@
 - [海鮮・魚介類](https://meatplus06-afk.github.io/meatplus-lp/categories/seafood/): 7商品
 - [牛肉](https://meatplus06-afk.github.io/meatplus-lp/categories/beef/): 5商品
 - [惣菜・加工品](https://meatplus06-afk.github.io/meatplus-lp/categories/prepared-foods/): 18商品
-- [贈り物](https://meatplus06-afk.github.io/meatplus-lp/categories/category-m/): 7商品
+- [贈り物](https://meatplus06-afk.github.io/meatplus-lp/categories/category-m/): 8商品
 
 ## 商品ページ
+- [佐賀牛肩ローススライス　250ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/m008/): 今夜はちょっと特別な食卓を囲みませんか？きめ細やかな霜降りが美しい、艶やかな佐賀牛がテーブルに並ぶだけで、家族の笑顔がこぼれます。日本屈指のブランド牛「佐賀牛」の中から、A4〜A5等級に格付けされた最高品質の肩ロースを厳選しました。赤身と脂身のバランスが絶妙な肩ロースは、肉本来の濃厚な旨みと、とろけ
 - [佐賀牛ロースステーキハーフカット](https://meatplus06-afk.github.io/meatplus-lp/products/m007/): 大切な記念日や、日頃の感謝を伝える食卓に、最高級の佐賀牛はいかがでしょうか。日本が誇るブランド牛「佐賀牛」の中でも、A4等級以上に格付けされた上質なロース肉のみを厳選しました。きめ細やかに入った美しい霜降りは、口に入れた瞬間にすっと溶け出し、上品な脂の甘みと赤身のコク深い味わいが広がります。一枚15
 - [博多辛子明太子　小切り　10ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/m006/): 炊き立ての白いご飯に、ピリッと旨い明太子。そんな至福のひとときを、いつでも手軽にお楽しみいただける「博多辛子明太子 小切り」を、たっぷり1kgでお届けします。本場博多で丁寧に作られたこだわりの味。厳選されたすけとうだらの卵を、白だしやワインなどを加えた秘伝の調味液にじっくりと漬け込み、まろやかで深み
 - [饅楽うなぎ蒲焼きざみ　10ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/m005/): 温かいご飯の上に、ふっくらと柔らかな九州産のうなぎ。甘辛い秘伝のタレが絡んだきざみ蒲焼きを乗せれば、あっという間に専門店の味がお楽しみいただけます。厳選された九州産のうなぎを、職人が一尾一尾丁寧に焼き上げ、食べやすいきざみタイプに仕上げました。長年受け継がれてきた秘伝のタレが、うなぎ本来の旨味を最大
