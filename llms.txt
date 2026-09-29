@@ -15,9 +15,10 @@
 - [海鮮・魚介類](https://meatplus06-afk.github.io/meatplus-lp/categories/seafood/): 7商品
 - [牛肉](https://meatplus06-afk.github.io/meatplus-lp/categories/beef/): 5商品
 - [惣菜・加工品](https://meatplus06-afk.github.io/meatplus-lp/categories/prepared-foods/): 18商品
-- [贈り物](https://meatplus06-afk.github.io/meatplus-lp/categories/category-m/): 10商品
+- [贈り物](https://meatplus06-afk.github.io/meatplus-lp/categories/category-m/): 11商品
 
 ## 商品ページ
+- [佐賀牛ヒレステーキ　200ｇ（100ｇ×2枚）](https://meatplus06-afk.github.io/meatplus-lp/products/m011/): 特別な記念日のディナー、あるいは心からの感謝を伝えたい贈り物に、最高級の食体験はいかがでしょうか。日本が誇るブランド牛「佐賀牛」。その中でも選び抜かれたA4～A5等級のヒレ肉は、まさに牛肉の女王と呼ぶにふさわしい逸品です。ヒレは一頭の牛からわずかしか取れない希少な部位。きめ細かく入ったサシと、上品な
 - [佐賀牛モモブロック 300ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/m010/): 特別な日のディナー、家族が集まる週末の食卓に、ひときわ豪華な一皿はいかがでしょうか。日本屈指のブランド牛「佐賀牛」の中でも、A4等級以上の厳選されたモモ肉を、使いやすい300gのブロックでお届けします。きめ細やかなサシと赤身のバランスが絶妙なモモ肉は、噛みしめるほどに上品な肉の旨みが口いっぱいに広が
 - [佐賀牛モモステーキ　5ｐ（100g×5ｐ）](https://meatplus06-afk.github.io/meatplus-lp/products/m009/): 特別な日のディナーに、あの人への心のこもった贈り物に、最高級の佐賀牛モモステーキはいかがでしょうか。 日本屈指のブランド和牛として知られる佐賀牛。その中でもA4等級以上に限定し、肉の旨みが凝縮されたモモの部位を厳選しました。赤身ならではのしっかりとした肉質と、噛むほどにあふれる深い味わいが特徴です。
 - [佐賀牛肩ローススライス　250ｇ/ｐ](https://meatplus06-afk.github.io/meatplus-lp/products/m008/): 今夜はちょっと特別な食卓を囲みませんか？きめ細やかな霜降りが美しい、艶やかな佐賀牛がテーブルに並ぶだけで、家族の笑顔がこぼれます。日本屈指のブランド牛「佐賀牛」の中から、A4〜A5等級に格付けされた最高品質の肩ロースを厳選しました。赤身と脂身のバランスが絶妙な肩ロースは、肉本来の濃厚な旨みと、とろけ
