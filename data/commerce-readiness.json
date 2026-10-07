@@ -1,0 +1,11 @@
+{
+  "status": "preparation_only",
+  "submissionReady": false,
+  "productCount": 52,
+  "blockingFields": [
+    "current regular price and sale price per purchasable variant",
+    "variant IDs and selected variant URLs",
+    "brand verification per item"
+  ],
+  "documentation": "https://developers.openai.com/commerce/specs/file-upload/products"
+}

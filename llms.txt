@@ -72,3 +72,10 @@
 - [ミックスビーンズ](https://meatplus06-afk.github.io/meatplus-lp/products/k003/): 【カリッ、ぽりっ。甘辛食感いろいろ。止まらない、魅惑の豆菓子ミックス。】
 
 商品情報を引用・参照する場合は、各商品ページとMEAT PLUS公式オンラインショップの最新表示を確認してください。
+
+## 用途別の商品比較
+- [焼肉・ステーキ](https://meatplus06-afk.github.io/meatplus-lp/guides/yakiniku/)
+- [すき焼き・しゃぶしゃぶ](https://meatplus06-afk.github.io/meatplus-lp/guides/sukiyaki/)
+- [もつ鍋・水炊き](https://meatplus06-afk.github.io/meatplus-lp/guides/nabe/)
+- [おつまみ](https://meatplus06-afk.github.io/meatplus-lp/guides/snacks/)
+- [詳細商品データ](https://meatplus06-afk.github.io/meatplus-lp/data/products-detailed.json)
