@@ -18,16 +18,20 @@ const knownSlugs = new Map([
 ]);
 const categorySlug = raw => knownSlugs.get(categoryLabel(raw)) || ('category-' + (categoryCode(raw) || 'other'));
 const categoryUrls = [...new Set((Array.isArray(publicProducts) ? publicProducts : []).map(item => site + '/categories/' + categorySlug(item.category) + '/'))];
-const urlList = [
+const sitemap = await fs.readFile('sitemap.xml','utf8');
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].replace(/&amp;/g,'&'));
+const urlList = [...new Set([
   site + '/',
   site + '/about/',
   site + '/sitemap.xml',
   site + '/llms.txt',
   site + '/llms-full.txt',
   site + '/data/products-public.json',
+  ...sitemapUrls,
+  site + '/data/products-detailed.json',
   ...categoryUrls,
   ...catalog.map(item => site + '/products/' + item.id + '/')
-];
+])];
 
 const response = await fetch('https://api.indexnow.org/indexnow', {
   method: 'POST',
