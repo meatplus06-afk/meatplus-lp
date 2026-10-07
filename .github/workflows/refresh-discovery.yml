@@ -1,0 +1,41 @@
+name: Refresh published product discovery
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/refresh-discovery.yml
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: refresh-published-discovery
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Rebuild discovery from published products
+        run: |
+          node scripts/build-discovery.mjs
+          node scripts/enhance-entity-seo.mjs
+          node scripts/build-commerce-discovery.mjs
+          node scripts/validate-commerce-discovery.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4
+        id: deployment
+      - name: Notify IndexNow
+        continue-on-error: true
+        run: node scripts/indexnow.mjs
