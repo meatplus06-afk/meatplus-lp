@@ -1,4 +1,6 @@
 import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const styleVersion=createHash('sha256').update(await fs.readFile('assets/style.css')).digest('hex').slice(0,12);
 const site='https://meatplus06-afk.github.io/meatplus-lp';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const plain=v=>String(v??'').replace(/<[^>]*>/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/\s+/g,' ').trim();
@@ -16,6 +18,7 @@ for(const p of products){
  if(!/^[a-z0-9_-]+$/i.test(p.id))throw new Error('Invalid ID');
  const file=`products/${p.id}/index.html`;
  let html=await fs.readFile(file,'utf8');
+ html=html.replace(/href="\.\.\/\.\.\/assets\/style\.css(?:\?[^" ]*)?"/g,`href="../../assets/style.css?v=${styleVersion}"`);
  const info=Object.fromEntries([...html.matchAll(/<dt>([\s\S]*?)<\/dt>\s*<dd>([\s\S]*?)<\/dd>/g)].map(m=>[plain(m[1]),plain(m[2])]));
  const scripts=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
  const schema=scripts.find(d=>d['@type']==='Product');
