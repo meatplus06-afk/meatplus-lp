@@ -13,6 +13,10 @@ on:
       - scripts/build-discovery.mjs
       - scripts/build-commerce-discovery.mjs
       - scripts/build-home.mjs
+      - scripts/guide-experience.mjs
+      - assets/guide-experience.css
+      - assets/guide-experience.js
+      - assets/guide-dinner-illustration.webp
       - assets/style.css
       - assets/home.css
       - assets/guide-analytics.js
