@@ -2,10 +2,14 @@
   "status": "preparation_only",
   "submissionReady": false,
   "productCount": 52,
+  "itemCount": 70,
+  "pricedItemCount": 70,
+  "storefrontFetchedAt": "2026-10-07T05:46:55.287045+00:00",
+  "storefrontSnapshotFresh": true,
+  "pendingProductIds": [],
   "blockingFields": [
-    "current regular price and sale price per purchasable variant",
-    "variant IDs and selected variant URLs",
-    "brand verification per item"
+    "brand verification per item",
+    "variant option names, selected variant URLs and variant-specific descriptions"
   ],
   "documentation": "https://developers.openai.com/commerce/specs/file-upload/products"
 }
