@@ -24,5 +24,9 @@ html=html.replace(/<nav class="section-nav" data-commerce-guides[\s\S]*?<\/nav>/
 html=html.replace(/<nav class="section-nav" data-discovery-categories[\s\S]*?<\/nav>/g,'');
 html=html.replace('<section class="catalog" id="catalog">',scenes+'<section class="catalog" id="catalog">');
 html=html.replace('<h2>商品を探す</h2>','<h2>次の「おいしい」を見つけよう。</h2>');
+html=html.replace(/ data-guide-action="details" data-product-id="[a-z0-9_-]+" data-guide-position="home_product"/g,'');
+html=html.replace(/(<a class="(?:card|home-hero-photo)"[^>]*href=")([^" ]*\/products\/([a-z0-9_-]+)\/)("[^>]*>)/g,
+ (_,start,url,id,end)=>start+url+end.replace('>',' data-guide-action="details" data-product-id="'+id+'" data-guide-position="home_product">'));
+html=html.replace('class="home-shop-link" href="https://meat-plus.club/"','class="home-shop-link" data-guide-action="shop" data-guide-position="home_header" href="https://meat-plus.club/?utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=home_shop"');
 await fs.writeFile('index.html',html);
 console.log('Built colorful product-led homepage with four purpose entries.');
