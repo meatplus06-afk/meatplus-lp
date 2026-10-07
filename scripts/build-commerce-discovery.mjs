@@ -37,6 +37,15 @@ for(const p of products){
  detailed.push({...p,description:factual,productInfo:info,purchaseUrl:buy.href,useCases:uses.map(g=>g.name),sourceUpdatedAt:p.updatedAt});
 }
 await fs.writeFile('data/products-detailed.json',JSON.stringify(detailed,null,2)+'\n');
+// Both hosts are verified in Search Console; Google supports cross-site
+// submission. List the shop's parent product URLs, not tracking or variant URLs.
+const shopUrls=new Set(['https://meat-plus.club/']);
+for(const p of detailed){
+ const u=new URL(p.purchaseUrl);
+ if(u.protocol!=='https:'||u.hostname!=='meat-plus.club'||u.search||u.hash||!u.pathname.endsWith('/product/'+p.id+'/'))throw new Error('Invalid shop sitemap URL: '+p.id);
+ shopUrls.add(u.href);
+}
+await fs.writeFile('w2-sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+[...shopUrls].map(url=>'<url><loc>'+esc(url)+'</loc></url>').join('\n')+'\n</urlset>\n');
 const active=groups.filter(g=>detailed.some(p=>p.useCases.includes(g.name)));
 const nav=`<nav class="section-nav" data-commerce-guides aria-label="用途から商品を探す">${active.map(g=>`<a href="${site}/guides/${g.slug}/">${esc(g.name)}</a>`).join('')}</nav>`;
 let index=await fs.readFile('index.html','utf8');
