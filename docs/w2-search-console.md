@@ -10,9 +10,11 @@ verified ownership in the same Search Console account. Google supports
 cross-site sitemap submission for verified properties:
 https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#cross-submit
 
-Submit the full URL
-`https://meatplus06-afk.github.io/meatplus-lp/w2-sitemap.xml` in the shop
-property's Sitemaps report. The guide's own `sitemap.xml` remains separate.
+Submit `w2-sitemap.xml` from the verified GitHub Pages guide property's
+Sitemaps report. Its URLs belong to the separately verified W2 shop.
+The shop property's URL-prefix form rejects an external full URL, so use
+the property hosting the file. The guide's own `sitemap.xml` remains separate.
+Submission acceptance is not proof of processing or indexing.
 Do not submit a redirect route, UTM tracking URL, or individual SKU URL when
 the shop uses the parent product as its canonical page.
 
