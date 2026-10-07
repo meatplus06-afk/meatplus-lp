@@ -67,7 +67,11 @@ for(const p of detailed){
  else for(const r of offers){
   const row={...base,item_id:r.item_id,title:r.title,url:r.url,image_url:r.image_url,availability:r.availability,price:r.price};
   // Parent specifications may describe only one size or flavor.
-  if(r.hasVariations)row.description=r.title+'。容量・種類は選択した商品名をご確認ください。';
+  if(r.hasVariations){
+   row.description=[r.title,'MEAT PLUS公式通販の商品です',...['保存方法','原産国','製造地'].filter(k=>p.productInfo[k]).map(k=>k+'：'+p.productInfo[k])].join('。')+'。';
+   row.group_id=p.id;row.listing_has_variations=true;
+   if(r.variantUrlVerified&&r.variant_dict)row.variant_dict=r.variant_dict;
+  }
   if(r.sale_price)row.sale_price=r.sale_price;
   candidates.push(row);
  }

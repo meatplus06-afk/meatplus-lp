@@ -37,6 +37,21 @@ class OfferTests(unittest.TestCase):
         for value in (None, 0, -1, True, 'NaN', 'Infinity'):
             self.assertIsNone(offers.money(value))
 
+    def test_selected_variant_requires_matching_route_index_and_name(self):
+        row = {'productId': 'a003', 'item_id': 'a003001', 'title': '和牛 400g', 'variantUrlReviewRequired': True}
+        page = '<product-detail-form product-id="a003" select-variation-index="0"></product-detail-form><script id="variation-select-dropdown"><dt>商品選択</dt><option value="0">和牛&#x3000;400ｇ</option></script>'
+        url = 'https://meat-plus.club/和牛/product/a003/a003001/'
+        offers.verify_selected_variant(row, 0, page, url)
+        self.assertEqual(row['variant_dict'], {'商品選択': '和牛 400g'})
+        self.assertTrue(row['variantUrlVerified'])
+        self.assertNotIn('variantUrlReviewRequired', row)
+        for wrong_page, wrong_url in ((page.replace('index="0"', 'index="1"'), url), (page.replace('400ｇ', '500ｇ'), url), (page, url.replace('a003001', 'a003002')), (page, url.replace('meat-plus.club', 'example.com'))):
+            with self.assertRaises(ValueError):
+                offers.verify_selected_variant(row, 0, wrong_page, wrong_url)
+
+    def test_storefront_unicode_display_name(self):
+        self.assertEqual(offers.storefront_text(r'和牛\u3000400g'), '和牛　400g')
+
 
 if __name__ == '__main__':
     unittest.main()

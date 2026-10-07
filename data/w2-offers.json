@@ -1,6 +1,6 @@
 {
   "status": "preparation_only",
-  "fetchedAt": "2026-10-07T05:50:22.344456+00:00",
+  "fetchedAt": "2026-10-07T06:19:20.098503+00:00",
   "source": "anonymous W2 storefront product detail API",
   "productCount": 52,
   "fetchedProductCount": 52,
@@ -43,7 +43,7 @@
       "productId": "a003",
       "item_id": "a003001",
       "title": "九州産黒毛和牛スライス　400ｇ/ｐ",
-      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/a003001/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/a003_var001_LL.jpg",
       "price": "4980.0 JPY",
       "availability": "in_stock",
@@ -54,13 +54,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "3780.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "九州産黒毛和牛スライス　400ｇ/ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "a003",
       "item_id": "a003002",
       "title": "九州産黒毛和牛スライス　500ｇ/ｐ",
-      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/a003002/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/a003_var002_LL.jpg",
       "price": "5980.0 JPY",
       "availability": "in_stock",
@@ -71,13 +74,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "4680.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "九州産黒毛和牛スライス　500ｇ/ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "a003",
       "item_id": "a003003",
       "title": "九州産黒毛和牛スライス　600ｇ/ｐ",
-      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/a003003/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/a003_var003_LL.jpg",
       "price": "6980.0 JPY",
       "availability": "in_stock",
@@ -88,13 +94,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "5580.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "九州産黒毛和牛スライス　600ｇ/ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "a003",
       "item_id": "a003004",
       "title": "九州産黒毛和牛スライス　700ｇ/ｐ",
-      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/a003004/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/a003_LL.jpg",
       "price": "7980.0 JPY",
       "availability": "in_stock",
@@ -105,7 +114,10 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "6380.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "九州産黒毛和牛スライス　700ｇ/ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "a025",
@@ -127,7 +139,7 @@
       "productId": "a026",
       "item_id": "a02601",
       "title": "九州産黒毛和牛ロースブロック　500ｇ/ｐ",
-      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/product/a026/",
+      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/product/a026/a02601/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/a026_LL.jpg",
       "price": "9800.0 JPY",
       "availability": "in_stock",
@@ -138,13 +150,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "7800.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "九州産黒毛和牛ロースブロック　500ｇ/ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "a026",
       "item_id": "a02602",
       "title": "九州産黒毛和牛ロースブロック　1ｋｇ/ｐ",
-      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/product/a026/",
+      "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/product/a026/a02602/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/a026_LL.jpg",
       "price": "17800.0 JPY",
       "availability": "in_stock",
@@ -155,7 +170,10 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "14800.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "九州産黒毛和牛ロースブロック　1ｋｇ/ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i007",
@@ -273,7 +291,7 @@
       "productId": "i024",
       "item_id": "i02401",
       "title": "ビーフカレー甘口",
-      "url": "https://meat-plus.club/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%93%E3%83%BC%E3%83%95%E3%82%AB%E3%83%AC%E3%83%BC/product/i024/",
+      "url": "https://meat-plus.club/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%93%E3%83%BC%E3%83%95%E3%82%AB%E3%83%AC%E3%83%BC/product/i024/i02401/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i024_LL.jpg",
       "price": "580.0 JPY",
       "availability": "in_stock",
@@ -284,13 +302,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "258.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "ビーフカレー甘口"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i024",
       "item_id": "i02406",
       "title": "ビーフカレー辛口",
-      "url": "https://meat-plus.club/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%93%E3%83%BC%E3%83%95%E3%82%AB%E3%83%AC%E3%83%BC/product/i024/",
+      "url": "https://meat-plus.club/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%93%E3%83%BC%E3%83%95%E3%82%AB%E3%83%AC%E3%83%BC/product/i024/i02406/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i024_LL.jpg",
       "price": "580.0 JPY",
       "availability": "in_stock",
@@ -301,7 +322,10 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "258.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "ビーフカレー辛口"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i025",
@@ -323,7 +347,7 @@
       "productId": "i026",
       "item_id": "i02601",
       "title": "博多水炊きスープ1ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02601/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
       "price": "1580.0 JPY",
       "availability": "in_stock",
@@ -334,13 +358,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1080.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多水炊きスープ1ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i026",
       "item_id": "i02602",
       "title": "博多水炊きスープ2ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02602/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
       "price": "1980.0 JPY",
       "availability": "in_stock",
@@ -351,13 +378,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1480.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多水炊きスープ2ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i026",
       "item_id": "i02603",
       "title": "博多水炊きスープ3ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02603/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
       "price": "2580.0 JPY",
       "availability": "in_stock",
@@ -368,13 +398,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1980.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多水炊きスープ3ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i026",
       "item_id": "i02604",
       "title": "博多水炊きスープ4ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02604/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
       "price": "2980.0 JPY",
       "availability": "in_stock",
@@ -385,13 +418,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "2480.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多水炊きスープ4ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i026",
       "item_id": "i02605",
       "title": "博多水炊きスープ5ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02605/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
       "price": "3680.0 JPY",
       "availability": "in_stock",
@@ -402,13 +438,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "2980.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多水炊きスープ5ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i027",
       "item_id": "i02701",
       "title": "博多醤油もつ鍋スーププ1ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02701/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
       "price": "1580.0 JPY",
       "availability": "in_stock",
@@ -419,13 +458,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1080.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多醤油もつ鍋スーププ1ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i027",
       "item_id": "i02702",
       "title": "博多醤油もつ鍋スープ2ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02702/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
       "price": "1980.0 JPY",
       "availability": "in_stock",
@@ -436,13 +478,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1480.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多醤油もつ鍋スープ2ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i027",
       "item_id": "i02703",
       "title": "博多醤油もつ鍋スープ3ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02703/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
       "price": "2580.0 JPY",
       "availability": "in_stock",
@@ -453,13 +498,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1980.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多醤油もつ鍋スープ3ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i027",
       "item_id": "i02704",
       "title": "博多醤油もつ鍋スープ4ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02704/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
       "price": "2980.0 JPY",
       "availability": "in_stock",
@@ -470,13 +518,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "2480.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多醤油もつ鍋スープ4ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i027",
       "item_id": "i02705",
       "title": "博多醤油もつ鍋スープ5ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02705/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
       "price": "3680.0 JPY",
       "availability": "in_stock",
@@ -487,13 +538,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "2980.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多醤油もつ鍋スープ5ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i028",
       "item_id": "i02801",
       "title": "博多味噌もつ鍋スープ1ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02801/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
       "price": "1580.0 JPY",
       "availability": "in_stock",
@@ -504,13 +558,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1080.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多味噌もつ鍋スープ1ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i028",
       "item_id": "i02802",
       "title": "博多味噌もつ鍋スープ2ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02802/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
       "price": "1980.0 JPY",
       "availability": "in_stock",
@@ -521,13 +578,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1480.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多味噌もつ鍋スープ2ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i028",
       "item_id": "i02803",
       "title": "博多味噌もつ鍋スープ3ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02803/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
       "price": "2580.0 JPY",
       "availability": "in_stock",
@@ -538,13 +598,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1980.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多味噌もつ鍋スープ3ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i028",
       "item_id": "i02804",
       "title": "博多味噌もつ鍋スープ4ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02804/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
       "price": "2980.0 JPY",
       "availability": "in_stock",
@@ -555,13 +618,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "2480.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多味噌もつ鍋スープ4ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i028",
       "item_id": "i02805",
       "title": "博多味噌もつ鍋スープ5ｐ",
-      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+      "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02805/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
       "price": "3680.0 JPY",
       "availability": "in_stock",
@@ -572,7 +638,10 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "2980.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "博多味噌もつ鍋スープ5ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "i029",
@@ -754,7 +823,7 @@
       "productId": "j022",
       "item_id": "j02201",
       "title": "黄金にしん甘酢漬　170ｇ/ｐ",
-      "url": "https://meat-plus.club/%E9%BB%84%E9%87%91%E3%81%AB%E3%81%97%E3%82%93%E7%94%98%E9%85%A2%E6%BC%AC/product/j022/",
+      "url": "https://meat-plus.club/%E9%BB%84%E9%87%91%E3%81%AB%E3%81%97%E3%82%93%E7%94%98%E9%85%A2%E6%BC%AC/product/j022/j02201/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/j022_LL.jpg",
       "price": "2580.0 JPY",
       "availability": "in_stock",
@@ -765,13 +834,16 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1680.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "黄金にしん甘酢漬　170ｇ/ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "j022",
       "item_id": "j02202",
       "title": "黄金にしん甘酢漬　400ｇ/ｐ",
-      "url": "https://meat-plus.club/%E9%BB%84%E9%87%91%E3%81%AB%E3%81%97%E3%82%93%E7%94%98%E9%85%A2%E6%BC%AC/product/j022/",
+      "url": "https://meat-plus.club/%E9%BB%84%E9%87%91%E3%81%AB%E3%81%97%E3%82%93%E7%94%98%E9%85%A2%E6%BC%AC/product/j022/j02202/",
       "image_url": "https://meat-plus.club/Contents/ProductImages/0/j022_LL.jpg",
       "price": "4800.0 JPY",
       "availability": "in_stock",
@@ -782,7 +854,10 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "3580.0 JPY",
-      "variantUrlReviewRequired": true
+      "variant_dict": {
+        "商品選択": "黄金にしん甘酢漬　400ｇ/ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "j023",
