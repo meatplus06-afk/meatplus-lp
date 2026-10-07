@@ -1,0 +1,2 @@
+const budget=document.querySelector('[data-guide-budget]');
+if(budget){budget.addEventListener('change',()=>{let count=0;const limit=budget.value==='all'?null:Number(budget.value);for(const card of document.querySelectorAll('[data-guide-card]')){const price=Number(card.dataset.price);const visible=limit===null||(card.dataset.price!==''&&price>0&&price<=limit);card.hidden=!visible;if(visible)count++;}document.querySelector('[data-guide-count]').textContent=count+'商品';document.querySelector('[data-guide-empty]').hidden=count!==0;});}

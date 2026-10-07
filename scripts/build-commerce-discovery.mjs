@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import {buildGuideExperience} from './guide-experience.mjs';
 import {createHash} from 'node:crypto';
 const styleVersion=createHash('sha256').update(await fs.readFile('assets/style.css')).digest('hex').slice(0,12);
 const site='https://meatplus06-afk.github.io/meatplus-lp';
@@ -102,3 +103,5 @@ if(fresh&&snapshot.items.some(r=>r.variantUrlReviewRequired))blockers.push('vari
 if(fresh&&snapshot.items.some(r=>r.priceReviewRequired||r.subscriptionOnly||(!r.canPurchase&&r.availability!=='out_of_stock')))blockers.push('purchase eligibility or price relationship review');
 await fs.writeFile('data/commerce-readiness.json',JSON.stringify({status:'preparation_only',submissionReady:false,productCount:detailed.length,itemCount:candidates.length,pricedItemCount:candidates.filter(r=>r.price).length,storefrontFetchedAt:snapshot?.fetchedAt||null,storefrontSnapshotFresh:fresh,pendingProductIds:pending,blockingFields:blockers,documentation:'https://developers.openai.com/commerce/specs/file-upload/products'},null,2)+'\n');
 console.log(`Commerce discovery: ${detailed.length} products, ${active.length} purpose guides; ${candidates.filter(r=>r.price).length} priced items, feed preparation only.`);
+
+await buildGuideExperience(detailed,active,snapshot,fresh);
