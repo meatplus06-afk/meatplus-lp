@@ -3,6 +3,7 @@ const site='https://meatplus06-afk.github.io/meatplus-lp';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const plain=v=>String(v??'').replace(/<[^>]*>/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/\s+/g,' ').trim();
 const ld=v=>JSON.stringify(v).replace(/</g,'\\u003c');
+const guideBuy=(p,slug)=>{const u=new URL(p.purchaseUrl);u.searchParams.set('utm_source','github_pages');u.searchParams.set('utm_medium','referral');u.searchParams.set('utm_campaign','guide_'+slug);u.searchParams.set('utm_content',p.id);return esc(u.href);};
 const groups=[
  {slug:'yakiniku',name:'焼肉・ステーキ',match:/焼肉|ステーキ/,intro:'焼肉用セットとステーキを、肉の種類・内容量・保存方法から比較できます。'},
  {slug:'sukiyaki',name:'すき焼き・しゃぶしゃぶ',match:/すき焼き|しゃぶしゃぶ/,intro:'すき焼きやしゃぶしゃぶの用途が掲載されている商品を比較できます。'},
@@ -44,7 +45,7 @@ await fs.writeFile('index.html',index);
 for(const g of active){
  const rows=detailed.filter(p=>p.useCases.includes(g.name));const url=`${site}/guides/${g.slug}/`;
  const schema={'@context':'https://schema.org','@graph':[{'@type':'CollectionPage',url,name:g.name+'の商品比較',publisher:{'@id':'https://meat-plus.club/#organization'}},{'@type':'ItemList',numberOfItems:rows.length,itemListElement:rows.map((p,i)=>({'@type':'ListItem',position:i+1,url:p.url,name:p.name}))}]};
- const html=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(g.name)}の商品比較・通販｜MEAT PLUS</title><meta name="description" content="${esc(g.intro)} MEAT PLUS公式の商品情報と購入先をご案内します。"><link rel="canonical" href="${url}"><meta name="robots" content="index,follow,max-image-preview:large"><script type="application/ld+json">${ld(schema)}</script><link rel="stylesheet" href="../../assets/style.css"></head><body><header class="site-header"><a class="brand" href="${site}/">MEAT PLUS</a><span>商品ガイド</span></header><main><nav class="breadcrumb"><a href="${site}/">商品ガイド</a><span>／</span><span>${esc(g.name)}</span></nav><section class="hero"><h1>${esc(g.name)}の商品を比較する</h1><p>${esc(g.intro)}</p><p>内容量は商品規格を掲載しています。人数の目安は、食事量やほかの料理によって変わります。</p></section><section class="catalog"><h2>${rows.length}商品の内容量・保存方法</h2><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;text-align:left"><thead><tr><th scope="col">商品</th><th scope="col">内容量・規格</th><th scope="col">保存方法</th><th scope="col">詳しい情報</th></tr></thead><tbody>${rows.map(p=>`<tr><th scope="row" style="padding:16px 8px;border-bottom:1px solid #ddd"><a href="${esc(p.url)}">${esc(p.name)}</a></th><td>${esc(p.productInfo['商品規格']||p.productInfo['内容量']||'商品ページで確認')}</td><td>${esc(p.productInfo['保存方法']||'商品ページで確認')}</td><td><a class="text-link" href="${esc(p.url)}">写真・原材料・購入先 →</a></td></tr>`).join('')}</tbody></table></div><p>価格・在庫・送料・お届け日・ギフト対応は、各商品の公式通販ページで最新情報をご確認ください。</p></section></main><footer><a href="${site}/">商品ガイドTOP</a><a href="${site}/about/">運営者・情報更新方針</a></footer></body></html>`;
+ const html=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(g.name)}の商品比較・通販｜MEAT PLUS</title><meta name="description" content="${esc(g.intro)} MEAT PLUS公式の商品情報と購入先をご案内します。"><link rel="canonical" href="${url}"><meta name="robots" content="index,follow,max-image-preview:large"><script type="application/ld+json">${ld(schema)}</script><link rel="stylesheet" href="../../assets/style.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-6WW5KF32KS"></script><script defer src="../../assets/guide-analytics.js"></script></head><body><header class="site-header"><a class="brand" href="${site}/">MEAT PLUS</a><span>商品ガイド</span></header><main><nav class="breadcrumb"><a href="${site}/">商品ガイド</a><span>／</span><span>${esc(g.name)}</span></nav><section class="hero"><h1>${esc(g.name)}の商品を比較する</h1><p>${esc(g.intro)}</p><p>内容量は商品規格を掲載しています。人数の目安は、食事量やほかの料理によって変わります。</p></section><section class="catalog"><h2>${rows.length}商品の内容量・保存方法</h2><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;text-align:left"><thead><tr><th scope="col">商品</th><th scope="col">内容量・規格</th><th scope="col">保存方法</th><th scope="col">詳しい情報</th><th scope="col">公式通販</th></tr></thead><tbody>${rows.map(p=>`<tr><th scope="row" style="padding:16px 8px;border-bottom:1px solid #ddd"><a data-guide-action="details" data-product-id="${esc(p.id)}" href="${esc(p.url)}">${esc(p.name)}</a></th><td>${esc(p.productInfo['商品規格']||p.productInfo['内容量']||'商品ページで確認')}</td><td>${esc(p.productInfo['保存方法']||'商品ページで確認')}</td><td><a class="text-link" data-guide-action="details" data-product-id="${esc(p.id)}" href="${esc(p.url)}">写真・原材料 →</a></td><td><a class="text-link" data-guide-action="purchase" data-product-id="${esc(p.id)}" href="${guideBuy(p,g.slug)}">価格・在庫を確認 →</a></td></tr>`).join('')}</tbody></table></div><p>価格・在庫・送料・お届け日・ギフト対応は、各商品の公式通販ページで最新情報をご確認ください。</p></section></main><footer><a href="${site}/">商品ガイドTOP</a><a href="${site}/about/">運営者・情報更新方針</a></footer></body></html>`;
  await fs.mkdir(`guides/${g.slug}`,{recursive:true});await fs.writeFile(`guides/${g.slug}/index.html`,html);
 }
 let sitemap=await fs.readFile('sitemap.xml','utf8');
@@ -54,8 +55,26 @@ sitemap=sitemap.replace('</urlset>',active.map(g=>`<url><loc>${site}/guides/${g.
 let llms=await fs.readFile('llms.txt','utf8');
 llms=llms.replace(/\n## 用途別の商品比較[\s\S]*$/,'')+'\n## 用途別の商品比較\n'+active.map(g=>`- [${g.name}](${site}/guides/${g.slug}/)`).join('\n')+`\n- [詳細商品データ](${site}/data/products-detailed.json)\n`;await fs.writeFile('llms.txt',llms);
 await fs.writeFile('llms-full.txt','# MEAT PLUS公式商品情報\n\n価格・在庫・配送条件は公式通販の最新表示を確認してください。\n\n'+detailed.map(p=>`## ${p.name}\n${p.description}\n商品情報: ${p.url}\n購入先: ${p.purchaseUrl}\n用途: ${p.useCases.join('、')}\n`).join('\n'));
-// Preparation only: confirm purchasable variants and live prices before upload.
-const candidates=detailed.map(p=>({item_id:p.id,title:p.name,description:p.description,url:p.purchaseUrl,brand:'MEAT PLUS',seller_name:'株式会社MEAT PLUS',image_url:p.image,availability:'unknown'}));
+// Preparation only: brand and selected-variant identity require verification.
+let snapshot=null;
+try{snapshot=JSON.parse(await fs.readFile('data/w2-offers.json','utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
+const fresh=!!snapshot && Number.isFinite(Date.parse(snapshot.fetchedAt)) && Date.now()-Date.parse(snapshot.fetchedAt)>=0 && Date.now()-Date.parse(snapshot.fetchedAt)<48*60*60*1000;
+const candidates=[];
+for(const p of detailed){
+ const offers=fresh?snapshot.items.filter(r=>r.productId===p.id):[];
+ const base={description:p.description,seller_name:'株式会社MEAT PLUS'};
+ if(!offers.length)candidates.push({...base,item_id:p.id,title:p.name,url:p.purchaseUrl,image_url:new URL(p.image,site+'/').href,availability:'unknown'});
+ else for(const r of offers){
+  const row={...base,item_id:r.item_id,title:r.title,url:r.url,image_url:r.image_url,availability:r.availability,price:r.price};
+  if(r.sale_price)row.sale_price=r.sale_price;
+  candidates.push(row);
+ }
+}
 await fs.writeFile('data/commerce-candidates.json',JSON.stringify(candidates,null,2)+'\n');
-await fs.writeFile('data/commerce-readiness.json',JSON.stringify({status:'preparation_only',submissionReady:false,productCount:candidates.length,blockingFields:['current regular price and sale price per purchasable variant','variant IDs and selected variant URLs','brand verification per item'],documentation:'https://developers.openai.com/commerce/specs/file-upload/products'},null,2)+'\n');
-console.log(`Commerce discovery: ${detailed.length} products, ${active.length} purpose guides; feed preparation only.`);
+const pending=detailed.filter(p=>!fresh||!snapshot.items.some(r=>r.productId===p.id)).map(p=>p.id);
+const blockers=['brand verification per item'];
+if(pending.length)blockers.push('current regular price per missing product');
+if(fresh&&snapshot.items.some(r=>r.variantUrlReviewRequired))blockers.push('variant option names, selected variant URLs and variant-specific descriptions');
+if(fresh&&snapshot.items.some(r=>r.priceReviewRequired||r.subscriptionOnly||(!r.canPurchase&&r.availability!=='out_of_stock')))blockers.push('purchase eligibility or price relationship review');
+await fs.writeFile('data/commerce-readiness.json',JSON.stringify({status:'preparation_only',submissionReady:false,productCount:detailed.length,itemCount:candidates.length,pricedItemCount:candidates.filter(r=>r.price).length,storefrontFetchedAt:snapshot?.fetchedAt||null,storefrontSnapshotFresh:fresh,pendingProductIds:pending,blockingFields:blockers,documentation:'https://developers.openai.com/commerce/specs/file-upload/products'},null,2)+'\n');
+console.log(`Commerce discovery: ${detailed.length} products, ${active.length} purpose guides; ${candidates.filter(r=>r.price).length} priced items, feed preparation only.`);
