@@ -7,6 +7,10 @@ for(const p of products){
  assert.equal((html.match(/data-commerce-summary/g)||[]).length,1);
  const schemas=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
  assert(schemas.some(s=>s['@type']==='Product'&&s['@id']===p.url+'#product'));
+ const productSchema=schemas.find(s=>s['@type']==='Product');
+ assert(!productSchema.brand&&!productSchema.manufacturer,'Unverified brand/manufacturer: '+p.id);
+ assert.equal((html.match(/data-purchase-help/g)||[]).length,1);
+ assert(html.includes('https://meat-plus.club/page/guide#shipping'));
  assert.equal(new URL(p.purchaseUrl).hostname,'meat-plus.club');
  assert(!p.purchaseUrl.includes('utm_'));
  for(const [,value] of schemas.find(s=>s['@type']==='Product').additionalProperty.map(v=>[v.name,v.value]))assert(Object.values(p.productInfo).includes(value));

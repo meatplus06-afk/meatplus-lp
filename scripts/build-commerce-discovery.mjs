@@ -20,6 +20,8 @@ for(const p of products){
  const scripts=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
  const schema=scripts.find(d=>d['@type']==='Product');
  if(!schema)throw new Error('Missing Product schema: '+p.id);
+ // The seller's identity does not establish each item's brand or manufacturer.
+ delete schema.brand;delete schema.manufacturer;
  const cta=html.match(/<a[^>]*data-cta-position="(?:main|top)"[^>]*href="([^"]+)"/);
  if(!cta)throw new Error('Missing purchase link: '+p.id);
  const buy=new URL(plain(cta[1]));
@@ -33,6 +35,10 @@ for(const p of products){
  html=html.replace(/<script([^>]*type="application\/ld\+json"[^>]*)>([\s\S]*?)<\/script>/g,(all,attrs,raw)=>JSON.parse(raw)['@type']==='Product'?`<script${attrs}>${ld(schema)}</script>`:all);
  const summary=`<section class="info" data-commerce-summary><div><h2>商品選びの要点</h2><p>${esc(factual)}</p></div><div><p>価格・在庫・配送日・送料・ギフト対応は、公式通販の商品ページで最新情報をご確認ください。</p>${uses.map(g=>`<p><a class="text-link" href="${site}/guides/${g.slug}/">${esc(g.name)}の商品を比較する →</a></p>`).join('')}</div></section>`;
  html=html.replace(/<section class="info" data-commerce-summary>[\s\S]*?<\/section>/g,'').replace('</main>',summary+'</main>');
+ html=html.replace(/<p class="note" data-purchase-help>[\s\S]*?<\/p>/g,'');
+ const help=`<p class="note" data-purchase-help><a class="text-link" data-guide-action="shipping" data-product-id="${esc(p.id)}" href="https://meat-plus.club/page/guide#shipping">送料・配送について確認する →</a></p>`;
+ html=html.replace(/(<a class="cta" data-cta-position="main"[^>]*>[\s\S]*?<\/a>)/,'$1'+help);
+ if(!html.includes('src="../../assets/guide-analytics.js"'))html=html.replace('</head>','<script defer src="../../assets/guide-analytics.js"></script></head>');
  await fs.writeFile(file,html);
  detailed.push({...p,description:factual,productInfo:info,purchaseUrl:buy.href,useCases:uses.map(g=>g.name),sourceUpdatedAt:p.updatedAt});
 }
