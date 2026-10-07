@@ -26,3 +26,15 @@ console.log(`Validated ${products.length} products, ${guides.length} guides and 
 const candidates=JSON.parse(await fs.readFile('data/commerce-candidates.json','utf8'));
 assert.equal(new Set(candidates.map(r=>r.item_id)).size,candidates.length);
 for(const row of candidates){assert.equal(new URL(row.url).hostname,'meat-plus.club');assert(new URL(row.image_url).protocol==='https:');assert(row.description);if(row.price){assert(/^\d+(?:\.\d+)? JPY$/.test(row.price));if(row.sale_price)assert(parseFloat(row.sale_price)<parseFloat(row.price));}}
+const offers=JSON.parse(await fs.readFile('data/w2-offers.json','utf8'));
+for(const row of candidates.filter(r=>r.listing_has_variations)){
+ assert(row.group_id);
+ assert(row.description.startsWith(row.title+'。'));
+ const offer=offers.items.find(r=>r.item_id===row.item_id);
+ if(offer?.variantUrlVerified){
+  assert.equal(row.url,offer.url);
+  assert(new URL(row.url).pathname.endsWith('/product/'+row.group_id+'/'+row.item_id+'/'));
+  assert.deepEqual(row.variant_dict,offer.variant_dict);
+  assert.equal(Object.values(row.variant_dict)[0],row.title);
+ }
+}

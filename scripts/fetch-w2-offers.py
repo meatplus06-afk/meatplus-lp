@@ -9,6 +9,39 @@ import pathlib
 import re
 import urllib.parse
 import urllib.request
+import unicodedata
+
+
+def storefront_text(value):
+    # W2 sometimes returns display names containing literal Unicode escapes.
+    return re.sub(r'\\u([0-9a-fA-F]{4})', lambda m: chr(int(m[1], 16)), str(value or ''))
+
+
+def verify_selected_variant(row, index, page, final_url):
+    url = urllib.parse.urlsplit(final_url)
+    expected_path = '/product/' + row['productId'] + '/' + row['item_id'] + '/'
+    if url.scheme != 'https' or url.hostname != 'meat-plus.club' or not url.path.endswith(expected_path):
+        raise ValueError('Selected variant URL mismatch')
+    form = re.search(r'<product-detail-form\b([^>]*)>', page)
+    if not form or not re.search(r'product-id="' + re.escape(row['productId']) + r'"', form[1]):
+        raise ValueError('Selected product mismatch')
+    if not re.search(r'select-variation-index="' + str(index) + r'"', form[1]):
+        raise ValueError('Selected option mismatch')
+    template = re.search(r'<script[^>]*id="variation-select-dropdown"[^>]*>([\s\S]*?)</script>', page)
+    if not template:
+        raise ValueError('Option template missing')
+    label = re.search(r'<dt\b[^>]*>([\s\S]*?)</dt>', template[1])
+    option = re.search(r'<option\b[^>]*value="' + str(index) + r'"[^>]*>([\s\S]*?)</option>', template[1])
+    text = lambda s: html.unescape(re.sub(r'<[^>]*>', '', s)).strip()
+    if not label or not option:
+        raise ValueError('Option label missing')
+    comparable = lambda s: re.sub(r'\s+', '', unicodedata.normalize('NFKC', s))
+    if not comparable(text(option[1])).startswith(comparable(row['title'])):
+        raise ValueError('Option display name mismatch')
+    row['url'] = final_url
+    row['variant_dict'] = {text(label[1]): row['title']}
+    row['variantUrlVerified'] = True
+    row.pop('variantUrlReviewRequired', None)
 
 
 def money(value):
@@ -53,11 +86,11 @@ def normalize(product, data):
         image = urllib.parse.urljoin('https://meatplus06-afk.github.io/meatplus-lp/', image)
         row = {
             'productId': product['id'], 'item_id': variant['variationId'],
-            'title': name.get('fullProductNameWithOutParenthesis') or master['productName'],
+            'title': storefront_text(name.get('fullProductNameWithOutParenthesis') or master['productName']),
             'url': product['purchaseUrl'], 'image_url': image,
             'price': regular + ' JPY', 'availability': availability,
             'hasVariations': master.get('hasVariation') is True,
-            'variantNames': {key: name[key] for key in ('name1', 'name2', 'name3') if name.get(key)},
+            'variantNames': {key: storefront_text(name[key]) for key in ('name1', 'name2', 'name3') if name.get(key)},
             'canPurchase': variant.get('canPurchase') is True,
             'subscriptionOnly': master.get('isSubscriptionOnly') is True,
         }
@@ -66,7 +99,6 @@ def normalize(product, data):
         elif decimal.Decimal(normal) > decimal.Decimal(regular):
             row['priceReviewRequired'] = True
         if row['hasVariations']:
-            # Keep the parent URL until selected-variant routing is verified.
             row['variantUrlReviewRequired'] = True
         rows.append(row)
     return rows
@@ -93,7 +125,19 @@ def fetch_product(product):
     )
     with session.open(request, timeout=25) as response:
         data = json.load(response)
-    return normalize(product, data)
+    rows = normalize(product, data)
+    for index, row in enumerate(rows):
+        if not row['hasVariations']:
+            continue
+        selected_url = 'https://meat-plus.club/product/detail-redirect/' + urllib.parse.quote(row['productId'], safe='') + '/' + urllib.parse.quote(row['item_id'], safe='')
+        try:
+            with session.open(selected_url, timeout=25) as response:
+                page = response.read().decode('utf-8')
+                verify_selected_variant(row, index, page, response.url)
+        except Exception:
+            # Retain the parent and explicit review flag if verification fails.
+            pass
+    return rows
 
 
 def main():

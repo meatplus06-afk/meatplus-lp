@@ -242,25 +242,35 @@
     "sale_price": "1800.0 JPY"
   },
   {
-    "description": "黄金にしん甘酢漬。商品規格：170ｇ/ｐ・400ｇ/ｐ。保存方法：冷凍。原産国：ノルウェー。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "黄金にしん甘酢漬　170ｇ/ｐ。MEAT PLUS公式通販の商品です。保存方法：冷凍。原産国：ノルウェー。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "j02201",
     "title": "黄金にしん甘酢漬　170ｇ/ｐ",
-    "url": "https://meat-plus.club/%E9%BB%84%E9%87%91%E3%81%AB%E3%81%97%E3%82%93%E7%94%98%E9%85%A2%E6%BC%AC/product/j022/",
+    "url": "https://meat-plus.club/%E9%BB%84%E9%87%91%E3%81%AB%E3%81%97%E3%82%93%E7%94%98%E9%85%A2%E6%BC%AC/product/j022/j02201/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/j022_LL.jpg",
     "availability": "in_stock",
     "price": "2580.0 JPY",
+    "group_id": "j022",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "黄金にしん甘酢漬　170ｇ/ｐ"
+    },
     "sale_price": "1680.0 JPY"
   },
   {
-    "description": "黄金にしん甘酢漬。商品規格：170ｇ/ｐ・400ｇ/ｐ。保存方法：冷凍。原産国：ノルウェー。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "黄金にしん甘酢漬　400ｇ/ｐ。MEAT PLUS公式通販の商品です。保存方法：冷凍。原産国：ノルウェー。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "j02202",
     "title": "黄金にしん甘酢漬　400ｇ/ｐ",
-    "url": "https://meat-plus.club/%E9%BB%84%E9%87%91%E3%81%AB%E3%81%97%E3%82%93%E7%94%98%E9%85%A2%E6%BC%AC/product/j022/",
+    "url": "https://meat-plus.club/%E9%BB%84%E9%87%91%E3%81%AB%E3%81%97%E3%82%93%E7%94%98%E9%85%A2%E6%BC%AC/product/j022/j02202/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/j022_LL.jpg",
     "availability": "in_stock",
     "price": "4800.0 JPY",
+    "group_id": "j022",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "黄金にしん甘酢漬　400ｇ/ｐ"
+    },
     "sale_price": "3580.0 JPY"
   },
   {
@@ -385,168 +395,243 @@
     "sale_price": "2980.0 JPY"
   },
   {
-    "description": "博多味噌もつ鍋スープ。商品規格：スープ：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多味噌もつ鍋スープ1ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02801",
     "title": "博多味噌もつ鍋スープ1ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02801/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
     "availability": "in_stock",
     "price": "1580.0 JPY",
+    "group_id": "i028",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多味噌もつ鍋スープ1ｐ"
+    },
     "sale_price": "1080.0 JPY"
   },
   {
-    "description": "博多味噌もつ鍋スープ。商品規格：スープ：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多味噌もつ鍋スープ2ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02802",
     "title": "博多味噌もつ鍋スープ2ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02802/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
     "availability": "in_stock",
     "price": "1980.0 JPY",
+    "group_id": "i028",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多味噌もつ鍋スープ2ｐ"
+    },
     "sale_price": "1480.0 JPY"
   },
   {
-    "description": "博多味噌もつ鍋スープ。商品規格：スープ：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多味噌もつ鍋スープ3ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02803",
     "title": "博多味噌もつ鍋スープ3ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02803/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
     "availability": "in_stock",
     "price": "2580.0 JPY",
+    "group_id": "i028",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多味噌もつ鍋スープ3ｐ"
+    },
     "sale_price": "1980.0 JPY"
   },
   {
-    "description": "博多味噌もつ鍋スープ。商品規格：スープ：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多味噌もつ鍋スープ4ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02804",
     "title": "博多味噌もつ鍋スープ4ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02804/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
     "availability": "in_stock",
     "price": "2980.0 JPY",
+    "group_id": "i028",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多味噌もつ鍋スープ4ｐ"
+    },
     "sale_price": "2480.0 JPY"
   },
   {
-    "description": "博多味噌もつ鍋スープ。商品規格：スープ：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多味噌もつ鍋スープ5ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02805",
     "title": "博多味噌もつ鍋スープ5ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E5%91%B3%E5%99%8C%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i028/i02805/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i028_LL.jpg",
     "availability": "in_stock",
     "price": "3680.0 JPY",
+    "group_id": "i028",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多味噌もつ鍋スープ5ｐ"
+    },
     "sale_price": "2980.0 JPY"
   },
   {
-    "description": "博多醤油もつ鍋スープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多醤油もつ鍋スーププ1ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02701",
     "title": "博多醤油もつ鍋スーププ1ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02701/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
     "availability": "in_stock",
     "price": "1580.0 JPY",
+    "group_id": "i027",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多醤油もつ鍋スーププ1ｐ"
+    },
     "sale_price": "1080.0 JPY"
   },
   {
-    "description": "博多醤油もつ鍋スープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多醤油もつ鍋スープ2ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02702",
     "title": "博多醤油もつ鍋スープ2ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02702/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
     "availability": "in_stock",
     "price": "1980.0 JPY",
+    "group_id": "i027",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多醤油もつ鍋スープ2ｐ"
+    },
     "sale_price": "1480.0 JPY"
   },
   {
-    "description": "博多醤油もつ鍋スープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多醤油もつ鍋スープ3ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02703",
     "title": "博多醤油もつ鍋スープ3ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02703/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
     "availability": "in_stock",
     "price": "2580.0 JPY",
+    "group_id": "i027",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多醤油もつ鍋スープ3ｐ"
+    },
     "sale_price": "1980.0 JPY"
   },
   {
-    "description": "博多醤油もつ鍋スープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多醤油もつ鍋スープ4ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02704",
     "title": "博多醤油もつ鍋スープ4ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02704/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
     "availability": "in_stock",
     "price": "2980.0 JPY",
+    "group_id": "i027",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多醤油もつ鍋スープ4ｐ"
+    },
     "sale_price": "2480.0 JPY"
   },
   {
-    "description": "博多醤油もつ鍋スープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多醤油もつ鍋スープ5ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02705",
     "title": "博多醤油もつ鍋スープ5ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E9%86%A4%E6%B2%B9%E3%82%82%E3%81%A4%E9%8D%8B%E3%82%B9%E3%83%BC%E3%83%97/product/i027/i02705/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i027_LL.jpg",
     "availability": "in_stock",
     "price": "3680.0 JPY",
+    "group_id": "i027",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多醤油もつ鍋スープ5ｐ"
+    },
     "sale_price": "2980.0 JPY"
   },
   {
-    "description": "博多水炊きスープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多水炊きスープ1ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02601",
     "title": "博多水炊きスープ1ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02601/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
     "availability": "in_stock",
     "price": "1580.0 JPY",
+    "group_id": "i026",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多水炊きスープ1ｐ"
+    },
     "sale_price": "1080.0 JPY"
   },
   {
-    "description": "博多水炊きスープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多水炊きスープ2ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02602",
     "title": "博多水炊きスープ2ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02602/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
     "availability": "in_stock",
     "price": "1980.0 JPY",
+    "group_id": "i026",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多水炊きスープ2ｐ"
+    },
     "sale_price": "1480.0 JPY"
   },
   {
-    "description": "博多水炊きスープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多水炊きスープ3ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02603",
     "title": "博多水炊きスープ3ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02603/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
     "availability": "in_stock",
     "price": "2580.0 JPY",
+    "group_id": "i026",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多水炊きスープ3ｐ"
+    },
     "sale_price": "1980.0 JPY"
   },
   {
-    "description": "博多水炊きスープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多水炊きスープ4ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02604",
     "title": "博多水炊きスープ4ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02604/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
     "availability": "in_stock",
     "price": "2980.0 JPY",
+    "group_id": "i026",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多水炊きスープ4ｐ"
+    },
     "sale_price": "2480.0 JPY"
   },
   {
-    "description": "博多水炊きスープ。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "博多水炊きスープ5ｐ。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02605",
     "title": "博多水炊きスープ5ｐ",
-    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/",
+    "url": "https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%B9%E3%83%BC%E3%83%97/product/i026/i02605/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i026_LL.jpg",
     "availability": "in_stock",
     "price": "3680.0 JPY",
+    "group_id": "i026",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "博多水炊きスープ5ｐ"
+    },
     "sale_price": "2980.0 JPY"
   },
   {
@@ -561,25 +646,35 @@
     "sale_price": "3800.0 JPY"
   },
   {
-    "description": "オリジナルビーフカレー。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "ビーフカレー甘口。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02401",
     "title": "ビーフカレー甘口",
-    "url": "https://meat-plus.club/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%93%E3%83%BC%E3%83%95%E3%82%AB%E3%83%AC%E3%83%BC/product/i024/",
+    "url": "https://meat-plus.club/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%93%E3%83%BC%E3%83%95%E3%82%AB%E3%83%AC%E3%83%BC/product/i024/i02401/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i024_LL.jpg",
     "availability": "in_stock",
     "price": "580.0 JPY",
+    "group_id": "i024",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "ビーフカレー甘口"
+    },
     "sale_price": "258.0 JPY"
   },
   {
-    "description": "オリジナルビーフカレー。商品規格：200ｇ/ｐ。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "ビーフカレー辛口。MEAT PLUS公式通販の商品です。保存方法：常温。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i02406",
     "title": "ビーフカレー辛口",
-    "url": "https://meat-plus.club/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%93%E3%83%BC%E3%83%95%E3%82%AB%E3%83%AC%E3%83%BC/product/i024/",
+    "url": "https://meat-plus.club/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%93%E3%83%BC%E3%83%95%E3%82%AB%E3%83%AC%E3%83%BC/product/i024/i02406/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/i024_LL.jpg",
     "availability": "in_stock",
     "price": "580.0 JPY",
+    "group_id": "i024",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "ビーフカレー辛口"
+    },
     "sale_price": "258.0 JPY"
   },
   {
@@ -660,25 +755,35 @@
     "sale_price": "1180.0 JPY"
   },
   {
-    "description": "九州産黒毛和牛ロースブロック。商品規格：500g/p・1ｋｇ/ｐ。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "九州産黒毛和牛ロースブロック　500ｇ/ｐ。MEAT PLUS公式通販の商品です。保存方法：冷凍。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "a02601",
     "title": "九州産黒毛和牛ロースブロック　500ｇ/ｐ",
-    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/product/a026/",
+    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/product/a026/a02601/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/a026_LL.jpg",
     "availability": "in_stock",
     "price": "9800.0 JPY",
+    "group_id": "a026",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "九州産黒毛和牛ロースブロック　500ｇ/ｐ"
+    },
     "sale_price": "7800.0 JPY"
   },
   {
-    "description": "九州産黒毛和牛ロースブロック。商品規格：500g/p・1ｋｇ/ｐ。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "九州産黒毛和牛ロースブロック　1ｋｇ/ｐ。MEAT PLUS公式通販の商品です。保存方法：冷凍。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "a02602",
     "title": "九州産黒毛和牛ロースブロック　1ｋｇ/ｐ",
-    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/product/a026/",
+    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/product/a026/a02602/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/a026_LL.jpg",
     "availability": "in_stock",
     "price": "17800.0 JPY",
+    "group_id": "a026",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "九州産黒毛和牛ロースブロック　1ｋｇ/ｐ"
+    },
     "sale_price": "14800.0 JPY"
   },
   {
@@ -693,47 +798,67 @@
     "sale_price": "2580.0 JPY"
   },
   {
-    "description": "九州産黒毛和牛スライス。商品規格：400ｇ/ｐ、500ｇ/ｐ、600ｇ/ｐ、700ｇ/ｐ。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "九州産黒毛和牛スライス　400ｇ/ｐ。MEAT PLUS公式通販の商品です。保存方法：冷凍。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "a003001",
     "title": "九州産黒毛和牛スライス　400ｇ/ｐ",
-    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/a003001/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/a003_var001_LL.jpg",
     "availability": "in_stock",
     "price": "4980.0 JPY",
+    "group_id": "a003",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "九州産黒毛和牛スライス　400ｇ/ｐ"
+    },
     "sale_price": "3780.0 JPY"
   },
   {
-    "description": "九州産黒毛和牛スライス。商品規格：400ｇ/ｐ、500ｇ/ｐ、600ｇ/ｐ、700ｇ/ｐ。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "九州産黒毛和牛スライス　500ｇ/ｐ。MEAT PLUS公式通販の商品です。保存方法：冷凍。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "a003002",
     "title": "九州産黒毛和牛スライス　500ｇ/ｐ",
-    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/a003002/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/a003_var002_LL.jpg",
     "availability": "in_stock",
     "price": "5980.0 JPY",
+    "group_id": "a003",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "九州産黒毛和牛スライス　500ｇ/ｐ"
+    },
     "sale_price": "4680.0 JPY"
   },
   {
-    "description": "九州産黒毛和牛スライス。商品規格：400ｇ/ｐ、500ｇ/ｐ、600ｇ/ｐ、700ｇ/ｐ。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "九州産黒毛和牛スライス　600ｇ/ｐ。MEAT PLUS公式通販の商品です。保存方法：冷凍。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "a003003",
     "title": "九州産黒毛和牛スライス　600ｇ/ｐ",
-    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/a003003/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/a003_var003_LL.jpg",
     "availability": "in_stock",
     "price": "6980.0 JPY",
+    "group_id": "a003",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "九州産黒毛和牛スライス　600ｇ/ｐ"
+    },
     "sale_price": "5580.0 JPY"
   },
   {
-    "description": "九州産黒毛和牛スライス。商品規格：400ｇ/ｐ、500ｇ/ｐ、600ｇ/ｐ、700ｇ/ｐ。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "description": "九州産黒毛和牛スライス　700ｇ/ｐ。MEAT PLUS公式通販の商品です。保存方法：冷凍。原産国：日本。製造地：日本。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "a003004",
     "title": "九州産黒毛和牛スライス　700ｇ/ｐ",
-    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/",
+    "url": "https://meat-plus.club/%E4%B9%9D%E5%B7%9E%E7%94%A3%E9%BB%92%E6%AF%9B%E5%92%8C%E7%89%9B%E3%82%B9%E3%83%A9%E3%82%A4%E3%82%B9/product/a003/a003004/",
     "image_url": "https://meat-plus.club/Contents/ProductImages/0/a003_LL.jpg",
     "availability": "in_stock",
     "price": "7980.0 JPY",
+    "group_id": "a003",
+    "listing_has_variations": true,
+    "variant_dict": {
+      "商品選択": "九州産黒毛和牛スライス　700ｇ/ｐ"
+    },
     "sale_price": "6380.0 JPY"
   },
   {
