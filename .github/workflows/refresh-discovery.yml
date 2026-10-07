@@ -5,6 +5,11 @@ on:
     branches: [main]
     paths:
       - .github/workflows/refresh-discovery.yml
+      - scripts/build-commerce-discovery.mjs
+      - assets/guide-analytics.js
+      - scripts/build-home.mjs
+      - assets/home.css
+      - data/w2-offers.json
 permissions:
   contents: read
   pages: write
@@ -29,6 +34,7 @@ jobs:
           node scripts/build-discovery.mjs
           node scripts/enhance-entity-seo.mjs
           node scripts/build-commerce-discovery.mjs
+          node scripts/build-home.mjs
           node scripts/validate-commerce-discovery.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

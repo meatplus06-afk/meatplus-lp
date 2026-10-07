@@ -16,6 +16,13 @@ for(const slug of guides){
  const html=await fs.readFile(`guides/${slug}/index.html`,'utf8');
  for(const m of html.matchAll(/href="https:\/\/meatplus06-afk.github.io\/meatplus-lp\/([^"?#]*)"/g))await fs.access(m[1]+'index.html');
  assert(html.includes('scope="col"'));
+ assert(html.includes('guide-analytics.js'));
+ assert(html.includes('data-guide-action="purchase"'));
+ for(const m of html.matchAll(/data-guide-action="purchase"[^>]*href="([^"]+)"/g)){const u=new URL(m[1].replaceAll('&amp;','&'));assert.equal(u.hostname,'meat-plus.club');assert.equal(u.searchParams.get('utm_campaign'),'guide_'+slug);}
 }
 assert.equal(JSON.parse(await fs.readFile('data/commerce-readiness.json','utf8')).submissionReady,false);
 console.log(`Validated ${products.length} products, ${guides.length} guides and preparation-only feed status.`);
+
+const candidates=JSON.parse(await fs.readFile('data/commerce-candidates.json','utf8'));
+assert.equal(new Set(candidates.map(r=>r.item_id)).size,candidates.length);
+for(const row of candidates){assert.equal(new URL(row.url).hostname,'meat-plus.club');assert(new URL(row.image_url).protocol==='https:');assert(row.description);if(row.price){assert(/^\d+(?:\.\d+)? JPY$/.test(row.price));if(row.sale_price)assert(parseFloat(row.sale_price)<parseFloat(row.price));}}

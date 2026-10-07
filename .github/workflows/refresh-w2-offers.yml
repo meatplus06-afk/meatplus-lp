@@ -1,0 +1,48 @@
+name: Refresh W2 commerce preparation
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 20 * * *'
+  push:
+    branches: [main]
+    paths:
+      - scripts/fetch-w2-offers.py
+      - .github/workflows/refresh-w2-offers.yml
+permissions:
+  contents: write
+concurrency:
+  group: refresh-w2-offers
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Read current anonymous storefront offers
+        run: python scripts/fetch-w2-offers.py
+      - name: Validate preparation data
+        run: |
+          node scripts/build-commerce-discovery.mjs
+          node scripts/build-home.mjs
+          node scripts/validate-commerce-discovery.mjs
+      - name: Persist current offer snapshot
+        run: |
+          git add data/w2-offers.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh anonymous W2 commerce offer snapshot'
+          # Discard generated pages; normal publication regenerates them.
+          git restore .
+          git fetch origin main
+          git rebase origin/main
+          git push
