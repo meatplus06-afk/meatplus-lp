@@ -32,6 +32,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: auto-publish-product-lp
@@ -110,6 +111,15 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Keep only the newest two Pages deployment artifacts
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          ARTIFACT_NAME: github-pages
+          ARTIFACT_KEEP: "2"
+          ARTIFACT_GRACE_MINUTES: "20"
+        run: node .github/scripts/prune-artifacts.cjs
 
       - name: Notify IndexNow
         continue-on-error: true
