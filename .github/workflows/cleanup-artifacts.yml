@@ -1,0 +1,21 @@
+name: Clean old Pages artifacts
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/cleanup-artifacts.yml
+permissions:
+  contents: read
+  actions: write
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Keep the newest two Pages packages
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          ARTIFACT_NAME: github-pages
+          ARTIFACT_KEEP: "2"
+          ARTIFACT_GRACE_MINUTES: "20"
+        run: node .github/scripts/prune-artifacts.cjs
