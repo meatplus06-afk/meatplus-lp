@@ -1,10 +1,10 @@
 {
   "status": "preparation_only",
-  "fetchedAt": "2026-10-14T23:19:24.873387+00:00",
+  "fetchedAt": "2026-10-15T23:07:48.549857+00:00",
   "source": "anonymous W2 storefront product detail API",
-  "productCount": 52,
-  "fetchedProductCount": 52,
-  "itemCount": 70,
+  "productCount": 53,
+  "fetchedProductCount": 53,
+  "itemCount": 71,
   "failures": [],
   "items": [
     {
@@ -874,6 +874,22 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1800.0 JPY"
+    },
+    {
+      "productId": "j024",
+      "item_id": "j024",
+      "title": "備長炭焼 匠九州産うなぎ蒲焼/無頭",
+      "url": "https://meat-plus.club/%E5%82%99%E9%95%B7%E7%82%AD%E7%84%BC+%E5%8C%A0%E4%B9%9D%E5%B7%9E%E7%94%A3%E3%81%86%E3%81%AA%E3%81%8E%E8%92%B2%E7%84%BC-%E7%84%A1%E9%A0%AD/product/j024/",
+      "image_url": "https://meat-plus.club/Contents/ProductImages/0/j024_LL.jpg",
+      "price": "6800.0 JPY",
+      "availability": "in_stock",
+      "hasVariations": false,
+      "variantNames": {
+        "name1": "備長炭焼 匠九州産うなぎ蒲焼/無頭"
+      },
+      "canPurchase": true,
+      "subscriptionOnly": false,
+      "sale_price": "5580.0 JPY"
     },
     {
       "productId": "k002",
