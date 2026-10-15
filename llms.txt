@@ -12,7 +12,7 @@
 
 ## カテゴリ
 - [スイーツ・菓子](https://meatplus06-afk.github.io/meatplus-lp/categories/sweets/): 8商品
-- [海鮮・魚介類](https://meatplus06-afk.github.io/meatplus-lp/categories/seafood/): 7商品
+- [海鮮・魚介類](https://meatplus06-afk.github.io/meatplus-lp/categories/seafood/): 8商品
 - [牛肉](https://meatplus06-afk.github.io/meatplus-lp/categories/beef/): 5商品
 - [惣菜・加工品](https://meatplus06-afk.github.io/meatplus-lp/categories/prepared-foods/): 18商品
 - [贈り物](https://meatplus06-afk.github.io/meatplus-lp/categories/category-m/): 14商品
@@ -39,6 +39,7 @@
 - [宮崎マンゴーこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k005/): 南国の太陽をたっぷり浴びた宮崎県産マンゴーの、甘く芳醇な香りがお口いっぱいに広がる、こんにゃくミニゼリーをお届けします。ぷるんともちっとした弾力のある食感は、こんにゃくゼリーならではの楽しさ。ついついもう一つ、と手が伸びてしまう美味しさです。たっぷり500g入った大容量パックで、ご家族みんなのおやつ
 - [長野県産シャインマスカットこんにゃくミニゼリー](https://meatplus06-afk.github.io/meatplus-lp/products/k004/): おやつの時間や食後のデザートに、爽やかな甘さのスイーツはいかがですか。このこんにゃくミニゼリーは、太陽の光をたっぷり浴びて育った長野県産シャインマスカットの果汁を贅沢に使用しました。袋を開けた瞬間に広がる芳醇な香りと、上品でみずみずしい甘さが口いっぱいに広がります。 こんにゃくならではの、ぷるんとし
 - [素焼き小魚＆ミックスナッツ](https://meatplus06-afk.github.io/meatplus-lp/products/k002/): ちょっと小腹が空いた時、ついつい甘いものに手が伸びていませんか？そんな毎日のひとときに、からだ想いの美味しいおやつはいかがでしょうか。国産のカタクチイワシなどを香ばしく焼き上げ、ほんのり甘じょっぱく味付けした小魚。そこに、食塩や油を使わずに素焼きにしたアーモンド、カシューナッツ、クルミを絶妙なバラン
+- [備長炭焼 匠九州産うなぎ蒲焼/無頭](https://meatplus06-afk.github.io/meatplus-lp/products/j024/): 九州産のうなぎを備長炭でじっくりと焼き上げた、無頭タイプの蒲焼です。1パック220g入りで、ご家庭で本格的なうなぎ料理を手軽にお楽しみいただけます。 職人が丁寧に焼き上げたうなぎは、炭火ならではの香ばしい風味が特徴です。醤油、みりん、砂糖、はちみつなどを合わせた特製のタレが、うなぎの旨みを一層引き立
 - [沖縄県産　海ぶどう](https://meatplus06-afk.github.io/meatplus-lp/products/j023/): 南国沖縄の青い海が育んだ海の恵み、「海ぶどう」をご家庭で手軽に楽しみませんか。キラキラと輝く緑の粒は、まるで海の宝石のよう。一口食べれば、プチプチと弾ける独特の食感と、ほんのり広がる磯の香りが、食卓をぱっと華やかに彩ります。 この海ぶどうは常温で長期保存が可能なので、冷蔵庫のスペースを気にすることな
 - [黄金にしん甘酢漬](https://meatplus06-afk.github.io/meatplus-lp/products/j022/): 脂ののったにしんとカラフトししゃも卵を独自の製法で結着加工しました。飽きのこないさっぱりとした甘酢で味付けしています。にしんの甘味とししゃも卵特有の歯ごたえ，程良い酸味がご賞味いただけます。
 - [タコチャンジャ](https://meatplus06-afk.github.io/meatplus-lp/products/j021/): 【プリプリ食感と旨辛がやみつき！ご飯もお酒も進む本格タコチャンジャ。】
