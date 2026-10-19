@@ -231,6 +231,15 @@
     "sale_price": "880.0 JPY"
   },
   {
+    "description": "国内産あなご蒲焼。商品規格：1尾（約110ｇ）。保存方法：常温。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "seller_name": "株式会社MEAT PLUS",
+    "item_id": "j025",
+    "title": "国内産あなご蒲焼",
+    "url": "https://meat-plus.club/%E5%9B%BD%E5%86%85%E7%94%A3%E3%81%82%E3%81%AA%E3%81%94%E8%92%B2%E7%84%BC/product/j025/",
+    "image_url": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/j025/product-list.jpg",
+    "availability": "unknown"
+  },
+  {
     "description": "備長炭焼 匠九州産うなぎ蒲焼/無頭。商品規格：220ｇ/ｐ。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "j024",
