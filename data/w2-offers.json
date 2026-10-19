@@ -1,10 +1,10 @@
 {
   "status": "preparation_only",
-  "fetchedAt": "2026-10-18T22:29:53.757198+00:00",
+  "fetchedAt": "2026-10-19T23:48:55.338453+00:00",
   "source": "anonymous W2 storefront product detail API",
-  "productCount": 53,
-  "fetchedProductCount": 53,
-  "itemCount": 71,
+  "productCount": 54,
+  "fetchedProductCount": 54,
+  "itemCount": 76,
   "failures": [],
   "items": [
     {
@@ -890,6 +890,101 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "5580.0 JPY"
+    },
+    {
+      "productId": "j025",
+      "item_id": "j02501",
+      "title": "国内産あなご蒲焼　1ｐ",
+      "url": "https://meat-plus.club/%E5%9B%BD%E5%86%85%E7%94%A3%E3%81%82%E3%81%AA%E3%81%94%E8%92%B2%E7%84%BC/product/j025/j02501/",
+      "image_url": "https://meat-plus.club/Contents/ProductImages/0/j025_LL.jpg",
+      "price": "1780.0 JPY",
+      "availability": "in_stock",
+      "hasVariations": true,
+      "variantNames": {
+        "name1": "国内産あなご蒲焼　1ｐ"
+      },
+      "canPurchase": true,
+      "subscriptionOnly": false,
+      "variant_dict": {
+        "商品選択": "国内産あなご蒲焼　1ｐ"
+      },
+      "variantUrlVerified": true
+    },
+    {
+      "productId": "j025",
+      "item_id": "j02502",
+      "title": "国内産あなご蒲焼　2ｐ",
+      "url": "https://meat-plus.club/%E5%9B%BD%E5%86%85%E7%94%A3%E3%81%82%E3%81%AA%E3%81%94%E8%92%B2%E7%84%BC/product/j025/j02502/",
+      "image_url": "https://meat-plus.club/Contents/ProductImages/0/j025_LL.jpg",
+      "price": "2980.0 JPY",
+      "availability": "in_stock",
+      "hasVariations": true,
+      "variantNames": {
+        "name1": "国内産あなご蒲焼　2ｐ"
+      },
+      "canPurchase": true,
+      "subscriptionOnly": false,
+      "variant_dict": {
+        "商品選択": "国内産あなご蒲焼　2ｐ"
+      },
+      "variantUrlVerified": true
+    },
+    {
+      "productId": "j025",
+      "item_id": "j02503",
+      "title": "国内産あなご蒲焼　3ｐ",
+      "url": "https://meat-plus.club/%E5%9B%BD%E5%86%85%E7%94%A3%E3%81%82%E3%81%AA%E3%81%94%E8%92%B2%E7%84%BC/product/j025/j02503/",
+      "image_url": "https://meat-plus.club/Contents/ProductImages/0/j025_LL.jpg",
+      "price": "4380.0 JPY",
+      "availability": "in_stock",
+      "hasVariations": true,
+      "variantNames": {
+        "name1": "国内産あなご蒲焼　3ｐ"
+      },
+      "canPurchase": true,
+      "subscriptionOnly": false,
+      "variant_dict": {
+        "商品選択": "国内産あなご蒲焼　3ｐ"
+      },
+      "variantUrlVerified": true
+    },
+    {
+      "productId": "j025",
+      "item_id": "j02504",
+      "title": "国内産あなご蒲焼　4ｐ",
+      "url": "https://meat-plus.club/%E5%9B%BD%E5%86%85%E7%94%A3%E3%81%82%E3%81%AA%E3%81%94%E8%92%B2%E7%84%BC/product/j025/j02504/",
+      "image_url": "https://meat-plus.club/Contents/ProductImages/0/j025_LL.jpg",
+      "price": "5580.0 JPY",
+      "availability": "in_stock",
+      "hasVariations": true,
+      "variantNames": {
+        "name1": "国内産あなご蒲焼　4ｐ"
+      },
+      "canPurchase": true,
+      "subscriptionOnly": false,
+      "variant_dict": {
+        "商品選択": "国内産あなご蒲焼　4ｐ"
+      },
+      "variantUrlVerified": true
+    },
+    {
+      "productId": "j025",
+      "item_id": "j02505",
+      "title": "国内産あなご蒲焼　5ｐ",
+      "url": "https://meat-plus.club/%E5%9B%BD%E5%86%85%E7%94%A3%E3%81%82%E3%81%AA%E3%81%94%E8%92%B2%E7%84%BC/product/j025/j02505/",
+      "image_url": "https://meat-plus.club/Contents/ProductImages/0/j025_LL.jpg",
+      "price": "6980.0 JPY",
+      "availability": "in_stock",
+      "hasVariations": true,
+      "variantNames": {
+        "name1": "国内産あなご蒲焼　5ｐ"
+      },
+      "canPurchase": true,
+      "subscriptionOnly": false,
+      "variant_dict": {
+        "商品選択": "国内産あなご蒲焼　5ｐ"
+      },
+      "variantUrlVerified": true
     },
     {
       "productId": "k002",
