@@ -1,10 +1,10 @@
 {
   "status": "preparation_only",
-  "fetchedAt": "2026-10-25T22:40:11.215552+00:00",
+  "fetchedAt": "2026-10-26T23:57:50.179343+00:00",
   "source": "anonymous W2 storefront product detail API",
-  "productCount": 54,
-  "fetchedProductCount": 54,
-  "itemCount": 76,
+  "productCount": 55,
+  "fetchedProductCount": 55,
+  "itemCount": 77,
   "failures": [],
   "items": [
     {
@@ -1113,6 +1113,21 @@
       "canPurchase": true,
       "subscriptionOnly": false,
       "sale_price": "1780.0 JPY"
+    },
+    {
+      "productId": "k010",
+      "item_id": "k010",
+      "title": "オーガニック 熟成干し芋｜MEAT PLUS公式通販",
+      "url": "https://meat-plus.club/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF+%E7%86%9F%E6%88%90%E5%B9%B2%E3%81%97%E8%8A%8B%EF%BD%9CMEAT+PLUS%E5%85%AC%E5%BC%8F%E9%80%9A%E8%B2%A9/product/k010/",
+      "image_url": "https://meat-plus.club/Contents/ProductImages/0/k010_LL.jpg",
+      "price": "1380.0 JPY",
+      "availability": "in_stock",
+      "hasVariations": false,
+      "variantNames": {
+        "name1": "オーガニック 熟成干し芋｜MEAT PLUS公式通販"
+      },
+      "canPurchase": true,
+      "subscriptionOnly": false
     },
     {
       "productId": "m001",
