@@ -3,15 +3,12 @@
   "submissionReady": false,
   "productCount": 57,
   "itemCount": 79,
-  "pricedItemCount": 78,
-  "storefrontFetchedAt": "2026-10-29T00:05:13.823095+00:00",
+  "pricedItemCount": 79,
+  "storefrontFetchedAt": "2026-10-30T00:00:48.467858+00:00",
   "storefrontSnapshotFresh": true,
-  "pendingProductIds": [
-    "i034"
-  ],
+  "pendingProductIds": [],
   "blockingFields": [
-    "brand verification per item",
-    "current regular price per missing product"
+    "brand verification per item"
   ],
   "documentation": "https://developers.openai.com/commerce/specs/file-upload/products"
 }
