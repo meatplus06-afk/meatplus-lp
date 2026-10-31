@@ -308,6 +308,12 @@
 購入先: https://meat-plus.club/%E5%8D%9A%E5%A4%9A%E6%B0%B4%E7%82%8A%E3%81%8D%E3%82%BB%E3%83%83%E3%83%88/product/i007/
 用途: もつ鍋・水炊き
 
+## 馬刺し/赤身
+馬刺し/赤身。商品規格：50ｇ/ｐ。保存方法：冷凍。原産国：中国。製造地：中国。賞味期限：発送日より3ヶ月。
+商品情報: https://meatplus06-afk.github.io/meatplus-lp/products/e002/
+購入先: https://meat-plus.club/%E9%A6%AC%E5%88%BA%E3%81%97-%E8%B5%A4%E8%BA%AB%EF%BD%9CMEAT+PLUS%E5%85%AC%E5%BC%8F%E9%80%9A%E8%B2%A9/product/e002/
+用途: 
+
 ## 九州産黒毛和牛ロースブロック
 九州産黒毛和牛ロースブロック。商品規格：500g/p・1ｋｇ/ｐ。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。
 商品情報: https://meatplus06-afk.github.io/meatplus-lp/products/a026/
