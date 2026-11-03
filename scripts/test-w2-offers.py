@@ -49,6 +49,20 @@ class OfferTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 offers.verify_selected_variant(row, 0, wrong_page, wrong_url)
 
+    def test_mapped_shop_identity_preserves_lp_join_and_rejects_wrong_shop_product(self):
+        product = {'id': 'i035', 'storefrontProductId': 'j035',
+                   'purchaseUrl': 'https://meat-plus.club/餃子/product/j035/', 'image': './gyoza.jpg'}
+        variant = {'productId': 'j035', 'variationId': 'j035', 'productPrice': {
+            'regularPrice': 1000, 'applicableNormalPrice': 1000}}
+        data = {'productMasterInfo': {'productId': 'j035', 'productName': '餃子'}, 'variationList': [variant]}
+        row = offers.normalize(product, data)[0]
+        self.assertEqual(row['productId'], 'i035')
+        self.assertEqual(row['storefrontProductId'], 'j035')
+        self.assertEqual(row['item_id'], 'j035')
+        data['productMasterInfo']['productId'] = 'i035'
+        with self.assertRaises(ValueError):
+            offers.normalize(product, data)
+
     def test_storefront_unicode_display_name(self):
         self.assertEqual(offers.storefront_text(r'和牛\u3000400g'), '和牛　400g')
 

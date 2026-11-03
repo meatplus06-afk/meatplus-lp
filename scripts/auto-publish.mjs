@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import {validatePurchaseUrl, verifyMappedStorefront} from './storefront-product-identity.mjs';
 
 const feedUrl = process.env.LP_FEED_URL;
 const site = 'https://meatplus06-afk.github.io/meatplus-lp';
@@ -230,6 +231,14 @@ try {
   throw new Error('Feed returned non-JSON content: ' + rawPayload.slice(0, 120).replace(/\s+/g, ' '));
 }
 const products = Array.isArray(payload.products) ? payload.products : [];
+// Validate the whole feed before writing pages or downloading images.
+for (const product of products) {
+  const id = text(product.productId || product.id).toLowerCase();
+  validatePurchaseUrl(id, product.purchaseUrl, {name: product.productName, specification: product.productInfo?.['商品規格']});
+  await verifyMappedStorefront(product, (url, options) => fetchWithRetry(url, options, {
+    attempts: 3, timeoutMs: 30000, label: 'Storefront identity ' + id
+  }));
+}
 if (!products.length) console.log('No queued products; rebuilding discovery files from the published catalog.');
 
 let catalog = [];
