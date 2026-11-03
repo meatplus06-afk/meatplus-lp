@@ -11,6 +11,9 @@ on:
       - scripts/apply-scene-copy-patch.mjs
       - scripts/apply-google-business-copy-patch.mjs
       - scripts/build-discovery.mjs
+      - scripts/storefront-product-identity.mjs
+      - scripts/test-storefront-product-identity.mjs
+      - data/storefront-product-identities.json
       - scripts/build-commerce-discovery.mjs
       - scripts/build-home.mjs
       - scripts/guide-experience.mjs
@@ -50,6 +53,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      - name: Test verified storefront identities
+        run: |
+          node --test scripts/test-storefront-product-identity.mjs
+          python3 scripts/test-w2-offers.py
 
       - name: Enable per-scene copy support
         run: node scripts/apply-scene-copy-patch.mjs

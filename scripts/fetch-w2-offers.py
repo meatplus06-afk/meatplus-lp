@@ -19,11 +19,12 @@ def storefront_text(value):
 
 def verify_selected_variant(row, index, page, final_url):
     url = urllib.parse.urlsplit(final_url)
-    expected_path = '/product/' + row['productId'] + '/' + row['item_id'] + '/'
+    shop_id = row.get('storefrontProductId', row['productId'])
+    expected_path = '/product/' + shop_id + '/' + row['item_id'] + '/'
     if url.scheme != 'https' or url.hostname != 'meat-plus.club' or not url.path.endswith(expected_path):
         raise ValueError('Selected variant URL mismatch')
     form = re.search(r'<product-detail-form\b([^>]*)>', page)
-    if not form or not re.search(r'product-id="' + re.escape(row['productId']) + r'"', form[1]):
+    if not form or not re.search(r'product-id="' + re.escape(shop_id) + r'"', form[1]):
         raise ValueError('Selected product mismatch')
     if not re.search(r'select-variation-index="' + str(index) + r'"', form[1]):
         raise ValueError('Selected option mismatch')
@@ -56,14 +57,15 @@ def money(value):
 
 def normalize(product, data):
     master = data.get('productMasterInfo', {})
-    if master.get('productId') != product['id']:
+    shop_id = product.get('storefrontProductId', product['id'])
+    if master.get('productId') != shop_id:
         raise ValueError('Product ID mismatch')
     variants = data.get('variationList')
     if not isinstance(variants, list) or not variants:
         raise ValueError('No purchasable item data')
     rows = []
     for variant in variants:
-        if variant.get('productId') != product['id'] or not variant.get('variationId'):
+        if variant.get('productId') != shop_id or not variant.get('variationId'):
             raise ValueError('Invalid variant ID')
         prices = variant.get('productPrice', {})
         regular = money(prices.get('regularPrice'))
@@ -94,6 +96,8 @@ def normalize(product, data):
             'canPurchase': variant.get('canPurchase') is True,
             'subscriptionOnly': master.get('isSubscriptionOnly') is True,
         }
+        if shop_id != product['id']:
+            row['storefrontProductId'] = shop_id
         if decimal.Decimal(normal) < decimal.Decimal(regular):
             row['sale_price'] = normal + ' JPY'
         elif decimal.Decimal(normal) > decimal.Decimal(regular):
@@ -119,7 +123,7 @@ def fetch_product(product):
         raise ValueError('Storefront token not found')
     request = urllib.request.Request(
         'https://meat-plus.club/front-api/v1/product/get',
-        data=json.dumps({'ProductId': product['id']}).encode(),
+        data=json.dumps({'ProductId': product.get('storefrontProductId', product['id'])}).encode(),
         headers={'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest',
                  'RequestVerificationToken': token[1]},
     )
@@ -129,7 +133,7 @@ def fetch_product(product):
     for index, row in enumerate(rows):
         if not row['hasVariations']:
             continue
-        selected_url = 'https://meat-plus.club/product/detail-redirect/' + urllib.parse.quote(row['productId'], safe='') + '/' + urllib.parse.quote(row['item_id'], safe='')
+        selected_url = 'https://meat-plus.club/product/detail-redirect/' + urllib.parse.quote(row.get('storefrontProductId', row['productId']), safe='') + '/' + urllib.parse.quote(row['item_id'], safe='')
         try:
             with session.open(selected_url, timeout=25) as response:
                 page = response.read().decode('utf-8')

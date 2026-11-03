@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import {validatePurchaseUrl, getStorefrontProductId} from './storefront-product-identity.mjs';
 import {buildGuideExperience} from './guide-experience.mjs';
 import {createHash} from 'node:crypto';
 const styleVersion=createHash('sha256').update(await fs.readFile('assets/style.css')).digest('hex').slice(0,12);
@@ -29,7 +30,7 @@ for(const p of products){
  const cta=html.match(/<a[^>]*data-cta-position="(?:main|top)"[^>]*href="([^"]+)"/);
  if(!cta)throw new Error('Missing purchase link: '+p.id);
  const buy=new URL(plain(cta[1]));
- if(buy.hostname!=='meat-plus.club')throw new Error('Unexpected shop URL');
+ validatePurchaseUrl(p.id,buy.href,{name:p.name,specification:info['商品規格']});
  for(const key of [...buy.searchParams.keys()])if(key.startsWith('utm_'))buy.searchParams.delete(key);
  const facts=Object.entries(info).filter(([k,v])=>k!=='商品名'&&v);
  const factual=[p.name,...facts.map(([k,v])=>`${k}：${v}`)].join('。')+'。';
@@ -44,7 +45,7 @@ for(const p of products){
  html=html.replace(/(<a class="cta" data-cta-position="main"[^>]*>[\s\S]*?<\/a>)/,'$1'+help);
  if(!html.includes('src="../../assets/guide-analytics.js"'))html=html.replace('</head>','<script defer src="../../assets/guide-analytics.js"></script></head>');
  await fs.writeFile(file,html);
- detailed.push({...p,description:factual,productInfo:info,purchaseUrl:buy.href,useCases:uses.map(g=>g.name),sourceUpdatedAt:p.updatedAt});
+ detailed.push({...p,description:factual,productInfo:info,purchaseUrl:buy.href,storefrontProductId:getStorefrontProductId(p.id),useCases:uses.map(g=>g.name),sourceUpdatedAt:p.updatedAt});
 }
 await fs.writeFile('data/products-detailed.json',JSON.stringify(detailed,null,2)+'\n');
 // Both hosts are verified in Search Console; Google supports cross-site
@@ -52,7 +53,7 @@ await fs.writeFile('data/products-detailed.json',JSON.stringify(detailed,null,2)
 const shopUrls=new Set(['https://meat-plus.club/']);
 for(const p of detailed){
  const u=new URL(p.purchaseUrl);
- if(u.protocol!=='https:'||u.hostname!=='meat-plus.club'||u.search||u.hash||!u.pathname.endsWith('/product/'+p.id+'/'))throw new Error('Invalid shop sitemap URL: '+p.id);
+ if(u.search||validatePurchaseUrl(p.id,u.href,{name:p.name,specification:p.productInfo['商品規格']})!==u.href)throw new Error('Invalid shop sitemap URL: '+p.id);
  shopUrls.add(u.href);
 }
 await fs.writeFile('w2-sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+[...shopUrls].map(url=>'<url><loc>'+esc(url)+'</loc></url>').join('\n')+'\n</urlset>\n');

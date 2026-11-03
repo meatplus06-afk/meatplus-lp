@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - .github/workflows/refresh-discovery.yml
+      - scripts/storefront-product-identity.mjs
+      - scripts/test-storefront-product-identity.mjs
+      - data/storefront-product-identities.json
       - scripts/build-commerce-discovery.mjs
       - assets/guide-analytics.js
       - scripts/build-home.mjs
@@ -29,6 +32,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Test verified storefront identities
+        run: node --test scripts/test-storefront-product-identity.mjs
+
       - name: Rebuild discovery from published products
         run: |
           node scripts/build-discovery.mjs

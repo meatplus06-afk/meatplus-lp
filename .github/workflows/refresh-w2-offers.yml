@@ -25,6 +25,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Test storefront offer identities
+        run: python scripts/test-w2-offers.py
       - name: Read current anonymous storefront offers
         run: python scripts/fetch-w2-offers.py
       - name: Validate preparation data

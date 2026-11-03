@@ -1,5 +1,7 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import {validatePurchaseUrl, getStorefrontProductId} from './storefront-product-identity.mjs';
+const shopSitemap=await fs.readFile('w2-sitemap.xml','utf8');
 const products=JSON.parse(await fs.readFile('data/products-detailed.json','utf8'));
 assert(products.length>0);
 for(const p of products){
@@ -11,7 +13,11 @@ for(const p of products){
  assert(!productSchema.brand&&!productSchema.manufacturer,'Unverified brand/manufacturer: '+p.id);
  assert.equal((html.match(/data-purchase-help/g)||[]).length,1);
  assert(html.includes('https://meat-plus.club/page/guide#shipping'));
- assert.equal(new URL(p.purchaseUrl).hostname,'meat-plus.club');
+ assert.equal(validatePurchaseUrl(p.id,p.purchaseUrl,{name:p.name,specification:p.productInfo['商品規格']}),p.purchaseUrl);
+ assert.equal(p.storefrontProductId,getStorefrontProductId(p.id));
+ assert(shopSitemap.includes('<loc>'+p.purchaseUrl.replaceAll('&','&amp;')+'</loc>'));
+ for(const cta of html.matchAll(/data-cta-position="[^"]+"[^>]*href="([^"]+)"/g))
+  assert.equal(validatePurchaseUrl(p.id,cta[1].replaceAll('&amp;','&')),p.purchaseUrl);
  assert(!p.purchaseUrl.includes('utm_'));
  for(const [,value] of schemas.find(s=>s['@type']==='Product').additionalProperty.map(v=>[v.name,v.value]))assert(Object.values(p.productInfo).includes(value));
 }
@@ -37,7 +43,7 @@ for(const row of candidates.filter(r=>r.listing_has_variations)){
  const offer=offers.items.find(r=>r.item_id===row.item_id);
  if(offer?.variantUrlVerified){
   assert.equal(row.url,offer.url);
-  assert(new URL(row.url).pathname.endsWith('/product/'+row.group_id+'/'+row.item_id+'/'));
+  assert(new URL(row.url).pathname.endsWith('/product/'+getStorefrontProductId(row.group_id)+'/'+row.item_id+'/'));
   assert.deepEqual(row.variant_dict,offer.variant_dict);
   assert.equal(Object.values(row.variant_dict)[0],row.title);
  }
