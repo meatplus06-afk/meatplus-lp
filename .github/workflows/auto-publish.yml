@@ -57,7 +57,7 @@ jobs:
       - name: Test verified storefront identities
         run: |
           node --test scripts/test-storefront-product-identity.mjs
-          python3 scripts/test-w2-offers.py
+          python3 -B scripts/test-w2-offers.py
 
       - name: Enable per-scene copy support
         run: node scripts/apply-scene-copy-patch.mjs
