@@ -446,6 +446,24 @@
     "sale_price": "1480.0 JPY"
   },
   {
+    "description": "国産ひとくち小粒生餃子。商品規格：650ｇ/ｐ（約13ｇ×50個入り）。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "seller_name": "株式会社MEAT PLUS",
+    "item_id": "i036",
+    "title": "国産ひとくち小粒生餃子",
+    "url": "https://meat-plus.club/%E5%9B%BD%E7%94%A3%E3%81%B2%E3%81%A8%E3%81%8F%E3%81%A1%E5%B0%8F%E7%B2%92%E7%94%9F%E9%A4%83%E5%AD%90%EF%BD%9CMEAT+PLUS%E5%85%AC%E5%BC%8F%E9%80%9A%E8%B2%A9/product/j036/",
+    "image_url": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i036/product-list.jpg",
+    "availability": "unknown"
+  },
+  {
+    "description": "創業の味！ちょっと大きな国産生餃子。商品規格：1ｋｇ/ｐ（20ｇ×50個入り）。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
+    "seller_name": "株式会社MEAT PLUS",
+    "item_id": "i035",
+    "title": "創業の味！ちょっと大きな国産生餃子",
+    "url": "https://meat-plus.club/%E5%89%B5%E6%A5%AD%E3%81%AE%E5%91%B3%EF%BC%81%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E5%A4%A7%E3%81%8D%E3%81%AA%E5%9B%BD%E7%94%A3%E7%94%9F%E9%A4%83%E5%AD%90%EF%BD%9CMEAT+PLUS%E5%85%AC%E5%BC%8F%E9%80%9A%E8%B2%A9/product/j035/",
+    "image_url": "https://meatplus06-afk.github.io/meatplus-lp/assets/products/i035/product-list.jpg",
+    "availability": "unknown"
+  },
+  {
     "description": "生めんたいキムチ。商品規格：180g/p。保存方法：冷凍。原産国：日本。製造地：日本。賞味期限：発送日より3ヶ月。",
     "seller_name": "株式会社MEAT PLUS",
     "item_id": "i034",
