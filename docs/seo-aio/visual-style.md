@@ -31,3 +31,11 @@ PR #16をmainへマージし、本番公開済み。Refresh published product di
 ### PR #17 公開後の確認
 
 320px幅でトップ・記事一覧・記事本文・用途別ページ・商品LPを確認。各ページのdocumentElement.scrollWidthは305pxで画面幅320px以内。記事本文15px、記事の主要CTA約49px、商品固定購入CTA48px、用途別選択欄46pxを実測。記事絞り込みも動作し、商品LPのW2購入URLと下部余白110pxを確認した。390px幅でも記事一覧に横はみ出しなし。Refresh published product discovery（41809173630）は初回デプロイ失敗後、再実行でsuccess。端末実機のタッチ操作やすべての端末での確認ではない。
+
+## PR #18 商品比較の操作性
+
+用途別ページの比較表にスワイプ・商品リンクの案内を追加し、商品名列を幅150pxで左に固定。名前付きのtabindex=0領域とフォーカス枠でキーボード操作にも対応した。公開ページの390px幅で操作案内・sticky・列幅150pxを確認し、キー操作でscrollLeftが変化しても商品名列の左位置が領域左位置に維持されることを確認。ページscrollWidth375pxで画面390px以内。
+
+画像は既存の一覧lazy loadingとwidth/height指定を維持。速度スコアの測定はしていない。
+
+実行41811841085は生成・検査・保存に成功したが、GitHub Pagesの配信APIが502 Server Errorを返して失敗。公開画面への反映は確認できたものの、正常なデプロイ終了とは判定していない。新しいworkflow dispatchも画面で2回失敗した。GitHub側が回復した後、最新mainから公開を実行し直す必要がある。
