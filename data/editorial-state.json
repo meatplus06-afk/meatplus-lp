@@ -1,6 +1,6 @@
 {
   "sukiyaki-choose": {
-    "hash": "775db9b8da441b58c053e3e54cc737c3600dac5372e1cfebe8ecb6d1555961c3",
+    "hash": "915a555b10ebecd5e7122d458078d2cd83a201f4a0a4314129ca70d1e2494283",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -13,7 +13,7 @@
     ]
   },
   "meat-gift-checklist": {
-    "hash": "98b413b5ceb222f15eebc99e82e77c8e6f0f9d1fb8443447f544677cf878ac68",
+    "hash": "9fc8e2430018763727ddab5d92ae629e8ee8b1f1bb1cc5f359955a2532afcd54",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -34,7 +34,7 @@
     ]
   },
   "nabe-set-or-soup": {
-    "hash": "a2eefe0f161102570e676f1b88c3af01e7fc6dbb1cd2e592bc726b635a0d88b1",
+    "hash": "f740668798b3362379da6d8a2a4a651083f5981b0a792666517ae123a51b413a",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -53,7 +53,7 @@
     ]
   },
   "frozen-meat-thawing": {
-    "hash": "b3e02c06b48977cabd1af1e5ae5cc4760cc562b6ac665c1089627ed551cc81e8",
+    "hash": "40effb1c5bcc1b003adb28abdb14876cb3c1f77aa1143c7efe3f5c6a4986f6aa",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -84,7 +84,7 @@
     ]
   },
   "beef-cuts": {
-    "hash": "bde8f619b051c1d636bc3949879dca15c2a992a87998a3cd808911c9ad8a6784",
+    "hash": "feb1116ea7184231864629f2034b58beabb0ee2ad7c9ac5c2b184551cf58428d",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -99,7 +99,7 @@
     ]
   },
   "wagyu-labels": {
-    "hash": "2f664cebd21acd6a3faa443e5eb32ad5a955dc14e07f4ec0c5d376d88b44b890",
+    "hash": "7c347cf8a1162a017dc11e173334df818bd946ceb3cb12382a8e9b7b9d19620a",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -123,7 +123,7 @@
     ]
   },
   "yakiniku-or-steak": {
-    "hash": "ea107a160f0471e2f4b2bd5384efd78fb2803df399a85e38827955166308e415",
+    "hash": "6cf5ab95e2db359a9950a90626228dcb1fb9c6ae2c4ab42f876249de74fc58b2",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -140,7 +140,7 @@
     ]
   },
   "gyoza-size": {
-    "hash": "53d07fa5e7aa5d83cf1262a4cefc0dc3e66e775caf9f9daaa02e6e0ef1158588",
+    "hash": "8dc52521a5d03eb1f83b529f5e2f0aa5ccf627419b8ce803cc2b6e803a2032d3",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -149,7 +149,7 @@
     ]
   },
   "unagi-style": {
-    "hash": "ee6b0dbf1aa719a70c0c918bebd68ebbb4bd640ed40bcccc4a82c9fb7c3dcecc",
+    "hash": "523de42f23cd2717857d09c5c69ea9f04a839fa98dd89ddc98358c54505bf339",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -159,7 +159,7 @@
     ]
   },
   "snacks-storage": {
-    "hash": "a72643b6a3dda38bbb6fb65c80ee2e58607431208bcea48f03ba1b5f09cf6882",
+    "hash": "b3d90d1cd90aec80b8186df45390892f6165ac2c5b442f97b6dd513e52a6d5cb",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -174,6 +174,29 @@
       "k003",
       "k006",
       "k007"
+    ]
+  },
+  "meatplus-craft": {
+    "hash": "5843538cd96d5ff7e45825e5355484ba752f4781a34057f00aee8265547abdf7",
+    "modified": "2026-11-04",
+    "published": "2026-11-04",
+    "productIds": [
+      "a001",
+      "a002",
+      "a003",
+      "a025",
+      "a026",
+      "m001",
+      "m002",
+      "m003",
+      "m004",
+      "m007",
+      "m008",
+      "m009",
+      "m010",
+      "m011",
+      "m013",
+      "m014"
     ]
   }
 }
