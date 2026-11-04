@@ -1,0 +1,31 @@
+[
+  {
+    "url": "https://www.themeatguy.jp/",
+    "status": 200,
+    "scope": "homepage only; product-page schema not inferred",
+    "jsonLdTypes": [
+      "BreadcrumbList",
+      "ListItem",
+      "WebSite",
+      "SearchAction",
+      "Organization"
+    ]
+  },
+  {
+    "url": "https://www.matsuzaka-steak.com/",
+    "status": 200,
+    "scope": "homepage only; product-page schema not inferred",
+    "jsonLdTypes": [
+      "Organization",
+      "ContactPoint",
+      "Restaurant",
+      "PostalAddress"
+    ]
+  },
+  {
+    "url": "https://www.oniku1129.com/",
+    "status": 200,
+    "scope": "homepage only; product-page schema not inferred",
+    "jsonLdTypes": []
+  }
+]
