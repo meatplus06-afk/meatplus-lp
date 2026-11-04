@@ -20,4 +20,4 @@
 .guide-welcome,.guide-choices,.guide-choice-heading,.choice-copy{min-width:0}
 }
 
-.guide-table-help{font-size:14px;line-height:1.8;color:#52627a;margin:12px 0}.comparison-scroll:focus-visible{outline:3px solid #007c83;outline-offset:3px}.guide-comparison th:first-child{position:sticky;left:0;background:#fff;box-shadow:3px 0 5px #18324f12;z-index:1}
+.guide-table-help{font-size:14px;line-height:1.8;color:#52627a;margin:12px 0}.comparison-scroll:focus-visible{outline:3px solid #007c83;outline-offset:3px}.guide-comparison th:first-child{position:sticky;left:0;background:#fff;box-shadow:3px 0 5px #18324f12;z-index:1;min-width:130px;max-width:170px;width:150px;overflow-wrap:anywhere}
