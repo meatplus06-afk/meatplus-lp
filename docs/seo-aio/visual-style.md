@@ -39,3 +39,7 @@ PR #16をmainへマージし、本番公開済み。Refresh published product di
 画像は既存の一覧lazy loadingとwidth/height指定を維持。速度スコアの測定はしていない。
 
 実行41811841085は生成・検査・保存に成功したが、GitHub Pagesの配信APIが502 Server Errorを返して失敗。公開画面への反映は確認できたものの、正常なデプロイ終了とは判定していない。新しいworkflow dispatchも画面で2回失敗した。GitHub側が回復した後、最新mainから公開を実行し直す必要がある。
+
+### PR #18 公開エラー解消確認（2026-11-04）
+
+最新mainから新規実行したAuto publish product LP（41813557585）は全体success。商品生成・検査・保存・GitHub Pagesへの配信・IndexNow通知のすべてがsuccessとなった。前回の502およびdispatch失敗の未完了状態は、この新規実行の正常終了をもって解消とする。公開後の用途別ページで比較操作案内と名前付きスクロール領域、公式通販リンク10件の表示を確認。ワークフロー設定やW2本体の変更は行っていない。
