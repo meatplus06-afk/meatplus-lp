@@ -1,4 +1,6 @@
 import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const homeStyleVersion=createHash('sha256').update(await fs.readFile('assets/home.css')).digest('hex').slice(0,12);
 const site='https://meatplus06-afk.github.io/meatplus-lp';
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const products=JSON.parse(await fs.readFile('data/products-detailed.json','utf8'));
@@ -16,7 +18,7 @@ const scenes=`<section class="home-scenes" id="home-scenes" data-home-scenes><di
 let html=await fs.readFile('index.html','utf8');
 html=html.replace(/<body(?: class="[^"]*")?>/,'<body class="home-page">');
 html=html.replace(/<script[^>]*src="\.\/assets\/guide-analytics\.js"[^>]*><\/script>/g,'');
-html=html.replace(/<link[^>]*href="\.\/assets\/home\.css"[^>]*>/g,'').replace('</head>','<link rel="stylesheet" href="./assets/home.css"><script defer src="./assets/guide-analytics.js"></script></head>');
+html=html.replace(/<link[^>]*href="\.\/assets\/home\.css(?:\?[^\"]*)?"[^>]*>/g,'').replace('</head>',`<link rel="stylesheet" href="./assets/home.css?v=${homeStyleVersion}"><script defer src="./assets/guide-analytics.js"></script></head>`);
 html=html.replace(/<header class="site-header">[\s\S]*?<\/header>/,`<header class="site-header"><a class="brand" href="./">MEAT PLUS<span>おいしいを、もっと。</span></a><nav aria-label="メインメニュー"><a href="#home-scenes">気分から選ぶ</a><a href="#catalog">商品一覧</a><a href="https://meatplus06-afk.github.io/meatplus-lp/articles/">食の読みもの</a><a class="home-shop-link" href="https://meat-plus.club/">公式通販へ ↗</a></nav></header>`);
 html=html.replace(/<section class="hero(?: home-hero)?">[\s\S]*?<\/section>/,hero);
 html=html.replace(/<section class="home-scenes"[\s\S]*?<\/section>/g,'');
