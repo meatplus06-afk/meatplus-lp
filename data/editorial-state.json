@@ -1,6 +1,6 @@
 {
   "sukiyaki-choose": {
-    "hash": "b4d76092f531c1b9190180895ead9f75011da93577e8852b0931474abb2544e5",
+    "hash": "d0f07ddece5b8bd6c2469a220783da819f512a8fe53aa75356e96ed727116b14",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -13,7 +13,7 @@
     ]
   },
   "meat-gift-checklist": {
-    "hash": "b8b14ba02c2e6f18c41698386670f5ecbc6507f9d6310e64756268a213f42bdb",
+    "hash": "8f08d217bdd19a81880a414c5e3a0cb7bdce7c6283d9f505dcf929874c5ba61d",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -34,7 +34,7 @@
     ]
   },
   "nabe-set-or-soup": {
-    "hash": "ac417a5b00bf9bdfb50a25fa49a85470bd33226168ea0a3ad9daf763612f2b82",
+    "hash": "953d7c7c8a634cce640a4aed2a87e88ec490b182bc318ca521de8e226b5638c1",
     "modified": "2026-11-04",
     "published": "2026-11-04",
     "productIds": [
@@ -50,6 +50,36 @@
       "i031",
       "i032",
       "i033"
+    ]
+  },
+  "frozen-meat-thawing": {
+    "hash": "cddf61e46bc6b74c7fa120f06b9e3164e854fba8a3aff79b5869b6060237df4f",
+    "modified": "2026-11-04",
+    "published": "2026-11-04",
+    "productIds": [
+      "a001",
+      "a002",
+      "a003",
+      "a025",
+      "a026",
+      "i008",
+      "i009",
+      "i025",
+      "i029",
+      "i030",
+      "i031",
+      "i032",
+      "i043",
+      "m001",
+      "m002",
+      "m003",
+      "m004",
+      "m007",
+      "m008",
+      "m009",
+      "m010",
+      "m011",
+      "m012"
     ]
   }
 }
