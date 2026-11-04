@@ -15,6 +15,7 @@ on:
       - scripts/test-storefront-product-identity.mjs
       - data/storefront-product-identities.json
       - scripts/build-editorial.mjs
+      - scripts/test-editorial.mjs
       - scripts/build-commerce-discovery.mjs
       - scripts/build-home.mjs
       - scripts/guide-experience.mjs
