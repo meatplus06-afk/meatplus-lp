@@ -15,6 +15,10 @@ on:
       - scripts/test-storefront-product-identity.mjs
       - data/storefront-product-identities.json
       - scripts/build-editorial.mjs
+      - scripts/editorial-content.mjs
+      - scripts/editorial-view.mjs
+      - assets/editorial.css
+      - assets/editorial.js
       - scripts/test-editorial.mjs
       - scripts/build-commerce-discovery.mjs
       - scripts/build-home.mjs
