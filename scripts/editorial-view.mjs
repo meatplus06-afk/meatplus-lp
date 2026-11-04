@@ -27,7 +27,7 @@ export function specExamples(topic,rows){
  if(!topic.caseIds)return '';
  const examples=topic.caseIds.map(id=>rows.find(p=>p.id===id)).filter(Boolean);
  if(!examples.length)return '';
- return `<section class="ed-case-study"><p class="ed-eyebrow">MEAT PLUS / PRODUCT DETAILS</p><h2>実商品の規格を、ひと目で。</h2><p>商品マスタに登録された規格から、重さと点数の関係を見てみましょう。</p><div class="ed-case-grid">${examples.map(p=>{
+ return `<section class="ed-case-study"><p class="ed-eyebrow">MEAT PLUS / PRODUCT DETAILS</p><h2>実商品の規格を、ひと目で。</h2><p>掲載商品の規格から、重さと点数の関係を見てみましょう。</p><div class="ed-case-grid">${examples.map(p=>{
  const spec=p.productInfo['商品規格'],normalized=spec.normalize('NFKC');
  const pack=normalized.match(/(\d+(?:\.\d+)?)\s*g\s*[×x]\s*(\d+)\s*(p|枚|個)/i),total=normalized.match(/^(?:約)?(\d+(?:\.\d+)?)\s*g/i);
  const valid=pack&&total&&Number(pack[2])<=12&&Number(pack[1])*Number(pack[2])===Number(total[1])&&!/[、・]|または|又は/.test(normalized);
