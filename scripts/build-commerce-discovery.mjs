@@ -1,3 +1,4 @@
+import {buildEditorial} from './build-editorial.mjs';
 import fs from 'node:fs/promises';
 import {validatePurchaseUrl, getStorefrontProductId} from './storefront-product-identity.mjs';
 import {buildGuideExperience} from './guide-experience.mjs';
@@ -106,3 +107,5 @@ await fs.writeFile('data/commerce-readiness.json',JSON.stringify({status:'prepar
 console.log(`Commerce discovery: ${detailed.length} products, ${active.length} purpose guides; ${candidates.filter(r=>r.price).length} priced items, feed preparation only.`);
 
 await buildGuideExperience(detailed,active,snapshot,fresh);
+
+await buildEditorial(detailed);

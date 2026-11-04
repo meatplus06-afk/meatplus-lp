@@ -12,6 +12,7 @@ document.addEventListener('click', function (event) {
   var link = event.target.closest('a[data-guide-action], a.home-scene');
   if (!link) return;
   var match = (link.classList.contains('home-scene') ? new URL(link.href).pathname : location.pathname).match(/\/guides\/([^/]+)\//);
+  var article = location.pathname.match(/\/articles\/([^/]+)\//);
   var action = link.dataset.guideAction;
   var eventName = link.classList.contains('home-scene') ? 'guide_select' :
     action === 'shipping' ? 'shipping_info_click' :
@@ -21,6 +22,7 @@ document.addEventListener('click', function (event) {
   gtag('event', eventName, {
     product_id: link.dataset.productId || '',
     guide_type: match ? match[1] : '',
+    article_type: article ? article[1] : '',
     cta_position: link.dataset.guidePosition || (document.body.classList.contains('home-page') ? 'home' : action === 'shipping' ? 'product_shipping' : 'guide_comparison'),
     link_url: link.href,
     transport_type: 'beacon'

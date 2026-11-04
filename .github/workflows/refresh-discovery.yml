@@ -33,7 +33,8 @@ jobs:
         with:
           node-version: '20'
       - name: Test verified storefront identities
-        run: node --test scripts/test-storefront-product-identity.mjs
+        run: |
+          node --test scripts/test-storefront-product-identity.mjs scripts/test-editorial.mjs
 
       - name: Rebuild discovery from published products
         run: |
