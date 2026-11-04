@@ -9,3 +9,13 @@
 .choice-detail{background:#007c83;border-color:#007c83;color:#fff}.choice-detail:hover{background:#006a72}.related-choices{background:linear-gradient(125deg,#e0f6ff,#dcfff4)}
 
 .guide-kicker{color:#92233e}
+
+
+@media(max-width:760px){
+.guide-scenes a{min-height:44px;display:inline-flex;align-items:center}
+.guide-comparison summary{min-height:44px}
+.comparison-scroll{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.guide-welcome h1{font-size:clamp(26px,7.5vw,36px)}
+.choice-copy h3{font-size:16px}.choice-spec{font-size:14px}
+.guide-welcome,.guide-choices,.guide-choice-heading,.choice-copy{min-width:0}
+}

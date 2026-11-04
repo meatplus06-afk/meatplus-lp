@@ -39,3 +39,31 @@
 @media(max-width:640px){.ed-hub-hero{background:radial-gradient(circle at 91% 11%,#ffd445 0 6%,transparent 6.2%),linear-gradient(145deg,#fff 40%,#e7f5ff);border-radius:0 0 26px 26px}.ed-hero-photo{box-shadow:7px 8px 0 #dff5ff}.ed-takeaways li span{width:28px;height:28px}.ed-footer{border-radius:18px 18px 0 0}}
 
 .ed-eyebrow,.ed-page .ed-text-link{color:#00656e}
+
+
+/* Phone reading: readable type, generous touch targets, compact article rows. */
+@media(max-width:640px){
+.ed-header nav a,.ed-footer nav a{display:inline-flex;align-items:center;min-height:44px}
+.ed-hero h1{font-size:clamp(25px,7vw,30px);line-height:1.5}
+.ed-hero-photo{width:65%;max-width:280px}
+.ed-intro,.ed-section p{font-size:15px;line-height:1.9}
+.ed-section-lead{font-size:16px!important}
+.ed-toc{font-size:14px}.ed-toc a{display:block;padding:8px 0}
+.ed-byline,.ed-visual figcaption,.ed-sources p,.ed-sources ul{font-size:12px}
+.ed-faq summary{min-height:44px;font-size:15px}.ed-faq details p{font-size:15px}
+.ed-filters button{min-height:44px;font-size:13px;padding:10px 14px}
+.ed-primary,.ed-product-buy{min-height:48px;display:flex;align-items:center;justify-content:center}
+.ed-product dl{font-size:14px}.ed-product h3{font-size:15px}
+.ed-article-grid,.ed-home-journal .ed-article-grid{grid-template-columns:minmax(0,1fr)}
+.ed-article-card{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center}
+.ed-card-photo img{aspect-ratio:1;padding:6px}.ed-card-photo>span{font-size:10px;left:4px;bottom:4px}
+.ed-card-copy{padding:14px}.ed-card-title{font-size:15px!important}
+.ed-card-copy p:not(.ed-card-title){font-size:12px}.ed-card-more{font-size:12px;margin-top:10px}
+.ed-paths strong{font-size:14px}.ed-paths span{font-size:12px}
+.ed-diagram-cell{min-width:0;flex:1 1 120px}.ed-diagram-cell span{font-size:12px}
+.ed-pack-example{flex-wrap:wrap}.ed-pack-example>div{min-width:100px}
+.ed-order ol{flex-wrap:wrap}.ed-order li{flex:1 1 90px;font-size:13px}
+.ed-table-scroll{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.ed-footer p{font-size:13px}.ed-company-note p:not(.ed-eyebrow){font-size:14px}
+}
+@media(max-width:350px){.ed-article-card{grid-template-columns:90px minmax(0,1fr)}.ed-card-copy{padding:12px 10px}.ed-paths>div{grid-template-columns:1fr}}
