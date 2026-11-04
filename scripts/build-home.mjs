@@ -17,7 +17,7 @@ let html=await fs.readFile('index.html','utf8');
 html=html.replace(/<body(?: class="[^"]*")?>/,'<body class="home-page">');
 html=html.replace(/<script[^>]*src="\.\/assets\/guide-analytics\.js"[^>]*><\/script>/g,'');
 html=html.replace(/<link[^>]*href="\.\/assets\/home\.css"[^>]*>/g,'').replace('</head>','<link rel="stylesheet" href="./assets/home.css"><script defer src="./assets/guide-analytics.js"></script></head>');
-html=html.replace(/<header class="site-header">[\s\S]*?<\/header>/,`<header class="site-header"><a class="brand" href="./">MEAT PLUS<span>おいしいを、もっと。</span></a><nav aria-label="メインメニュー"><a href="#home-scenes">気分から選ぶ</a><a href="#catalog">商品一覧</a><a class="home-shop-link" href="https://meat-plus.club/">公式通販へ ↗</a></nav></header>`);
+html=html.replace(/<header class="site-header">[\s\S]*?<\/header>/,`<header class="site-header"><a class="brand" href="./">MEAT PLUS<span>おいしいを、もっと。</span></a><nav aria-label="メインメニュー"><a href="#home-scenes">気分から選ぶ</a><a href="#catalog">商品一覧</a><a href="https://meatplus06-afk.github.io/meatplus-lp/articles/">食の読みもの</a><a class="home-shop-link" href="https://meat-plus.club/">公式通販へ ↗</a></nav></header>`);
 html=html.replace(/<section class="hero(?: home-hero)?">[\s\S]*?<\/section>/,hero);
 html=html.replace(/<section class="home-scenes"[\s\S]*?<\/section>/g,'');
 html=html.replace(/<nav class="section-nav" data-commerce-guides[\s\S]*?<\/nav>/g,'');
