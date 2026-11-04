@@ -13,6 +13,7 @@ function buildEcPrompt_(product) {
     '- 商品画像から推測した重量・原材料・産地を事実にしない。仕入先・原価・社内メモなど非公開情報は出力しない。',
     '- 特に、入力に解凍方法がなければ冷蔵庫解凍・流水解凍・解凍時間を一切記載しない。一般的な料理知識で補完しない。保存方法が冷凍でも解凍手順を追加しない。',
     '- 肉質、柔らかさ、とろける口当たり、脂の甘み、鮮度、調理の手軽さも、入力に根拠がない場合は断定しない。',
+    '- 保存方法と配送方法を区別する。保存方法が冷凍でも「冷凍でお届け」「冷凍便」などの配送温度帯は推測しない。保存方法・賞味期限としてのみ記載する。',
     '- キーワードを羅列せず、商品名と確認できる特徴・用途を自然な日本語で結び付ける。他社名や無関係な検索語を使わない。',
     '',
     '読みやすさと検索での識別:',
@@ -70,4 +71,31 @@ function createFallbackSearchTerms_(product) {
 
 function createFallbackMetaDescription_(product) {
   return stripMarkdownSymbols_([product.productName, product.spec, product.featureUse].map(safeText_).filter(Boolean).join('。') + '。');
+}
+
+
+function buildAllOutput_(product, generated) {
+  return [
+    '【商品名案】',
+    '1. ' + safeText_(generated.titles[0]),
+    '2. ' + safeText_(generated.titles[1]),
+    '3. ' + safeText_(generated.titles[2]),
+    '',
+    '【キャッチコピー】',
+    safeText_(generated.catchCopy),
+    '',
+    '【商品説明文】',
+    safeText_(generated.longDescription),
+    '',
+    '【おススメポイント】',
+    bulletsText_(generated.generalBullets),
+    '',
+    '【FAQ】',
+    faqText_(generated.faq),
+    '',
+        '【お客様への一言】',
+    createCustomerMessage_(product),
+    '',
+appendProductInfoBlock_(product)
+  ].join('\n');
 }
