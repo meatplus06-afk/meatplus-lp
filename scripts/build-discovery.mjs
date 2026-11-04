@@ -21,6 +21,11 @@ const knownSlugs = new Map([
 ]);
 const categorySlug = raw => knownSlugs.get(categoryLabel(raw)) || ('category-' + (categoryCode(raw) || 'other'));
 const today = new Date().toISOString().slice(0, 10);
+const sourceDate = value => {
+  const raw = text(value);
+  const parsed = Date.parse(raw);
+  return /^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(raw) && Number.isFinite(parsed) && new Date(parsed).toISOString().slice(0, 10) === raw.slice(0, 10) ? raw : '';
+};
 
 const products = JSON.parse(await fs.readFile('data/products-public.json', 'utf8'));
 if (!Array.isArray(products)) throw new Error('data/products-public.json must contain an array.');
@@ -79,7 +84,7 @@ for (const product of products) {
   const canonical = text(product.url) || `${site}/products/${id}/`;
   const label = categoryLabel(product.category);
   const slug = categorySlug(product.category);
-  const updated = text(product.updatedAt);
+  const updated = sourceDate(product.updatedAt);
   const title = text(product.name);
 
   if (!page.includes('rel="describedby"')) {
@@ -89,7 +94,9 @@ for (const product of products) {
     new RegExp(`<title>${title.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}｜MEAT PLUS公式商品ガイド<\\/title>`),
     `<title>${esc(title)}｜商品情報・公式通販｜MEAT PLUS</title>`
   );
-  if (!page.includes('id="discovery-webpage-schema"')) {
+  // Refresh only our own WebPage block; preserve the product and other schemas.
+  page = page.replace(/<script id="discovery-webpage-schema" type="application\/ld\+json">[\s\S]*?<\/script>/g, '');
+  {
     const webPageLd = {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
@@ -167,10 +174,10 @@ await fs.writeFile('about/index.html', aboutHtml);
 
 // Rebuild sitemap with products plus discovery pages.
 const urlEntries = [
-  `<url><loc>${site}/</loc><lastmod>${today}</lastmod><priority>0.9</priority></url>`,
-  `<url><loc>${aboutUrl}</loc><lastmod>${today}</lastmod><priority>0.6</priority></url>`,
-  ...categories.map(category => `<url><loc>${site}/categories/${esc(category.slug)}/</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`),
-  ...products.map(product => `<url><loc>${esc(product.url)}</loc><lastmod>${text(product.updatedAt).slice(0,10) || today}</lastmod><priority>1.0</priority><image:image><image:loc>${esc(product.image)}</image:loc><image:title>${esc(product.name)}</image:title></image:image></url>`)
+  `<url><loc>${site}/</loc><priority>0.9</priority></url>`,
+  `<url><loc>${aboutUrl}</loc><priority>0.6</priority></url>`,
+  ...categories.map(category => `<url><loc>${site}/categories/${esc(category.slug)}/</loc><priority>0.8</priority></url>`),
+  ...products.map(product => `<url><loc>${esc(product.url)}</loc>${sourceDate(product.updatedAt) ? `<lastmod>${sourceDate(product.updatedAt).slice(0,10)}</lastmod>` : ''}<priority>1.0</priority><image:image><image:loc>${esc(product.image)}</image:loc><image:title>${esc(product.name)}</image:title></image:image></url>`)
 ];
 await fs.writeFile('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' + urlEntries.join('\n') + '\n</urlset>\n');
 
