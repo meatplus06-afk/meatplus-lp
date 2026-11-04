@@ -1,0 +1,55 @@
+{
+  "sukiyaki-choose": {
+    "hash": "b4d76092f531c1b9190180895ead9f75011da93577e8852b0931474abb2544e5",
+    "modified": "2026-11-04",
+    "published": "2026-11-04",
+    "productIds": [
+      "a001",
+      "a002",
+      "a003",
+      "a025",
+      "m008",
+      "m012"
+    ]
+  },
+  "meat-gift-checklist": {
+    "hash": "b8b14ba02c2e6f18c41698386670f5ecbc6507f9d6310e64756268a213f42bdb",
+    "modified": "2026-11-04",
+    "published": "2026-11-04",
+    "productIds": [
+      "m001",
+      "m002",
+      "m003",
+      "m004",
+      "m005",
+      "m006",
+      "m007",
+      "m008",
+      "m009",
+      "m010",
+      "m011",
+      "m012",
+      "m013",
+      "m014"
+    ]
+  },
+  "nabe-set-or-soup": {
+    "hash": "ac417a5b00bf9bdfb50a25fa49a85470bd33226168ea0a3ad9daf763612f2b82",
+    "modified": "2026-11-04",
+    "published": "2026-11-04",
+    "productIds": [
+      "i007",
+      "i008",
+      "i009",
+      "i025",
+      "i026",
+      "i027",
+      "i028",
+      "i029",
+      "i030",
+      "i031",
+      "i032",
+      "i033"
+    ]
+  }
+}

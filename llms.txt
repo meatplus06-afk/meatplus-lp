@@ -88,3 +88,8 @@
 - [もつ鍋・水炊き](https://meatplus06-afk.github.io/meatplus-lp/guides/nabe/)
 - [おつまみ](https://meatplus06-afk.github.io/meatplus-lp/guides/snacks/)
 - [詳細商品データ](https://meatplus06-afk.github.io/meatplus-lp/data/products-detailed.json)
+
+## 商品選びの記事
+- [すき焼き・しゃぶしゃぶ肉の選び方｜部位・内容量・保存方法を比べる](https://meatplus06-afk.github.io/meatplus-lp/articles/sukiyaki-choose/)
+- [肉ギフト・お歳暮の選び方｜購入前に確認したい条件](https://meatplus06-afk.github.io/meatplus-lp/articles/meat-gift-checklist/)
+- [もつ鍋・水炊き通販の選び方｜セットとスープ単品の違い](https://meatplus06-afk.github.io/meatplus-lp/articles/nabe-set-or-soup/)
