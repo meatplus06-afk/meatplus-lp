@@ -8,6 +8,7 @@ on:
       - scripts/storefront-product-identity.mjs
       - scripts/test-storefront-product-identity.mjs
       - data/storefront-product-identities.json
+      - scripts/build-editorial.mjs
       - scripts/build-commerce-discovery.mjs
       - assets/guide-analytics.js
       - scripts/build-home.mjs
